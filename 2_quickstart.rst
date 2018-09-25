@@ -510,7 +510,7 @@ Running a Water Quality Analysis
      pipe roughness values, etc.).
 
 
-.. |image0| image:: .\\media\image1.jpeg
+.. |image0| image:: .\media/image1.jpeg
 .. |image1| image:: .\/media/image2.png
 .. |image2| image:: .\/media/image3.png
 .. |image3| image:: .\/media/image4.png
