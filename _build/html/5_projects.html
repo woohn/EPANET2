@@ -1,0 +1,464 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>5. WORKING WITH PROJECTS &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="6. WORKING WITH OBJECTS" href="6_objects.html" />
+    <link rel="prev" title="4. EPANET’S WORKSPACE" href="4_EPANET_workspace.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">5. WORKING WITH PROJECTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#opening-and-saving-project-files">Opening and Saving Project Files</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-defaults">Project Defaults</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#calibration-data">Calibration Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-summary">Project Summary</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>5. WORKING WITH PROJECTS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/5_projects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="working-with-projects">
+<h1>5. WORKING WITH PROJECTS<a class="headerlink" href="#working-with-projects" title="Permalink to this headline">¶</a></h1>
+<p><em>This chapter discusses how EPANET uses project files to store a
+piping network’s data. It explains how to set certain default options
+for the project and how to register calibration data (observed
+measurements) with the project to use for model evaluation.</em></p>
+<hr class="docutils" />
+<div class="section" id="opening-and-saving-project-files">
+<h2>Opening and Saving Project Files<a class="headerlink" href="#opening-and-saving-project-files" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Project files contain all of the information used to model a network.
+They are usually named with a .NET extension.</p>
+<p>To create a new project:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>File &gt;&gt; New</strong> from the Menu Bar or click <img alt="image72" src="_images/image38.png" /> on the
+Standard Toolbar.</li>
+<li>You will be prompted to save the existing project (if changes were
+made to it) before the new project is created.</li>
+<li>A new, unnamed project is created with all options set to their
+default values.</li>
+</ol>
+</div></blockquote>
+<p>A new project is automatically created whenever EPANET first begins.
+To open an existing project stored on disk:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Either select <strong>File &gt;&gt; Open</strong> from the Menu Bar or click <img alt="image73" src="_images/image39.png" />
+on the Standard Toolbar.</li>
+<li>You will be prompted to save the current project (if changes were
+made to it).</li>
+<li>Select the file to open from the Open File dialog form that will
+appear. You can choose to open a file type saved previously as an
+EPANET project (typically with a .NET extension) or exported as a
+text file (typically with a .INP extension). EPANET recognizes file
+types by their content, not their names.</li>
+<li>Click <strong>OK</strong> to close the dialog and open the selected file.</li>
+</ol>
+</div></blockquote>
+<p>To save a project under its current name:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Either select <strong>File &gt;&gt; Save</strong> from the Menu Bar or click <img alt="image74" src="_images/image40.png" />
+on the Standard Toolbar.</li>
+</ul>
+</div></blockquote>
+<p>To save a project using a different name:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>File &gt;&gt; Save As</strong> from the Menu Bar.</li>
+<li>A standard File Save dialog form will appear from which you can
+select the folder and name that the project should be saved under.</li>
+</ol>
+</div></blockquote>
+<p><strong>Note:</strong> Projects are always saved as binary .NET files. To save a
+project’s data as readable ASCII text, use the <strong>Export &gt;&gt; Network</strong>
+command from the <strong>File</strong> menu.</p>
+</div></blockquote>
+</div>
+<div class="section" id="project-defaults">
+<h2>Project Defaults<a class="headerlink" href="#project-defaults" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Each project has a set of default values that are used unless
+overridden by the EPANET user. These values fall into three
+categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Default ID labels (labels used to identify nodes and links when they
+are first created)</li>
+<li>Default node/link properties (e.g., node elevation, pipe length,
+diameter, and roughness)</li>
+<li>Default hydraulic analysis options (e.g., system of units, headloss
+equation, etc.)</li>
+</ul>
+</div></blockquote>
+<p>To set default values for a project:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Project &gt;&gt; Defaults</strong> from the Menu Bar.</li>
+<li>A Defaults dialog form will appear with three pages, one for each
+category listed above.</li>
+<li>Check the box in the lower right of the dialog form if you want to
+save your choices for use in all new future projects as well.</li>
+<li>Click <strong>OK</strong> to accept your choice of defaults.</li>
+</ol>
+</div></blockquote>
+<p>The specific items for each category of defaults will be discussed
+next.</p>
+<p><strong>Default ID Labels</strong></p>
+<p>The ID Labels page of the Defaults dialog form is shown in Figure 5.1
+below. It is used to determine how EPANET will assign default ID
+labels to network components when they are first created. For each
+type of object one can enter a label prefix or leave the field blank
+if the default ID will simply be a number. Then one supplies an
+increment to be used when adding a numerical suffix to the default
+label. As an example, if J were used as a prefix for Junctions along
+with an increment of 5, then as junctions are created they receive
+default labels of J5, J10, J15 and so on. After an object has been
+created, the Property Editor can be used to modify its ID label if
+need be.</p>
+<p><img alt="image75" src="_images/image2.png" /></p>
+<p><strong>Figure 5.1</strong> ID Labels Page of Project Defaults Dialog</p>
+<p><strong>Default Node/Link Properties</strong></p>
+<p>The Properties page of the Defaults dialog form is shown in Figure
+5.2. It sets default property values for newly created nodes and
+links. These properties include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Elevation for nodes</li>
+<li>Diameter for tanks</li>
+<li>Maximum water level for tanks</li>
+<li>Length for pipes</li>
+<li>Auto-Length (automatic calculation of length) for pipes</li>
+<li>Diameter for pipes</li>
+<li>Roughness for pipes</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><p>When the Auto-Length property is turned on, pipe lengths will
+automatically be computed as pipes are added or repositioned on the
+network map. A node or link created with these default properties can
+always be modified later on using the Property Editor.</p>
+<p><img alt="image76" src="_images/image60.png" /></p>
+<p><strong>Figure 5.2</strong> Properties Page of the Project Defaults Dialog</p>
+<p><strong>Default Hydraulic Options</strong></p>
+<p>The third page of the Defaults dialog form is used to assign default
+hydraulic analysis options. It contains the same set of hydraulic
+options as the project’s Hydraulic Options accessed from the Browser
+(see Section 8.1). They are repeated on the Project Defaults dialog
+so that they can be saved for use with future projects as well as
+with the current one. The most important Hydraulic Options to check
+when setting up a new project are Flow Units, Headloss Formula, and
+Default Pattern. The choice of Flow Units determines whether all
+other network quantities are expressed in Customary US units or in SI
+metric units. The choice of Headloss Formula defines the type of the
+roughness coefficient to be supplied for each pipe in the network.
+The Default Pattern automatically becomes the time pattern used to
+vary demands in an extended period simulation for all junctions not
+assigned any pattern.</p>
+</div></blockquote>
+</div>
+<div class="section" id="calibration-data">
+<h2>Calibration Data<a class="headerlink" href="#calibration-data" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET allows you to compare results of a simulation against measured
+field data. This can be done via Time Series plots for selected
+locations in the network or by special Calibration Reports that
+consider multiple locations. Before EPANET can use such calibration
+data it has to be entered into a file and registered with the
+project.</p>
+<p>Calibration Files</p>
+<p>A Calibration File is a text file containing measured data for a
+particular quantity taken over a particular period of time within a
+distribution system. The file provides observed data that can be
+compared to the results of a network simulation. Separate files
+should be created for different parameters (e.g., pressure, fluoride,
+chlorine, flow, etc.) and different sampling studies. Each line of
+the file contains the following items:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Location ID - ID label (as used in the network model) of the location
+where the measurement was made</li>
+<li>Time - Time (in hours) when the measurement was made</li>
+<li>Value - Result of the measurement</li>
+</ul>
+</div></blockquote>
+<p>The measurement time is with respect to time zero of the simulation
+to which the Calibration File will be applied. It can be entered as
+either a decimal number (e.g., 27.5) or in hours:minutes format
+(e.g., 27:30). For data to be used in a single period analysis all
+time values can be 0. Comments can be added to the file by placing a
+semicolon (;) before them. For a series of measurements made at the
+same location the Location ID does not have to be repeated. An
+excerpt from a Calibration File is shown below.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">;</span><span class="n">Fluoride</span> <span class="n">Tracer</span> <span class="n">Measurements</span>
+
+<span class="p">;</span><span class="n">Location</span>  <span class="n">Time</span>   <span class="n">Value</span>
+
+<span class="p">;</span><span class="o">--------------------------</span>
+
+       <span class="n">N1</span>    <span class="mi">0</span>      <span class="mf">0.5</span>
+             <span class="mf">6.4</span>    <span class="mf">1.2</span>
+            <span class="mf">12.7</span>    <span class="mf">0.9</span>
+       <span class="n">N2</span>    <span class="mf">0.5</span>    <span class="mf">0.72</span>
+             <span class="mf">5.6</span>    <span class="mf">0.77</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Registering Calibration Data</p>
+<p>To register calibration data residing in a Calibration File:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Project &gt;&gt; Calibration Data</strong> from the Menu Bar.</li>
+<li>In the Calibration Data dialog form shown in Figure 5.3, click in
+the box next to the parameter you wish to register data for.</li>
+<li>Either type in the name of a Calibration File for this parameter or
+click the <strong>Browse</strong> button to search for it.</li>
+<li>Click the <strong>Edit</strong> button if you want to open the Calibration File
+in Windows NotePad for editing.</li>
+<li>Repeat steps 2 - 4 for any other parameters that have calibration
+data.</li>
+<li>Click <strong>OK</strong> to accept your selections.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div><p><img alt="image77" src="_images/image61.png" /></p>
+<p><strong>Figure 5.3</strong> Calibration Data Dialog</p>
+</div></blockquote>
+</div>
+<div class="section" id="project-summary">
+<h2>Project Summary<a class="headerlink" href="#project-summary" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>To view a summary description of the current project select <strong>Project
+&gt;&gt; Summary</strong> from the Menu Bar. The Project Summary dialog form will
+appear in which you can edit a descriptive title for the project as
+well as add notes that further describe the project. When you go to
+open a previously saved file, the Open File dialog box will display
+both of these items as different file names are selected. This makes
+them very useful for locating specific network analyses. The form
+also displays certain network statistics, such as the number of
+junctions, pipes, pumps, etc.</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="6_objects.html" class="btn btn-neutral float-right" title="6. WORKING WITH OBJECTS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="4_EPANET_workspace.html" class="btn btn-neutral" title="4. EPANET’S WORKSPACE" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

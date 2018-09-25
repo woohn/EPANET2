@@ -1,0 +1,1582 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>6. WORKING WITH OBJECTS &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="7. WORKING WITH THE MAP" href="7_map.html" />
+    <link rel="prev" title="5. WORKING WITH PROJECTS" href="5_projects.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">6. WORKING WITH OBJECTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#types-of-objects">Types of Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#adding-objects">Adding Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-objects">Selecting Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-visual-objects">Editing Visual Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-non-visual-objects">Editing Non-Visual Objects</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#curve-editor">Curve Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pattern-editor">Pattern Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controls-editor">Controls Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demand-editor">Demand Editor</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#source-quality-editor">Source Quality Editor</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#copying-and-pasting-objects">Copying and Pasting Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#shaping-and-reversing-links">Shaping and Reversing Links</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#deleting-an-object">Deleting an Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#moving-an-object">Moving an Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-a-group-of-objects">Selecting a Group of Objects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#editing-a-group-of-objects">Editing a Group of Objects</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>6. WORKING WITH OBJECTS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/6_objects.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="working-with-objects">
+<h1>6. WORKING WITH OBJECTS<a class="headerlink" href="#working-with-objects" title="Permalink to this headline">¶</a></h1>
+<p><em>EPANET uses various types of objects to model a distribution system.
+These objects can be accessed either directly on the network map or
+from the Data page of the Browser window. This chapter describes what
+these objects are and how they can be created, selected, edited,
+deleted, and repositioned.</em></p>
+<hr class="docutils" />
+<div class="section" id="types-of-objects">
+<h2>Types of Objects<a class="headerlink" href="#types-of-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET contains both physical objects that can appear on the network
+map, and non-physical objects that encompass design and operational
+information. These objects can be classified as followed:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Nodes<ol class="loweralpha">
+<li>Junctions</li>
+<li>Reservoirs</li>
+<li>Tanks</li>
+</ol>
+</li>
+<li>Links<ol class="loweralpha">
+<li>Pipes</li>
+<li>Pumps</li>
+<li>Valves</li>
+</ol>
+</li>
+<li>Map Labels</li>
+<li>Time Patterns</li>
+<li>Curves</li>
+<li>Controls<ol class="loweralpha">
+<li>Simple</li>
+<li>Rule-Based</li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="adding-objects">
+<h2>Adding Objects<a class="headerlink" href="#adding-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><strong>Adding a Node</strong></p>
+<p>To add a Node using the Map Toolbar:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Click the button for the type of node (junction <img alt="image78" src="_images/image6.png" />, reservoir
+<img alt="image79" src="_images/image5.png" />, or tank <img alt="image80" src="_images/image7.png" />) to add from the Map Toolbar if it is
+not already depressed.</li>
+<li>Move the mouse to the desired location on the map and click.</li>
+</ol>
+</div></blockquote>
+<p>To add a Node using the Browser:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the type of node (junction, reservoir, or tank) from the
+Object list of the Data Browser.</li>
+<li>Click the Add button <img alt="image81" src="_images/image16.jpeg" />.</li>
+<li>Enter map coordinates with the Property Editor (optional).</li>
+</ol>
+</div></blockquote>
+<p><strong>Adding a Link</strong></p>
+<p>To add a straight or curved-line Link using the Map Toolbar:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Click the button for the type of link to add (pipe <img alt="image82" src="_images/image9.png" />, pump
+<img alt="image83" src="_images/image10.png" />, or valve <img alt="image84" src="_images/image52.png" /> ) from the Map Toolbar if it is not
+already depressed.</li>
+<li>On the map, click the mouse over the link’s start node.</li>
+<li>Move the mouse in the direction of the link’s end node, clicking it
+at those intermediate points where it is necessary to change the
+link’s direction.</li>
+<li>Click the mouse a final time over the link’s end node.</li>
+</ol>
+</div></blockquote>
+<p>Pressing the right mouse button or the Escape key while drawing a
+link will cancel the operation.</p>
+<p>To add a straight line Link using the Browser:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the type of link to add (pipe, pump, or valve) from the Object
+list of the Data Browser.</li>
+<li>Click the Add button.</li>
+<li>Enter the From and To nodes of the link in the Property Editor.</li>
+</ol>
+</div></blockquote>
+<p><strong>Adding a Map Label</strong></p>
+<p>To add a label to the map:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Click the Text button <img alt="image85" src="_images/image11.png" /> on the Map Toolbar.</li>
+<li>Click the mouse on the map where label should appear.</li>
+<li>Enter the text for the label.</li>
+<li>Press the <strong>Enter</strong> key.</li>
+</ol>
+</div></blockquote>
+<p><strong>Adding a Curve</strong></p>
+<p>To add a curve to the network database:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select Curve from the object category list of the Data Browser.</li>
+<li>Click the Add button.</li>
+<li>Edit the curve using the Curve Editor (see below).</li>
+</ol>
+</div></blockquote>
+<p><strong>Adding a Time Pattern</strong></p>
+<p>To add a time pattern to the network:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select Patterns from the object category list of the Data Browser.</li>
+<li>Click the Add button.</li>
+<li>Edit the pattern using the Pattern Editor (see below).</li>
+</ol>
+</div></blockquote>
+<p><strong>Using a Text File</strong></p>
+<p>In addition to adding individual objects interactively, you can
+import a text file containing a list of node ID’s with their
+coordinates as well as a list of link ID’s and their connecting nodes
+(see Section 11.4 - Importing a Partial Network).</p>
+</div></blockquote>
+</div>
+<div class="section" id="selecting-objects">
+<h2>Selecting Objects<a class="headerlink" href="#selecting-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To select an object on the map:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Make sure that the map is in Selection mode (the mouse cursor has the
+shape of an arrow pointing up to the left). To switch to this mode,
+either click the Select Object button <img alt="image86" src="_images/image12.png" /> on the Map Toolbar or
+choose <strong>Select Object</strong> from the <strong>Edit</strong> menu.</li>
+<li>Click the mouse over the desired object on the map.</li>
+</ol>
+</div></blockquote>
+<p>To select an object using the Browser:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the category of object from the dropdown list of the Data
+Browser<strong>.</strong></li>
+<li>Select the desired object from the list below the category heading.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="editing-visual-objects">
+<h2>Editing Visual Objects<a class="headerlink" href="#editing-visual-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><blockquote>
+<div><p>The Property Editor (see Section 4.8) is used to edit the properties
+of objects that can appear on the Network Map (Junctions, Reservoirs,
+Tanks, Pipes, Pumps, Valves, or Labels). To edit one of these
+objects, select the object on the map or from the Data Browser, then
+click the Edit button <img alt="image87" src="_images/image14.jpeg" /> on the Data Browser (or simply
+double-click the object on the map). The properties associated with
+each of these types of objects are described in Tables 6.1 to 6.7.</p>
+<p>Note: The unit system in which object properties are expressed
+depends on the choice of units for flow rate. Using a flow rate
+expressed in cubic feet, gallons or acre-feet means that US units
+will be used for all quantities. Using a flow rate expressed in
+liters or cubic meters means that SI metric units will be used. Flow
+units are selected from the project’s Hydraulic Options which can be
+accessed from the <strong>Project &gt;&gt; Defaults</strong> menu. The units used for
+all properties are summarized in Appendix A.</p>
+<p><strong>Table 6.1</strong> Junction Properties</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Junction ID</td>
+<td>A unique label used to identify
+the junction. It can consist of a
+combination of up to 15 numerals
+or characters. It cannot be the
+same as the ID for any other
+node. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>X-Coordinate</td>
+<td>The horizontal location of the
+junction on the map, measured in
+the map’s distance units. If left
+blank the junction will not
+appear on the network map.</td>
+</tr>
+<tr class="row-even"><td>Y-Coordinate</td>
+<td>The vertical location of the
+junction on the map, measured in
+the map’s distance units. If left
+blank the junction will not
+appear on the network map.</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>An optional text string that
+describes other significant
+information about the junction.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>An optional text string (with no
+spaces) used to assign the
+junction to a category, such as a
+pressure zone.</td>
+</tr>
+<tr class="row-odd"><td>Elevation</td>
+<td>The elevation in feet (meters)
+above some common reference of
+the junction. This is a required
+property. Elevation is used only
+to compute pressure at the
+junction. It does not affect any
+other computed quantity.</td>
+</tr>
+<tr class="row-even"><td>Base Demand</td>
+<td>The average or nominal demand for
+water by the main category of
+consumer at the junction, as
+measured in the current flow
+units. A negative value is used
+to indicate an external source of
+flow into the junction. If left
+blank then demand is assumed to
+be zero.</td>
+</tr>
+<tr class="row-odd"><td>Demand Pattern</td>
+<td>The ID label of the time pattern
+used to characterize time
+variation in demand for the main
+category of consumer at the
+junction. The pattern provides
+multipliers that are applied to
+the Base Demand to determine
+actual demand in a given time
+period. If left blank then the
+<strong>Default Time Pattern</strong> assigned
+in the Hydraulic Options (see
+Section 8.1) will be used.</td>
+</tr>
+<tr class="row-even"><td>Demand Categories</td>
+<td>Number of different categories of
+water users defined for the
+junction. Click the ellipsis
+button (or hit the Enter key) to
+bring up a special Demands Editor
+which will let you assign base
+demands and time patterns to
+multiple categories of users at
+the junction. Ignore if only a
+single demand category will
+suffice.</td>
+</tr>
+<tr class="row-odd"><td>Emitter Coefficient</td>
+<td>Discharge coefficient for emitter
+(sprinkler or nozzle) placed at
+junction. The coefficient
+represents the flow (in current
+flow units) that occurs at a
+pressure drop of 1 psi (or
+meter). Leave blank if no emitter
+is present. See the Emitters
+topic in Section 3.1 for more
+details.</td>
+</tr>
+<tr class="row-even"><td>Initial Quality</td>
+<td>Water quality level at the
+junction at the start of the
+simulation period. Can be left
+blank if no water quality
+analysis is being made or if the
+level is zero.</td>
+</tr>
+<tr class="row-odd"><td>Source Quality</td>
+<td>Quality of any water entering the
+network at this location. Click
+the ellipsis button (or hit the
+Enter key) to bring up the Source
+Quality Editor (see Section 6.5
+below).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Table 6.2</strong> Reservoir Properties</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Reservoir ID</td>
+<td>A unique label used to identify
+the reservoir. It can consist of
+a combination of up to 15
+numerals or characters. It cannot
+be the same as the ID for any
+other node. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>X-Coordinate</td>
+<td>The horizontal location of the
+reservoir on the map, measured in
+the map’s distance units. If left
+blank the reservoir will not
+appear on the network map.</td>
+</tr>
+<tr class="row-even"><td>Y-Coordinate</td>
+<td>The vertical location of the
+reservoir on the map, measured in
+the map’s distance units. If left
+blank the reservoir will not
+appear on the network map.</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>An optional text string that
+describes other significant
+information about the reservoir.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>An optional text string (with no
+spaces) used to assign the
+reservoir to a category, such as
+a pressure zone</td>
+</tr>
+<tr class="row-odd"><td>Total Head</td>
+<td>The hydraulic head (elevation +
+pressure head) of water in the
+reservoir in feet (meters). This
+is a required property.</td>
+</tr>
+<tr class="row-even"><td>Head Pattern</td>
+<td>The ID label of a time pattern
+used to model time variation in
+the reservoir’s head. Leave blank
+if none applies. This property is
+useful if the reservoir
+represents a tie-in to another
+system whose pressure varies with
+time.</td>
+</tr>
+<tr class="row-odd"><td>Initial Quality</td>
+<td>Water quality level at the
+reservoir. Can be left blank if
+no water quality analysis is
+being made or if the level is
+zero.</td>
+</tr>
+<tr class="row-even"><td>Source Quality</td>
+<td>Quality of any water entering the
+network at this location. Click
+the ellipsis button (or hit the
+Enter key) to bring up the Source
+Quality Editor (see Section 6.1
+below).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Table 6.3</strong> Tank Properties</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Tank ID</td>
+<td>A unique label used to identify
+the tank. It can consist of a
+combination of up to 15 numerals
+or characters. It cannot be the
+same as the ID for any other
+node. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>X-Coordinate</td>
+<td>The horizontal location of the
+tank on the map, measured in the
+map’s scaling units. If left
+blank the tank will not appear on
+the network map.</td>
+</tr>
+<tr class="row-even"><td>Y-C&nbsp; oordinate</td>
+<td>The vertical location of the tank
+on the map, measured in the map’s
+scaling units. If left blank the
+tank will not appear on the
+network map.</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>Optional text string that
+describes other significant
+information about the tank.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>Optional text string (with no
+spaces) used to assign the tank
+to a category, such as a pressure
+zone</td>
+</tr>
+<tr class="row-odd"><td>Elevation</td>
+<td>Elevation above a common datum in
+feet (meters) of the bottom shell
+of the tank. This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>Initial Level</td>
+<td>Height in feet (meters) of the
+water surface above the bottom
+elevation of the tank at the
+start of the simulation. This is
+a required property.</td>
+</tr>
+<tr class="row-odd"><td>Minimum Level</td>
+<td>Minimum height in feet (meters)
+of the water surface above the
+bottom elevation that will be
+maintained. The tank will not be
+allowed to drop below this level.
+This is a required property.</td>
+</tr>
+<tr class="row-even"><td>Maximum Level</td>
+<td>Maximum height in feet (meters)
+of the water surface above the
+bottom elevation that will be
+maintained. The tank will not be
+allowed to rise above this level.
+This is a required property.</td>
+</tr>
+<tr class="row-odd"><td>Diameter</td>
+<td>The diameter of the tank in feet
+(meters). For cylindrical tanks
+this is the actual diameter. For
+square or rectangular tanks it
+can be an equivalent diameter
+equal to 1.128 times the square
+root of the cross-sectional area.
+For tanks whose geometry will be
+described by a curve (see below)
+it can be set to any value. This
+is a required property.</td>
+</tr>
+<tr class="row-even"><td>Minimum Volume</td>
+<td>The volume of water in the tank
+when it is at its minimum level,
+in cubic feet (cubic meters).
+This is an optional property,
+useful mainly for describing the
+bottom geometry of
+non-cylindrical tanks where a
+full volume versus depth curve
+will not be supplied (see below).</td>
+</tr>
+<tr class="row-odd"><td>Volume Curve</td>
+<td>The ID label of a curve used to
+describe the relation between
+tank volume and water level. If
+no value is supplied then the
+tank is assumed to be
+cylindrical.</td>
+</tr>
+<tr class="row-even"><td>Mixing Model</td>
+<td>The type of water quality mixing
+that occurs within the tank. The
+choices include</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MIXED (fully mixed),</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 2COMP (two-compartment
+mixing),</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FIFO
+(first-in-first-out plug flow),</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; LIFO (last-in-first-out
+plug flow).</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>See the Mixing Models topic in
+Section 3.4 for more information.</td>
+</tr>
+<tr class="row-even"><td>Mixing Fraction</td>
+<td>The fraction of the tank’s total
+volume that comprises the
+inlet-outlet compartment of the
+two-compartment (2COMP) mixing
+model. Can be left blank if
+another type of mixing model is
+employed.</td>
+</tr>
+<tr class="row-odd"><td>Reaction Coefficient</td>
+<td>The bulk reaction coefficient for
+chemical reactions in the tank.
+Time units are 1/days. Use a
+positive value for growth
+reactions and a negative value
+for decay. Leave blank if the
+Global Bulk reaction coefficient
+specified in the project’s
+Reactions Options will apply. See
+Water Quality Reactions in
+Section 3.4 for more information.</td>
+</tr>
+<tr class="row-even"><td>Initial Quality</td>
+<td>Water quality level in the tank
+at the start of the simulation.
+Can be left blank if no water
+quality analysis is being made or
+if the level is zero.</td>
+</tr>
+<tr class="row-odd"><td>Source Quality</td>
+<td>Quality of any water entering the
+network at this location. Click
+the ellipsis button (or hit the
+Enter key) to bring up the Source
+Quality Editor (see Section 6.5
+below).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Table 6.4</strong> Pipe Properties</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Pipe ID</td>
+<td>A unique label used to identify
+the pipe. It can consist of a
+combination of up to 15 numerals
+or characters. It cannot be the
+same as the ID for any other
+link. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Start Node</td>
+<td>The ID of the node where the pipe
+begins. This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>End Node</td>
+<td>The ID of the node where the pipe
+ends. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>An optional text string that
+describes other significant
+information about the pipe.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>An optional text string (with no
+spaces) used to assign the pipe
+to a category, perhaps one based
+on age or material</td>
+</tr>
+<tr class="row-odd"><td>Length</td>
+<td>The actual length of the pipe in
+feet (meters). This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>Diameter</td>
+<td>The pipe diameter in inches (mm).
+This is a required property.</td>
+</tr>
+<tr class="row-odd"><td>Roughness</td>
+<td>The roughness coefficient of the
+pipe. It is unitless for
+Hazen-Williams or Chezy-Manning
+roughness and has units of
+millifeet (mm) for Darcy-Weisbach
+roughness. This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>Loss Coefficient</td>
+<td>Unitless minor loss coefficient
+associated with bends, fittings,
+etc. Assumed 0 if left blank.</td>
+</tr>
+<tr class="row-odd"><td>Initial Status</td>
+<td>Determines whether the pipe is
+initially open, closed, or
+contains a check valve. If a
+check valve is specified then the
+flow direction in the pipe will
+always be from the Start node to
+the End node.</td>
+</tr>
+<tr class="row-even"><td>Bulk Coefficient</td>
+<td>The bulk reaction coefficient for
+the pipe. Time units are 1/days.
+Use a positive value for growth
+and a negative value for decay.
+Leave blank if the Global Bulk
+reaction coefficient from the
+project’s Reaction Options will
+apply. See Water Quality
+Reactions in Section 3.4 for more
+information.</td>
+</tr>
+<tr class="row-odd"><td>Wall Coefficient</td>
+<td>The wall reaction coefficient for
+the pipe. Time units are 1/days.
+Use a positive value for growth
+and a negative value for decay.
+Leave blank if the Global Wall
+reaction coefficient from the
+project’s Reactions Options will
+apply. See Water Quality
+Reactions in Section 3.4 for more
+information.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note</strong>: Pipe lengths can be automatically computed as pipes are
+added or repositioned on the network map if the <strong>Auto-Length</strong>
+setting is turned on. To toggle this setting On/Off either:</div></blockquote>
+<ul class="simple">
+<li>Select <strong>Project &gt;&gt; Defaults</strong> and edit the Auto-Length field on the
+Properties page of the Defaults dialog form.</li>
+<li>Right-click over the Auto-Length section of the Status Bar and then
+click on the popup menu item that appears.</li>
+</ul>
+<blockquote>
+<div><p>Be sure to provide meaningful dimensions for the network map before
+using the Auto-Length feature (see Section 7.2).</p>
+<p><strong>Table 6.5</strong> Pump Properties</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Pump ID</td>
+<td>A unique label used to identify
+the pump. It can consist of a
+combination of up to 15 numerals
+or characters. It cannot be the
+same as the ID for any other
+link. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Start Node</td>
+<td>The ID of the node on the suction
+side of the pump. This is a
+required property</td>
+</tr>
+<tr class="row-even"><td>End Node</td>
+<td>The ID of the node on the
+discharge side of the pump. This
+is a required property</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>An optional text string that
+describes other significant
+information about the pump.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>An optional text string (with no
+spaces) used to assign the pump
+to a category, perhaps based on
+age, size or location</td>
+</tr>
+<tr class="row-odd"><td>Pump Curve</td>
+<td>The ID label of the pump curve
+used to describe the relationship
+between the head delivered by the
+pump and the flow through the
+pump. Leave blank if the pump
+will be a constant energy pump
+(see below).</td>
+</tr>
+<tr class="row-even"><td>Power</td>
+<td>The power supplied by the pump in
+horsepower (kw). Assumes that the
+pump supplies the same amount of
+energy no matter what the flow
+is. Leave blank if a pump curve
+will be used instead. Use when
+pump curve information is not
+available.</td>
+</tr>
+<tr class="row-odd"><td>Speed</td>
+<td>The relative speed setting of the
+pump (unitless). For example, a
+speed setting of 1.2 implies that
+the rotational speed of the pump
+is 20% higher than the normal
+setting.</td>
+</tr>
+<tr class="row-even"><td>Pattern</td>
+<td>The ID label of a time pattern
+used to control the pump’s
+operation. The multipliers of the
+pattern are equivalent to speed
+settings. A multiplier of zero
+implies that the pump will be
+shut off during the corresponding
+time period. Leave blank if not
+applicable.</td>
+</tr>
+<tr class="row-odd"><td>Initial Status</td>
+<td>State of the pump (open or
+closed) at the start of the
+simulation period.</td>
+</tr>
+<tr class="row-even"><td>Efficiency Curve</td>
+<td>The ID label of the curve that
+represents the pump’s
+wire-to-water efficiency (in
+percent) as a function of flow
+rate. This information is used
+only to compute energy usage.
+Leave blank if not applicable or
+if the global pump efficiency
+supplied with the project’s
+Energy Options (see Section 8.1)
+will be used.</td>
+</tr>
+<tr class="row-odd"><td>Energy Price</td>
+<td>The average or nominal price of
+energy in monetary units per
+kw-hr. Used only for computing
+the cost of energy usage. Leave
+blank if not applicable or if the
+global value supplied with the
+project’s Energy Options (Section
+8.1) will be used.</td>
+</tr>
+<tr class="row-even"><td>Price Pattern</td>
+<td>The ID label of the time pattern
+used to describe the variation in
+energy price throughout the day.
+Each multiplier in the pattern is
+applied to the pump’s Energy
+Price to determine a time-of-day
+pricing for the corresponding
+period. Leave blank if not
+applicable or if the global
+pricing pattern specified in the
+project’s Energy Options (Section
+8.1) will be used.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Table 6.6</strong> Valve Properties</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>ID Label</td>
+<td>A unique label used to identify
+the valve. It can consist of a
+combination of up to 15 numerals
+or characters. It cannot be the
+same as the ID for any other
+link. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Start Node</td>
+<td>The ID of the node on the nominal
+upstream or inflow side of the
+valve. (PRVs and PSVs maintain
+flow in only a single direction.)
+This is a required property.</td>
+</tr>
+<tr class="row-even"><td>End Node</td>
+<td>The ID of the node on the nominal
+downstream or discharge side of
+the valve. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>An optional text string that
+describes other significant
+information about the valve.</td>
+</tr>
+<tr class="row-even"><td>Tag</td>
+<td>An optional text string (with no
+spaces) used to assign the valve
+to a category, perhaps based on
+type or location.</td>
+</tr>
+<tr class="row-odd"><td>Diameter</td>
+<td>The valve diameter in inches
+(mm). This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>Type</td>
+<td>The valve type (PRV, PSV, PBV,
+FCV, TCV, or GPV). See Valves in
+Section 6.1for descriptions of
+the various types of valves. This
+is a required property.</td>
+</tr>
+<tr class="row-odd"><td>Setting</td>
+<td>A required parameter that
+describes the valve’s operational
+setting.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Valve Type - Setting Parameter
+PRV - Pressure (psi or m)
+PSV - Pressure (psi or m)
+PBV - Pressure (psi or m)
+FCV - Flow (flow units)
+TCV - Loss Coefficient (unitless)
+GPV - ID of head loss curve</td>
+</tr>
+<tr class="row-odd"><td>Loss Coefficient</td>
+<td>Unitless minor loss coefficient
+that applies when the valve is
+completely opened. Assumed 0 if
+left blank.</td>
+</tr>
+<tr class="row-even"><td>Fixed Status</td>
+<td>Valve status at the start of the
+simulation. If set to OPEN or
+CLOSED then the control setting
+of the valve is ignored and the
+valve behaves as an open or
+closed link, respectively. If set
+to NONE, then the valve will
+behave as intended. A valve’s
+fixed status and its setting can
+be made to vary throughout a
+simulation by the use of control
+statements. If a valve’s status
+was fixed to OPEN/CLOSED, then it
+can be made active again using a
+control that assigns a new
+numerical setting to it.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Table 6.7</strong> Map Label Properties</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>PROPERTY</em></th>
+<th class="head"><em>DESCRIPTION</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Text</td>
+<td>The label’s text.</td>
+</tr>
+<tr class="row-odd"><td>X-Coordinate</td>
+<td>The horizontal location of the
+upper left corner of the label on
+the map, measured in the map’s
+scaling units. This is a required
+property.</td>
+</tr>
+<tr class="row-even"><td>Y-C&nbsp; oordinate</td>
+<td>The vertical location of the
+upper left corner of the label on
+the map, measured in the map’s
+scaling units. This is a required
+property.</td>
+</tr>
+<tr class="row-odd"><td>Anchor Node</td>
+<td>ID of node that serves as the
+label’s anchor point (see Note 1
+below). Leave blank if label will
+not be anchored.</td>
+</tr>
+<tr class="row-even"><td>Meter Type</td>
+<td>Type of object being metered by
+the label (see Note 2 below).
+Choices are None, Node, or Link.</td>
+</tr>
+<tr class="row-odd"><td>Meter ID</td>
+<td>ID of the object (Node or Link)
+being metered.</td>
+</tr>
+<tr class="row-even"><td>Font</td>
+<td>Launches a Font dialog that
+allows selection of the label’s
+font, size, and style.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><ol class="arabic simple">
+<li>A label’s anchor node property is used to anchor the label relative
+to a given location on the map. When the map is zoomed in, the label
+will appear the same distance from its anchor node as it did under
+the full extent view. This feature prevents labels from wandering too
+far away from the objects they were meant to describe when a map is
+zoomed.</li>
+<li>The Meter Type and ID properties determine if the label will act as a
+meter. Meter labels display the value of the current viewing
+parameter (chosen from the Map Browser) underneath the label text.
+The Meter Type and ID must refer to an existing node or link in the
+network. Otherwise, only the label text appears.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="editing-non-visual-objects">
+<h2>Editing Non-Visual Objects<a class="headerlink" href="#editing-non-visual-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Curves, Time Patterns, and Controls have special editors that are
+used to define their properties. To edit one of these objects, select
+the object from the Data Browser and then click the Edit button
+<img alt="image88" src="_images/image14.jpeg" />. In addition, the Property Editor for Junctions contains an
+ellipsis button in the field for Demand Categories that brings up a
+special Demand Editor when clicked. Similarly, the Source Quality
+field in the Property Editor for Junctions, Reservoirs, and Tanks has
+a button that launches a special Source Quality editor. Each of these
+specialized editors is described next.</div></blockquote>
+<div class="section" id="curve-editor">
+<h3>Curve Editor<a class="headerlink" href="#curve-editor" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Curve Editor is a dialog form as shown in Figure 6.1. To use the
+Curve Editor, enter values for the following items:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="17%" />
+<col width="83%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Item</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Curve ID</td>
+<td>ID label of the curve (maximum of 15 numerals or characters)</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>Optional description of what the curve represents</td>
+</tr>
+<tr class="row-even"><td>Curve Type</td>
+<td>Type of curve</td>
+</tr>
+<tr class="row-odd"><td>X-Y Data</td>
+<td>X-Y data points for the curve</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>As you move between cells in the X-Y data table (or press the Enter
+key) the curve is redrawn in the preview window. For single- and
+three-point pump curves, the equation generated for the curve will be
+displayed in the Equation box. Click the <strong>OK</strong> button to accept the
+curve or the <strong>Cancel</strong> button to cancel your entries. You can also
+click the <strong>Load</strong> button to load in curve data that was previously
+saved to file or click the <strong>Save</strong> button to save the current
+curve’s data to a file.</p>
+<blockquote>
+<div><img alt="image89" src="_images/image17.png" /></div></blockquote>
+<p><strong>Figure 6.1</strong> Curve Editor</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pattern-editor">
+<h3>Pattern Editor<a class="headerlink" href="#pattern-editor" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Pattern Editor, displayed in Figure 6.2, edits the properties of
+a time pattern object. To use the Pattern Editor enter values for the
+following items:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Item</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Pattern ID</td>
+<td>ID label of the pattern (maximum
+of 15 numerals or characters)</td>
+</tr>
+<tr class="row-odd"><td>Description</td>
+<td>Optional description of what the
+pattern represents</td>
+</tr>
+<tr class="row-even"><td>Multipliers</td>
+<td>Multiplier value for each time
+period of the pattern.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>As multipliers are entered, the preview chart is redrawn to provide a
+visual depiction of the pattern. If you reach the end of the
+available Time Periods when entering multipliers, simply hit the
+<strong>Enter</strong> key to add on another period. When finished editing, click
+the <strong>OK</strong> button to accept the pattern or the <strong>Cancel</strong> button to
+cancel your entries. You can also click the <strong>Load</strong> button to load
+in pattern data that was previously saved to file or click the
+<strong>Save</strong> button to save the current pattern’s data to a file.</p>
+<blockquote>
+<div><img alt="image90" src="_images/image22.png" /></div></blockquote>
+<p><strong>Figure 6.2</strong> Pattern Editor</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="controls-editor">
+<h3>Controls Editor<a class="headerlink" href="#controls-editor" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Controls Editor, shown in Figure 6.3, is a text editor window
+used to edit both simple and rule-based controls. It has a standard
+text-editing menu that is activated by right-clicking anywhere in the
+Editor. The menu contains commands for Undo, Cut, Copy, Paste,
+Delete, and Select All.</p>
+<blockquote>
+<div><img alt="image91" src="_images/image62.png" /></div></blockquote>
+<p><strong>Figure 6.3</strong> Controls Editor</p>
+</div></blockquote>
+</div>
+<div class="section" id="demand-editor">
+<h3>Demand Editor<a class="headerlink" href="#demand-editor" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Demand Editor is pictured in Figure 6.4. It is used to assign
+base demands and time patterns when there is more than one category
+of water user at a junction. The editor is invoked from the Property
+Editor by clicking the ellipsis button (or hitting the Enter key)
+when the Demand Categories field has the focus.</p>
+<p>The editor is a table containing three columns. Each category of
+demand is entered as a new row in the table. The columns contain the
+following information:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Base Demand</em>: baseline or average demand for the category (required)</li>
+<li><em>Time Pattern</em>: ID label of time pattern used to allow demand to vary
+with time (optional)</li>
+<li><em>Category</em>: text label used to identify the demand category
+(optional)</li>
+</ul>
+<blockquote>
+<div><img alt="image92" src="_images/image63.png" /></div></blockquote>
+</div></blockquote>
+<p><strong>Figure 6.4</strong> Demand Editor</p>
+<p>The table initially is sized for 10 rows. If additional rows are
+needed select any cell in the last row and hit the <strong>Enter</strong> key.</p>
+<p><strong>Note</strong>: By convention, the demand placed in the first row of the
+editor will be considered the main category for the junction and will
+appear in the Base Demand field of the Property Editor.</p>
+</div></blockquote>
+</div>
+<div class="section" id="source-quality-editor">
+<h3>Source Quality Editor<a class="headerlink" href="#source-quality-editor" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div><p>The Source Quality Editor is a pop-up dialog used to describe the
+quality of source flow entering the network at a specific node. This
+source might represent the main treatment works, a well head or
+satellite treatment facility, or an unwanted contaminant intrusion.
+The dialog form, shown in Figure 6.5, contains the following fields:</p>
+<blockquote>
+<div><img alt="image93" src="_images/image64.png" /></div></blockquote>
+<p><strong>Figure 6.5</strong> Source Quality Editor</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Field</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Source Type</td>
+<td>Select either:</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>-&nbsp; Concentration</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>-&nbsp; Mass Booster</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>-&nbsp; Flow Paced Booster</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>-&nbsp; Setpoint Booster</td>
+</tr>
+<tr class="row-odd"><td>Source Quality</td>
+<td>Baseline or average concentration
+(or mass flow rate per minute) of
+source – leave blank to remove
+the source</td>
+</tr>
+<tr class="row-even"><td>Quality Pattern</td>
+<td>ID label of time pattern used to
+make source quality vary with
+time – leave blank if not
+applicable</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>A water quality source can be designated as a concentration or
+booster source.</div></blockquote>
+<ul class="simple">
+<li>A <strong>concentration source</strong> fixes the concentration of any external
+inflow entering the network, such as flow from a reservoir or from a
+negative demand placed at a junction.</li>
+<li>A <strong>mass booster source</strong> adds a fixed mass flow to that entering the
+node from other points in the network.</li>
+<li>A <strong>flow paced booster source</strong> adds a fixed concentration to that
+resulting from the mixing of all inflow to the node from other points
+in the network.</li>
+<li>A <strong>setpoint booster source</strong> fixes the concentration of any flow
+leaving the node (as long as the concentration resulting from all
+inflow to the node is below the setpoint).</li>
+</ul>
+<blockquote>
+<div>The concentration-type source is best used for nodes that represent
+source water supplies or treatment works (e.g., reservoirs or nodes
+assigned a negative demand). The booster-type source is best used to
+model direct injection of a tracer or additional disinfectant into
+the network or to model a contaminant intrusion.</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="copying-and-pasting-objects">
+<h2>Copying and Pasting Objects<a class="headerlink" href="#copying-and-pasting-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The properties of an object displayed on the Network Map can be
+copied and pasted into another object from the same category. To copy
+the properties of an object to EPANET’s internal clipboard:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Right-click the object on the map.</li>
+<li>Select <strong>Copy</strong> from the pop-up menu that appears.</li>
+</ol>
+</div></blockquote>
+<p>To paste copied properties into an object:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Right-click the object on the map.</li>
+<li>Select <strong>Paste</strong> from the pop-up menu that appears.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="shaping-and-reversing-links">
+<h2>Shaping and Reversing Links<a class="headerlink" href="#shaping-and-reversing-links" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Links can be drawn as polylines containing any number of
+straight-line segments that add change of direction and curvature to
+the link. Once a link has been drawn on the map, interior points that
+define these line segments can be added, deleted, and moved (see
+Figure 6.6). To edit the interior points of a link:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the link to edit on the Network Map and click <img alt="image94" src="_images/image13.png" /> on the
+Map Toolbar (or select <strong>Edit &gt;&gt; Select Vertex</strong> from the Menu Bar,
+or right-click on the link and select <strong>Vertices</strong> from the popup
+menu).</li>
+<li>The mouse pointer will change shape to an arrow tip, and any existing
+vertex points on the link will be displayed with small handles around
+them. To select a particular vertex, click the mouse over it.</li>
+<li>To add a new vertex to the link, right-click the mouse and select
+<strong>Add Vertex</strong> from the popup menu (or simply press the <strong>Insert</strong>
+key on the keyboard).</li>
+<li>To delete the currently selected vertex, right-click the mouse and
+select <strong>Delete Vertex</strong> from the popup menu (or simply press the
+<strong>Delete</strong> key on the keyboard).</li>
+<li>To move a vertex to another location, drag it with the left mouse
+button held down to its new position.</li>
+<li>While in Vertex Selection mode you can begin editing the vertices for
+another link by clicking on the link. To leave Vertex Selection mode,
+right-click on the map and select <strong>Quit Editing</strong> from the popup
+menu, or select any other button on the Map Toolbar.</li>
+</ol>
+<p><img alt="image95" src="_images/image65.png" /></p>
+</div></blockquote>
+<p><strong>Figure 6.6</strong> Reshaping a Link</p>
+<p>A link can also have its direction reversed (i.e., its end nodes
+switched) by right- clicking on it and selecting <strong>Reverse</strong> from the
+pop-up menu that appears. This is useful for re-orienting pumps and
+valves that originally were added in the wrong direction.</p>
+</div></blockquote>
+</div>
+<div class="section" id="deleting-an-object">
+<h2>Deleting an Object<a class="headerlink" href="#deleting-an-object" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To delete an object:</p>
+<blockquote>
+<div><ol class="arabic">
+<li><p class="first">Select the object on the map or from the Data Browser.</p>
+</li>
+<li><p class="first">Either:</p>
+<blockquote>
+<div><ul class="simple">
+<li>click <img alt="image96" src="_images/image44.png" /> on the Standard Toolbar,</li>
+<li>click the same button on the Data Browser,</li>
+<li>press the <strong>Delete</strong> key on the keyboard.</li>
+</ul>
+</div></blockquote>
+</li>
+</ol>
+<p><strong>Note</strong>: You can require that all deletions be confirmed before they
+take effect. See the General Preferences page of the Program
+Preferences dialog box described in Section 4.9.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="moving-an-object">
+<h2>Moving an Object<a class="headerlink" href="#moving-an-object" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To move a node or label to another location on the map:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the node or label.</li>
+<li>With the left mouse button held down over the object, drag it to its
+new location.</li>
+<li>Release the left button.</li>
+</ol>
+</div></blockquote>
+<p>Alternatively, new X and Y coordinates for the object can be typed in
+manually in the Property Editor. Whenever a node is moved all links
+connected to it are moved as well.</p>
+</div></blockquote>
+</div>
+<div class="section" id="selecting-a-group-of-objects">
+<h2>Selecting a Group of Objects<a class="headerlink" href="#selecting-a-group-of-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To select a group of objects that lie within an irregular region of
+the network map:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Edit &gt;&gt; Select Region</strong> or click <img alt="image97" src="_images/image47.png" /> on the Map
+Toolbar.</li>
+<li>Draw a polygon fence line around the region of interest on the map
+by clicking the left mouse button at each successive vertex of the
+polygon.</li>
+<li>Close the polygon by clicking the right button or by pressing the
+<strong>Enter</strong> key; Cancel the selection by pressing the <strong>Escape</strong> key.</li>
+</ol>
+</div></blockquote>
+<p>To select all objects currently in view on the map select <strong>Edit &gt;&gt;
+Select All</strong>. (Objects outside the current viewing extent of the map
+are not selected.)</p>
+<p>Once a group of objects has been selected, you can edit a common
+property (see the following section) or delete the selected objects
+from the network. To do the latter, click <img alt="image98" src="_images/image44.png" /> or press the
+<strong>Delete</strong> key.</p>
+</div></blockquote>
+</div>
+<div class="section" id="editing-a-group-of-objects">
+<h2>Editing a Group of Objects<a class="headerlink" href="#editing-a-group-of-objects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To edit a property for a group of objects:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the region of the map that will contain the group of objects
+to be edited using the method described in previous section.</li>
+<li>Select <strong>Edit &gt;&gt; Group Edit</strong> from the Menu Bar.</li>
+<li>Define what to edit in the Group Edit dialog form that appears.</li>
+</ol>
+</div></blockquote>
+<p>The Group Edit dialog form, shown in Figure 6.6, is used to modify a
+property for a selected group of objects. To use the dialog form:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select a category of object (Junctions or Pipes) to edit.</li>
+<li>Check the “with” box if you want to add a filter that will limit the
+objects selected for editing. Select a property, relation and value
+that define the filter. An example might be “with Diameter below 12”.</li>
+<li>Select the type of change to make - Replace, Multiply, or Add To.</li>
+<li>Select the property to change.</li>
+<li>Enter the value that should replace, multiply, or be added to the
+existing value.</li>
+<li>Click <strong>OK</strong> to execute the group edit.</li>
+</ol>
+<blockquote>
+<div><img alt="image99" src="_images/image66.png" /></div></blockquote>
+<p><strong>Figure 6.7</strong> Group Edit Dialog</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="7_map.html" class="btn btn-neutral float-right" title="7. WORKING WITH THE MAP" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="5_projects.html" class="btn btn-neutral" title="5. WORKING WITH PROJECTS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

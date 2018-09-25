@@ -1,0 +1,1191 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>C. COMMAND LINE EPANET &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="D. ANALYSIS ALGORITHMS" href="D_analysis_algorithms.html" />
+    <link rel="prev" title="B. ERROR MESSAGES" href="B_error_messages.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">C. COMMAND LINE EPANET</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-instructions">General Instructions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#input-file-format">Input File Format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#report-file-format">Report File Format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#status-section">Status Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-section">Energy Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#nodes-section">Nodes Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#links-section">Links Section</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#binary-output-file-format">Binary Output File Format</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prolog-section">Prolog Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-use-section">Energy Use Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extended-period-section">Extended Period Section</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#epilogue-section">Epilogue Section</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>C. COMMAND LINE EPANET</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/C_command_line_EPANET.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="c-command-line-epanet">
+<h1>C. COMMAND LINE EPANET<a class="headerlink" href="#c-command-line-epanet" title="Permalink to this headline">¶</a></h1>
+<hr class="docutils" />
+<div class="section" id="general-instructions">
+<h2>General Instructions<a class="headerlink" href="#general-instructions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET can also be run as a console application from the command line
+within a DOS window. In this case network input data are placed into
+a text file and results are written to a text file. The command line
+for running EPANET in this fashion is:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">epanet2d</span>  <span class="n">inpfile</span>  <span class="n">rptfile</span>  <span class="n">outfile</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Here <strong>inpfile</strong> is the name of the input file, <strong>rptfile</strong> is the
+name of the output report file, and <strong>outfile</strong> is the name of an
+optional binary output file that stores results in a special binary
+format. If the latter file is not needed then just the input and
+report file names should be supplied. As written, the above command
+assumes that you are working in the directory in which EPANET was
+installed or that this directory has been added to the PATH statement
+in your AUTOEXEC.BAT file. Otherwise full pathnames for the
+executable <strong>epanet2d.exe</strong> and the files on the command line must be
+used. The error messages for command line EPANET are the same as
+those for Windows EPANET and are listed in Appendix B.</p>
+</div></blockquote>
+</div>
+<div class="section" id="input-file-format">
+<h2>Input File Format<a class="headerlink" href="#input-file-format" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The input file for command line EPANET has the same format as the
+text file that Windows EPANET generates from its <strong>File &gt;&gt; Export &gt;&gt;
+Network</strong> command. It is organized in sections, where each section
+begins with a keyword enclosed in brackets. The various keywords are
+listed below.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+<col width="20%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Network
+Components</em></th>
+<th class="head"><em>System
+Operation</em></th>
+<th class="head"><em>Water
+Quality</em></th>
+<th class="head"><em>Options
+and
+Reporting</em></th>
+<th class="head"><em>Network
+Map/Tags</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>[TITLE]</td>
+<td>[CURVES]</td>
+<td>[QUALITY]</td>
+<td>[OPTIONS]</td>
+<td>[COORDINATES
+]</td>
+</tr>
+<tr class="row-odd"><td>[JUNCTIONS]</td>
+<td>[PATTERNS]</td>
+<td>[REACTIONS]</td>
+<td>[TIMES]</td>
+<td>[VERTICES]</td>
+</tr>
+<tr class="row-even"><td>[RESERVOIRS
+]</td>
+<td>[ENERGY]</td>
+<td>[SOURCES]</td>
+<td>[REPORT]</td>
+<td>[LABELS]</td>
+</tr>
+<tr class="row-odd"><td>[TANKS]</td>
+<td>[STATUS]</td>
+<td>[MIXING]</td>
+<td>&#160;</td>
+<td>[BACKDROP]</td>
+</tr>
+<tr class="row-even"><td>[PIPES]</td>
+<td>[CONTROLS]</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>[TAGS]</td>
+</tr>
+<tr class="row-odd"><td>[PUMPS]</td>
+<td>[RULES]</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>[VALVES]</td>
+<td>[DEMANDS]</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td>[EMITTERS]</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<p>The order of sections is not important. However, whenever a node or
+link is referred to in a section it must have already been defined in
+the [JUNCTIONS], [RESERVOIRS], [TANKS], [PIPES], [PUMPS], or [VALVES]
+sections. Thus it is
+recommended that these sections be placed first, right after the
+[TITLE] section. The network map and tags sections are not used by
+command line EPANET and can be eliminated from the file.</p>
+<p>Each section can contain one or more lines of data. Blank lines can
+appear anywhere in the file and the semicolon (;) can be used to
+indicate that what follows on the line is a comment, not data. A
+maximum of 255 characters can appear on a line. The ID labels used to
+identify nodes, links, curves and patterns can be any combination of
+up to 15 characters and numbers.</p>
+<p>Figure C.1 displays the input file that represents the tutorial
+network discussed in Chapter 2.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">TITLE</span><span class="p">]</span>
+<span class="n">EPANET</span> <span class="n">TUTORIAL</span>
+
+<span class="p">[</span><span class="n">JUNCTIONS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Elev</span> <span class="n">Demand</span>
+<span class="p">;</span><span class="o">------------------</span>
+<span class="mi">2</span> <span class="mi">0</span> <span class="mi">0</span>
+<span class="mi">3</span> <span class="mi">710</span> <span class="mi">650</span>
+<span class="mi">4</span> <span class="mi">700</span> <span class="mi">150</span>
+<span class="mi">5</span> <span class="mi">695</span> <span class="mi">200</span>
+<span class="mi">6</span> <span class="mi">700</span> <span class="mi">150</span>
+
+<span class="p">[</span><span class="n">RESERVOIRS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Head</span>
+<span class="p">;</span><span class="o">---------</span>
+<span class="mi">1</span> <span class="mi">700</span>
+
+<span class="p">[</span><span class="n">TANKS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Elev</span> <span class="n">InitLvl</span> <span class="n">MinLvl</span> <span class="n">MaxLvl</span> <span class="n">Diam</span> <span class="n">Volume</span>
+<span class="p">;</span><span class="o">-----------------------------------------------</span>
+<span class="mi">7</span> <span class="mi">850</span> <span class="mi">5</span> <span class="mi">0</span> <span class="mi">15</span> <span class="mi">70</span> <span class="mi">0</span>
+
+<span class="p">[</span><span class="n">PIPES</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Node1</span> <span class="n">Node2</span> <span class="n">Length</span> <span class="n">Diam</span> <span class="n">Roughness</span>
+<span class="p">;</span><span class="o">-----------------------------------------</span>
+<span class="mi">1</span> <span class="mi">2</span> <span class="mi">3</span> <span class="mi">3000</span> <span class="mi">12</span> <span class="mi">100</span>
+<span class="mi">2</span> <span class="mi">3</span> <span class="mi">6</span> <span class="mi">5000</span> <span class="mi">12</span> <span class="mi">100</span>
+<span class="mi">3</span> <span class="mi">3</span> <span class="mi">4</span> <span class="mi">5000</span> <span class="mi">8</span> <span class="mi">100</span>
+<span class="mi">4</span> <span class="mi">4</span> <span class="mi">5</span> <span class="mi">5000</span> <span class="mi">8</span> <span class="mi">100</span>
+<span class="mi">5</span> <span class="mi">5</span> <span class="mi">6</span> <span class="mi">5000</span> <span class="mi">8</span> <span class="mi">100</span>
+<span class="mi">6</span> <span class="mi">6</span> <span class="mi">7</span> <span class="mi">7000</span> <span class="mi">10</span> <span class="mi">100</span>
+
+<span class="p">[</span><span class="n">PUMPS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Node1</span> <span class="n">Node2</span> <span class="n">Parameters</span>
+<span class="p">;</span><span class="o">---------------------------------</span>
+<span class="mi">7</span> <span class="mi">1</span> <span class="mi">2</span> <span class="n">HEAD</span> <span class="mi">1</span>
+
+<span class="p">[</span><span class="n">PATTERNS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Multipliers</span>
+<span class="p">;</span><span class="o">-----------------------</span>
+<span class="mi">1</span> <span class="mf">0.5</span> <span class="mf">1.3</span> <span class="mi">1</span> <span class="mf">1.2</span>
+
+<span class="p">[</span><span class="n">CURVES</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">X</span><span class="o">-</span><span class="n">Value</span> <span class="n">Y</span><span class="o">-</span><span class="n">Value</span>
+<span class="p">;</span><span class="o">--------------------</span>
+<span class="mi">1</span> <span class="mi">1000</span> <span class="mi">200</span>
+
+<span class="p">[</span><span class="n">QUALITY</span><span class="p">]</span>
+<span class="p">;</span><span class="n">Node</span> <span class="n">InitQual</span>
+<span class="p">;</span><span class="o">-------------</span>
+<span class="mi">1</span> <span class="mi">1</span>
+
+<span class="p">[</span><span class="n">REACTIONS</span><span class="p">]</span>
+<span class="n">Global</span> <span class="n">Bulk</span> <span class="o">-</span><span class="mi">1</span>
+<span class="n">Global</span> <span class="n">Wall</span> <span class="mi">0</span>
+
+<span class="p">[</span><span class="n">TIMES</span><span class="p">]</span>
+<span class="n">Duration</span> <span class="mi">24</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Hydraulic</span> <span class="n">Timestep</span> <span class="mi">1</span><span class="p">:</span><span class="mi">00</span>
+<span class="n">Quality</span> <span class="n">Timestep</span> <span class="mi">0</span><span class="p">:</span><span class="mi">05</span>
+<span class="n">Pattern</span> <span class="n">Timestep</span> <span class="mi">6</span><span class="p">:</span><span class="mi">00</span>
+
+<span class="p">[</span><span class="n">REPORT</span><span class="p">]</span>
+<span class="n">Page</span> <span class="mi">55</span>
+<span class="n">Energy</span> <span class="n">Yes</span>
+<span class="n">Nodes</span> <span class="n">All</span>
+<span class="n">Links</span> <span class="n">All</span>
+
+<span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+<span class="n">Units</span> <span class="n">GPM</span>
+<span class="n">Headloss</span> <span class="n">H</span><span class="o">-</span><span class="n">W</span>
+<span class="n">Pattern</span> <span class="mi">1</span>
+<span class="n">Quality</span> <span class="n">Chlorine</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
+<span class="n">Tolerance</span> <span class="mf">0.01</span>
+
+<span class="p">[</span><span class="n">END</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Figure C.1</strong> Example EPANET Input File</p>
+</div></blockquote>
+<p><cite>On the pages that follow the contents and formats of each keyword
+section are described in alphabetical order &lt;F_en2_section_keywords.rst&gt;</cite>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="report-file-format">
+<h2>Report File Format<a class="headerlink" href="#report-file-format" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Statements supplied to the [REPORT] section of the input file control
+the contents of the report file generated from a command-line run of
+EPANET. A portion of the report generated from the input file of
+Figure C.1 is shown in Figure C.2. In general a report can contain
+the following sections:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Status Section</li>
+<li>Energy Section</li>
+<li>Nodes Section</li>
+<li>Links Section</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="status-section">
+<h3>Status Section<a class="headerlink" href="#status-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Status Section of the output report lists the initial status of
+all reservoirs, tanks, pumps, valves, and closed pipes as well as any
+changes in the status of these components as they occur over time in
+an extended period simulation. The status of reservoirs and tanks
+indicates whether they are filling or emptying. The status of links
+indicates whether they are open or closed and includes the relative
+speed setting for pumps and the pressure/flow setting for control
+valves. To include a Status Section in the report use the command
+<strong>STATUS YES</strong> in the [REPORT] section of the input file.</p>
+<p>Using <strong>STATUS FULL</strong> will also produce a full listing of the
+convergence results for all iterations of each hydraulic analysis
+made during a simulation. This listing will also show which
+components are changing status during the iterations. This level of
+detail is only useful when one is trying to debug a run that fails to
+converge because a component’s status is cycling.</p>
+</div></blockquote>
+</div>
+<div class="section" id="energy-section">
+<h3>Energy Section<a class="headerlink" href="#energy-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Energy Section of the output report lists overall energy
+consumption and cost for each pump in the network. The items listed
+for each pump include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Percent Utilization (percent of the time that the pump is on-line)</li>
+<li>Average Efficiency</li>
+<li>Kilowatt-hours consumed per million gallons (or cubic meters) pumped</li>
+<li>Average Kilowatts consumed</li>
+<li>Peak Kilowatts used</li>
+<li>Average cost per day</li>
+</ul>
+</div></blockquote>
+<p>Also listed is the total cost per day for pumping and the total
+demand charge (cost based on the peak energy usage) incurred. To
+include an Energy Section in the report the command <strong>ENERGY YES</strong>
+must appear in the [REPORT] section of the input file.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">******************************************************************</span>
+<span class="o">*</span> <span class="n">E</span> <span class="n">P</span> <span class="n">A</span> <span class="n">N</span> <span class="n">E</span> <span class="n">T</span> <span class="o">*</span>
+<span class="o">*</span> <span class="n">Hydraulic</span> <span class="ow">and</span> <span class="n">Water</span> <span class="n">Quality</span> <span class="o">*</span>
+<span class="o">*</span> <span class="n">Analysis</span> <span class="k">for</span> <span class="n">Pipe</span> <span class="n">Networks</span> <span class="o">*</span>
+<span class="o">*</span> <span class="n">Version</span> <span class="mf">2.0</span> <span class="o">*</span>
+<span class="o">******************************************************************</span>
+<span class="n">EPANET</span> <span class="n">TUTORIAL</span>
+<span class="n">Input</span> <span class="n">Data</span> <span class="n">File</span> <span class="o">...................</span> <span class="n">tutorial</span><span class="o">.</span><span class="n">inp</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Junctions</span><span class="o">................</span> <span class="mi">5</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Reservoirs</span><span class="o">...............</span> <span class="mi">1</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Tanks</span> <span class="o">...................</span> <span class="mi">1</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Pipes</span> <span class="o">...................</span> <span class="mi">6</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Pumps</span> <span class="o">...................</span> <span class="mi">1</span>
+<span class="n">Number</span> <span class="n">of</span> <span class="n">Valves</span> <span class="o">..................</span> <span class="mi">0</span>
+<span class="n">Headloss</span> <span class="n">Formula</span> <span class="o">..................</span> <span class="n">Hazen</span><span class="o">-</span><span class="n">Williams</span>
+<span class="n">Hydraulic</span> <span class="n">Timestep</span> <span class="o">................</span> <span class="mf">1.00</span> <span class="n">hrs</span>
+<span class="n">Hydraulic</span> <span class="n">Accuracy</span> <span class="o">................</span> <span class="mf">0.001000</span>
+<span class="n">Maximum</span> <span class="n">Trials</span> <span class="o">....................</span> <span class="mi">40</span>
+<span class="n">Quality</span> <span class="n">Analysis</span> <span class="o">..................</span> <span class="n">Chlorine</span>
+<span class="n">Water</span> <span class="n">Quality</span> <span class="n">Time</span> <span class="n">Step</span> <span class="o">...........</span> <span class="mf">5.00</span> <span class="nb">min</span>
+<span class="n">Water</span> <span class="n">Quality</span> <span class="n">Tolerance</span> <span class="o">...........</span> <span class="mf">0.01</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
+<span class="n">Specific</span> <span class="n">Gravity</span> <span class="o">..................</span> <span class="mf">1.00</span>
+<span class="n">Relative</span> <span class="n">Kinematic</span> <span class="n">Viscosity</span> <span class="o">......</span> <span class="mf">1.00</span>
+<span class="n">Relative</span> <span class="n">Chemical</span> <span class="n">Diffusivity</span> <span class="o">.....</span> <span class="mf">1.00</span>
+<span class="n">Demand</span> <span class="n">Multiplier</span> <span class="o">.................</span> <span class="mf">1.00</span>
+<span class="n">Total</span> <span class="n">Duration</span> <span class="o">....................</span> <span class="mf">24.00</span> <span class="n">hrs</span>
+<span class="n">Reporting</span> <span class="n">Criteria</span><span class="p">:</span>
+<span class="n">All</span> <span class="n">Nodes</span>
+<span class="n">All</span> <span class="n">Links</span>
+<span class="n">Energy</span> <span class="n">Usage</span><span class="p">:</span>
+<span class="o">----------------------------------------------------------------</span>
+<span class="n">Usage</span> <span class="n">Avg</span><span class="o">.</span> <span class="n">Kw</span><span class="o">-</span><span class="n">hr</span> <span class="n">Avg</span><span class="o">.</span> <span class="n">Peak</span> <span class="n">Cost</span>
+<span class="n">Pump</span> <span class="n">Factor</span> <span class="n">Effic</span><span class="o">.</span> <span class="o">/</span><span class="n">Mgal</span> <span class="n">Kw</span> <span class="n">Kw</span> <span class="o">/</span><span class="n">day</span>
+<span class="o">----------------------------------------------------------------</span>
+<span class="mi">7</span> <span class="mf">100.00</span> <span class="mf">75.00</span> <span class="mf">746.34</span> <span class="mf">51.34</span> <span class="mf">51.59</span> <span class="mf">0.00</span>
+<span class="o">----------------------------------------------------------------</span>
+                   <span class="n">Demand</span> <span class="n">Charge</span><span class="p">:</span> <span class="mf">0.00</span>
+                      <span class="n">Total</span> <span class="n">Cost</span><span class="p">:</span> <span class="mf">0.00</span>
+
+<span class="n">Node</span> <span class="n">Results</span> <span class="n">at</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span> <span class="n">hrs</span><span class="p">:</span>
+<span class="o">--------------------------------------------------------</span>
+<span class="n">Demand</span> <span class="n">Head</span> <span class="n">Pressure</span> <span class="n">Chlorine</span>
+<span class="n">Node</span> <span class="n">gpm</span> <span class="n">ft</span> <span class="n">psi</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
+<span class="o">--------------------------------------------------------</span>
+<span class="mi">2</span> <span class="mf">0.00</span> <span class="mf">893.37</span> <span class="mf">387.10</span> <span class="mf">0.00</span>
+<span class="mi">3</span> <span class="mf">325.00</span> <span class="mf">879.78</span> <span class="mf">73.56</span> <span class="mf">0.00</span>
+<span class="mi">4</span> <span class="mf">75.00</span> <span class="mf">874.43</span> <span class="mf">75.58</span> <span class="mf">0.00</span>
+<span class="mi">5</span> <span class="mf">100.00</span> <span class="mf">872.69</span> <span class="mf">76.99</span> <span class="mf">0.00</span>
+<span class="mi">6</span> <span class="mf">75.00</span> <span class="mf">872.71</span> <span class="mf">74.84</span> <span class="mf">0.00</span>
+<span class="mi">1</span> <span class="o">-</span><span class="mf">1048.52</span> <span class="mf">700.00</span> <span class="mf">0.00</span> <span class="mf">1.00</span> <span class="n">Reservoir</span>
+<span class="mi">7</span> <span class="mf">473.52</span> <span class="mf">855.00</span> <span class="mf">2.17</span> <span class="mf">0.00</span> <span class="n">Tank</span>
+<span class="n">Link</span> <span class="n">Results</span> <span class="n">at</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span> <span class="n">hrs</span><span class="p">:</span>
+<span class="o">----------------------------------------------</span>
+<span class="n">Flow</span> <span class="n">Velocity</span> <span class="n">Headloss</span>
+<span class="n">Link</span> <span class="n">gpm</span> <span class="n">fps</span> <span class="o">/</span><span class="mi">1000</span><span class="n">ft</span>
+<span class="o">----------------------------------------------</span>
+<span class="mi">1</span> <span class="mf">1048.52</span> <span class="mf">2.97</span> <span class="mf">4.53</span>
+<span class="mi">2</span> <span class="mf">558.33</span> <span class="mf">1.58</span> <span class="mf">1.41</span>
+<span class="mi">3</span> <span class="mf">165.19</span> <span class="mf">1.05</span> <span class="mf">1.07</span>
+<span class="mi">4</span> <span class="mf">90.19</span> <span class="mf">0.58</span> <span class="mf">0.35</span>
+<span class="mi">5</span> <span class="o">-</span><span class="mf">9.81</span> <span class="mf">0.06</span> <span class="mf">0.01</span>
+<span class="mi">6</span> <span class="mf">473.52</span> <span class="mf">1.93</span> <span class="mf">2.53</span>
+<span class="mi">7</span> <span class="mf">1048.52</span> <span class="mf">0.00</span> <span class="o">-</span><span class="mf">193.37</span> <span class="n">Pump</span>
+<span class="n">Node</span> <span class="n">Results</span> <span class="n">at</span> <span class="mi">1</span><span class="p">:</span><span class="mi">00</span> <span class="n">hrs</span><span class="p">:</span>
+<span class="o">--------------------------------------------------------</span>
+<span class="n">Demand</span> <span class="n">Head</span> <span class="n">Pressure</span> <span class="n">Chlorine</span>
+<span class="n">Node</span> <span class="n">gpm</span> <span class="n">ft</span> <span class="n">psi</span> <span class="n">mg</span><span class="o">/</span><span class="n">L</span>
+<span class="o">--------------------------------------------------------</span>
+<span class="mi">2</span> <span class="mf">0.00</span> <span class="mf">893.92</span> <span class="mf">387.34</span> <span class="mf">1.00</span>
+<span class="mi">3</span> <span class="mf">325.00</span> <span class="mf">880.42</span> <span class="mf">73.84</span> <span class="mf">0.99</span>
+<span class="mi">4</span> <span class="mf">75.00</span> <span class="mf">875.12</span> <span class="mf">75.88</span> <span class="mf">0.00</span>
+<span class="mi">5</span> <span class="mf">100.00</span> <span class="mf">873.40</span> <span class="mf">77.30</span> <span class="mf">0.00</span>
+<span class="mi">6</span> <span class="mf">75.00</span> <span class="mf">873.43</span> <span class="mf">75.15</span> <span class="mf">0.00</span>
+<span class="mi">1</span> <span class="o">-</span><span class="mf">1044.60</span> <span class="mf">700.00</span> <span class="mf">0.00</span> <span class="mf">1.00</span> <span class="n">Reservoir</span>
+<span class="mi">7</span> <span class="mf">469.60</span> <span class="mf">855.99</span> <span class="mf">2.59</span> <span class="mf">0.00</span> <span class="n">Tank</span>
+<span class="n">Link</span> <span class="n">Results</span> <span class="n">at</span> <span class="mi">1</span><span class="p">:</span><span class="mi">00</span> <span class="n">hrs</span><span class="p">:</span>
+<span class="o">----------------------------------------------</span>
+<span class="n">Flow</span> <span class="n">Velocity</span> <span class="n">Headloss</span>
+<span class="n">Link</span> <span class="n">gpm</span> <span class="n">fps</span> <span class="o">/</span><span class="mi">1000</span><span class="n">ft</span>
+<span class="o">----------------------------------------------</span>
+<span class="mi">1</span> <span class="mf">1044.60</span> <span class="mf">2.96</span> <span class="mf">4.50</span>
+<span class="mi">2</span> <span class="mf">555.14</span> <span class="mf">1.57</span> <span class="mf">1.40</span>
+<span class="mi">3</span> <span class="mf">164.45</span> <span class="mf">1.05</span> <span class="mf">1.06</span>
+<span class="mi">4</span> <span class="mf">89.45</span> <span class="mf">0.57</span> <span class="mf">0.34</span>
+<span class="mi">5</span> <span class="o">-</span><span class="mf">10.55</span> <span class="mf">0.07</span> <span class="mf">0.01</span>
+<span class="mi">6</span> <span class="mf">469.60</span> <span class="mf">1.92</span> <span class="mf">2.49</span>
+<span class="mi">7</span> <span class="mf">1044.60</span> <span class="mf">0.00</span> <span class="o">-</span><span class="mf">193.92</span> <span class="n">Pump</span>
+</pre></div>
+</div>
+<p><strong>Figure C.2</strong> Excerpt from a Report File</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="nodes-section">
+<h3>Nodes Section<a class="headerlink" href="#nodes-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Nodes Section of the output report lists simulation results for
+those nodes and parameters identified in the [REPORT] section of the
+input file. Results are listed for each reporting time step of an
+extended period simulation. The reporting time step is specified in
+the [TIMES] section of the input file. Results at intermediate times
+when certain hydraulic events occur, such as pumps turning on or off
+or tanks closing because they become empty or full, are not reported.</p>
+<p>To have nodal results reported the [REPORT] section of the input file
+must contain the keyword <strong>NODES</strong> followed by a listing of the ID
+labels of the nodes to be included in the report. There can be
+several such <strong>NODES</strong> lines in the file. To report results for all
+nodes use the command <strong>NODES ALL</strong>.</p>
+<p>The default set of reported quantities for nodes includes Demand,
+Head, Pressure, and Water Quality. You can specify how many decimal
+places to use when listing results for a parameter by using commands
+such as <strong>PRESSURE PRECISION 3</strong> in the input file (i.e., use 3
+decimal places when reporting results for pressure). The default
+precision is 2 decimal places for all quantities. You can filter the
+report to list only the occurrences of values below or above a
+certain value by adding statements of the form <strong>PRESSURE BELOW 20</strong>
+to the input file.</p>
+</div></blockquote>
+</div>
+<div class="section" id="links-section">
+<h3>Links Section<a class="headerlink" href="#links-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Links Section of the output report lists simulation results for
+those links and parameters identified in the [REPORT] section of the
+input file. The reporting times follow the same convention as was
+described for nodes in the previous section.</p>
+<p>As with nodes, to have any results for links reported you must
+include the keyword <strong>LINKS</strong> followed by a list of link ID labels in
+the [REPORT] section of the input file. Use the command <strong>LINKS ALL</strong>
+to report results for all links.</p>
+<p>The default parameters reported on for links includes Flow, Velocity,
+and Headloss. Diameter, Length, Water Quality, Status, Setting,
+Reaction Rate, and Friction Factor can be added to these by using
+commands such as <strong>DIAMETER YES</strong> or <strong>DIAMETER PRECISION 0</strong>. The
+same conventions used with node parameters for specifying reporting
+precision and filters also applies to links.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="binary-output-file-format">
+<h2>Binary Output File Format<a class="headerlink" href="#binary-output-file-format" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>If a third file name is supplied to the command line that runs EPANET
+then the results for all parameters for all nodes and links for all
+reporting time periods will be saved to this file in a special binary
+format. This file can be used for special post- processing purposes.
+Data written to the file are 4-byte integers, 4-byte floats, or
+fixed-size strings whose size is a multiple of 4 bytes. This allows
+the file to be divided conveniently into 4-byte records. The file
+consists of four sections of the following sizes in bytes:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="30%" />
+<col width="70%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Section</em></th>
+<th class="head"><em>Size in bytes</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Prolog</td>
+<td>852 + 20*Nnodes + 36*Nlinks + 8*Ntanks</td>
+</tr>
+<tr class="row-odd"><td>Energy Use</td>
+<td>28*Npumps + 4</td>
+</tr>
+<tr class="row-even"><td>Extended Period</td>
+<td>(16*Nnodes + 32*Nlinks)*Nperiods</td>
+</tr>
+<tr class="row-odd"><td>Epilog</td>
+<td>28</td>
+</tr>
+</tbody>
+</table>
+<p>where</p>
+<blockquote>
+<div><p>Nnodes = number of nodes (junctions + reservoirs + tanks) Nlinks =
+number of links (pipes + pumps + valves) Ntanks = number of tanks and
+reservoirs</p>
+<p>Npumps = number of pumps</p>
+<p>Nperiods = number of reporting periods</p>
+<p>and all of these counts are themselves written to the file’s Prolog
+or Epilog sections.</p>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="prolog-section">
+<h3>Prolog Section<a class="headerlink" href="#prolog-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The prolog section of the binary Output File contains the following
+data:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Number of
+Bytes</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Magic Number ( =
+516114521)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Version (= 200)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td><p class="first">Number of Nodes</p>
+<p class="last">(Junctions +
+Reservoirs + Tanks)</p>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Number of Reservoirs
+&amp; Tanks</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td><p class="first">Number of Links</p>
+<p class="last">(Pipes + Pumps +
+Valves)</p>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Number of Pumps</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Number of Valves</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Water Quality
+Option 0 = none</p>
+<p>1 = chemical</p>
+<p>2 = age</p>
+<p class="last">3 = source trace</p>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Index of Node for
+Source Tracing</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Flow Units Option
+0 = cfs</p>
+<p>1 = gpm</p>
+<p>2 = mgd</p>
+<p>3 = Imperial mgd 4
+= acre-ft/day</p>
+<p>5 = liters/second</p>
+<p>6 = liters/minute</p>
+<p>7 = megaliters/day</p>
+<p class="last">8 = cubic
+meters/hour 9 =
+cubic meters/day</p>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td><p class="first">Pressure Units
+Option 0 = psi</p>
+<p>1 = meters</p>
+<p class="last">2 = kPa</p>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Statistics Flag</p>
+<blockquote class="last">
+<div><p>0 = no statistical
+processing 1 =
+results are
+time-averaged</p>
+<p>2 = only minimum
+values reported</p>
+<p>3 = only maximum
+values reported 4
+= only ranges
+reported</p>
+</div></blockquote>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Reporting Start Time
+(seconds)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Reporting Time Step
+(seconds)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Simulation Duration
+(seconds)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Problem Title (1st
+line)</td>
+<td>Char</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>Problem Title (2nd
+line)</td>
+<td>Char</td>
+<td>80</td>
+</tr>
+<tr class="row-odd"><td>Problem Title (3rd
+line)</td>
+<td>Char</td>
+<td>80</td>
+</tr>
+<tr class="row-even"><td>Name of Input File</td>
+<td>Char</td>
+<td>260</td>
+</tr>
+<tr class="row-odd"><td>Name of Report File</td>
+<td>Char</td>
+<td>260</td>
+</tr>
+<tr class="row-even"><td>Name of Chemical</td>
+<td>Char</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>Chemical
+Concentration Units</td>
+<td>Char</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>ID Label of Each Node</td>
+<td>Char</td>
+<td>16</td>
+</tr>
+<tr class="row-odd"><td>ID Label of Each Link</td>
+<td>Char</td>
+<td>16</td>
+</tr>
+<tr class="row-even"><td>Index of Start Node
+of Each Link</td>
+<td>Integer</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Index of End Node of
+Each Link</td>
+<td>Integer</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-even"><td><p class="first">Type Code of Each
+Link 0 = Pipe with
+CV</p>
+<p>1 = Pipe</p>
+<p>2 = Pump</p>
+<p>3 = PRV</p>
+<p>4 = PSV</p>
+<p>5 = PBV</p>
+<p>6 = FCV</p>
+<p>7 = TCV</p>
+<p class="last">8 = GPV</p>
+</td>
+<td>Integer</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Node Index of Each
+Tank</td>
+<td>Integer</td>
+<td>4*Ntanks</td>
+</tr>
+<tr class="row-even"><td>Cross-Sectional Area
+of Each Tank</td>
+<td>Float</td>
+<td>4*Ntanks</td>
+</tr>
+<tr class="row-odd"><td>Elevation of Each
+Node</td>
+<td>Float</td>
+<td>4*Nnodes</td>
+</tr>
+<tr class="row-even"><td>Length of Each Link</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Diameter of Each Link</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+</tbody>
+</table>
+<p>There is a one-to-one correspondence between the order in which the
+ID labels for nodes and links are written to the file and the index
+numbers of these components. Also, reservoirs are distinguished from
+tanks by having their cross-sectional area set to zero.</p>
+</div></blockquote>
+</div>
+<div class="section" id="energy-use-section">
+<h3>Energy Use Section<a class="headerlink" href="#energy-use-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Energy Use section of the binary output file immediately follows
+the Prolog section. It contains the following data:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Number of
+Bytes</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Repeated for each
+pump:</td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li>Pump Index in List
+of Links</li>
+</ul>
+</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li>Pump Utilization
+(%)</li>
+</ul>
+</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li>Average Efficiency
+(%)</li>
+<li>Average
+Kwatts/Million
+Gallons
+(/Meter:sup:<cite>3</cite>)</li>
+</ul>
+</td>
+<td>Float Float</td>
+<td><p class="first">4</p>
+<p class="last">4</p>
+</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li>Average Kwatts</li>
+</ul>
+</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><ul class="first last simple">
+<li>Peak Kwatts</li>
+</ul>
+</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td><ul class="first last simple">
+<li>Average Cost Per
+Day</li>
+</ul>
+</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Overall Peak Energy
+Usage</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The statistics reported in this section refer to the period of time
+between the start of the output reporting period and the end of the
+simulation.</p>
+</div></blockquote>
+</div>
+<div class="section" id="extended-period-section">
+<h3>Extended Period Section<a class="headerlink" href="#extended-period-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Extended Period section of the binary Output File contains
+simulation results for each reporting period of an analysis (the
+reporting start time and time step are written to the Output File’s
+Prolog section and the number of steps is written to the Epilog
+section). For each reporting period the following values are written
+to the file:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Size in Bytes</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Demand at Each Node</td>
+<td>Float</td>
+<td>4*Nnodes</td>
+</tr>
+<tr class="row-odd"><td>Hydraulic Head at
+Each Node</td>
+<td>Float</td>
+<td>4*Nnodes</td>
+</tr>
+<tr class="row-even"><td>Pressure at Each Node</td>
+<td>Float</td>
+<td>4*Nnodes</td>
+</tr>
+<tr class="row-odd"><td>Water Quality at Each
+Node</td>
+<td>Float</td>
+<td>4*Nnodes</td>
+</tr>
+<tr class="row-even"><td><p class="first">Flow in Each Link</p>
+<p class="last">(negative for reverse
+flow)</p>
+</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Velocity in Each Link</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-even"><td><p class="first">Headloss per 1000
+Units of Length for
+Each Link (Negative
+of head gain for
+pumps and total head</p>
+<p class="last">loss for valves)</p>
+</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Average Water Quality
+in Each Link</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-even"><td><p class="first">Status Code for Each
+Link</p>
+<blockquote class="last">
+<div><p>0 = closed (max.
+head exceeded) 1 =
+temporarily closed</p>
+<p>2 = closed</p>
+<p>3 = open</p>
+<p>4 = active
+(partially open)</p>
+<p>5 = open (max.
+flow exceeded) 6 =
+open (flow setting
+not met)</p>
+<p>7 = open (pressure
+setting not met)</p>
+</div></blockquote>
+</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Setting for Each
+Link:</p>
+<blockquote class="last">
+<div><p>Roughness
+Coefficient for
+Pipes Speed for
+Pumps</p>
+<p>Setting for Valves</p>
+</div></blockquote>
+</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-even"><td>Reaction Rate for
+Each Link
+(mass/L/day)</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+<tr class="row-odd"><td>Friction Factor for
+Each Link</td>
+<td>Float</td>
+<td>4*Nlinks</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="epilogue-section">
+<h3>Epilogue Section<a class="headerlink" href="#epilogue-section" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Epilogue section of the binary output file contains the following
+data:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="51%" />
+<col width="17%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><strong>Item</strong></th>
+<th class="head"><strong>Type</strong></th>
+<th class="head"><strong>Number of Bytes</strong></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Average bulk reaction rate (mass/hr)</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Average wall reaction rate (mass/hr)</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Average tank reaction rate (mass/hr)</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td>Average source inflow rate (mass/hr)</td>
+<td>Float</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Number of Reporting Periods</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-odd"><td><p class="first">Warning Flag:</p>
+<blockquote class="last">
+<div><p>0 = no warnings</p>
+<p>1 = warnings were generated</p>
+</div></blockquote>
+</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+<tr class="row-even"><td>Magic Number ( = 516114521)</td>
+<td>Integer</td>
+<td>4</td>
+</tr>
+</tbody>
+</table>
+<p>The mass units of the reaction rates both here and in the Extended
+Period output depend on the concentration units assigned to the
+chemical being modeled. The reaction rates listed in this section
+refer to the average of the rates seen in all pipes (or all tanks)
+over the entire reporting period of the simulation.</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="D_analysis_algorithms.html" class="btn btn-neutral float-right" title="D. ANALYSIS ALGORITHMS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="B_error_messages.html" class="btn btn-neutral" title="B. ERROR MESSAGES" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

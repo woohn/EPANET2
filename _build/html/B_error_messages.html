@@ -1,0 +1,445 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>B. ERROR MESSAGES &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="C. COMMAND LINE EPANET" href="C_command_line_EPANET.html" />
+    <link rel="prev" title="A. UNITS OF MEASUREMENT" href="A_units.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>B. ERROR MESSAGES</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/B_error_messages.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="b-error-messages">
+<h1>B. ERROR MESSAGES<a class="headerlink" href="#b-error-messages" title="Permalink to this headline">¶</a></h1>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ID</th>
+<th class="head">Explanation</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>101</td>
+<td>An analysis was terminated due to
+insufficient memory available.</td>
+</tr>
+<tr class="row-odd"><td>110</td>
+<td>An analysis was terminated
+because the network hydraulic
+equations could not be solved.
+Check for portions of the network
+not having any physical links
+back to a tank or reservoir or
+for unreasonable values for
+network input data.</td>
+</tr>
+<tr class="row-even"><td>200</td>
+<td>One or more errors were detected
+in the input data. The nature of
+the error will be described by
+the 200-series error messages
+listed below.</td>
+</tr>
+<tr class="row-odd"><td>201</td>
+<td>There is a syntax error in a line
+of the input file created from
+your network data. This is most
+likely to have occurred in .INP
+text created by a user outside of
+EPANET.</td>
+</tr>
+<tr class="row-even"><td>202</td>
+<td>An illegal numeric value was
+assigned to a property.</td>
+</tr>
+<tr class="row-odd"><td>203</td>
+<td>An object refers to undefined
+node.</td>
+</tr>
+<tr class="row-even"><td>204</td>
+<td>An object refers to an undefined
+link.</td>
+</tr>
+<tr class="row-odd"><td>205</td>
+<td>An object refers to an undefined
+time pattern.</td>
+</tr>
+<tr class="row-even"><td>206</td>
+<td>An object refers to an undefined
+curve.</td>
+</tr>
+<tr class="row-odd"><td>207</td>
+<td>An attempt is made to control a
+check valve. Once a pipe is
+assigned a Check Valve status
+with the Property Editor, its
+status cannot be changed by
+either simple or rule-based
+controls.</td>
+</tr>
+<tr class="row-even"><td>208</td>
+<td>Reference was made to an
+undefined node. This could occur
+in a control statement for
+example.</td>
+</tr>
+<tr class="row-odd"><td>209</td>
+<td>An illegal value was assigned to
+a node property.</td>
+</tr>
+<tr class="row-even"><td>210</td>
+<td>Reference was made to an
+undefined link. This could occur
+in a control statement for
+example.</td>
+</tr>
+<tr class="row-odd"><td>211</td>
+<td>An illegal value was assigned to
+a link property.</td>
+</tr>
+<tr class="row-even"><td>212</td>
+<td>A source tracing analysis refers
+to an undefined trace node.</td>
+</tr>
+<tr class="row-odd"><td>213</td>
+<td>An analysis option has an illegal
+value (an example would be a
+negative time step value).</td>
+</tr>
+<tr class="row-even"><td>214</td>
+<td>There are too many characters in
+a line read from an input file.
+The lines in the .INP file are
+limited to 255 characters.</td>
+</tr>
+<tr class="row-odd"><td>215</td>
+<td>Two or more nodes or links share
+the same ID label.</td>
+</tr>
+<tr class="row-even"><td>216</td>
+<td>Energy data were supplied for an
+undefined pump.</td>
+</tr>
+<tr class="row-odd"><td>217</td>
+<td>Invalid energy data were supplied
+for a pump.</td>
+</tr>
+<tr class="row-even"><td>219</td>
+<td>A valve is illegally connected to
+a reservoir or tank. A PRV, PSV
+or FCV cannot be directly
+connected to a reservoir or tank.
+Use a length of pipe to separate
+the two.</td>
+</tr>
+<tr class="row-odd"><td>220</td>
+<td>A valve is illegally connected
+to another valve. PRVs cannot
+share the same downstream node
+or be linked in series, PSVs
+cannot share the same upstream
+node or be linked in series,
+and a PSV cannot be directly
+connected to the downstream
+node of a PRV.</td>
+</tr>
+<tr class="row-even"><td>221</td>
+<td>A rule-based control contains
+a misplaced clause.</td>
+</tr>
+<tr class="row-odd"><td>223</td>
+<td>There are not enough nodes in
+the network to analyze. A
+valid network must contain at
+least one tank/reservoir and
+one junction node.</td>
+</tr>
+<tr class="row-even"><td>224</td>
+<td>There is not at least one tank
+or reservoir in the network.</td>
+</tr>
+<tr class="row-odd"><td>225</td>
+<td>Invalid lower/upper levels
+were specified for a tank
+(e.g., the lower lever is
+higher than the upper level).</td>
+</tr>
+<tr class="row-even"><td>226</td>
+<td>No pump curve or power rating
+was supplied for a pump. A
+pump must either be assigned a
+curve ID in its Pump Curve
+property or a power rating in
+its Power property. If both
+properties are assigned then
+the Pump Curve is used.</td>
+</tr>
+<tr class="row-odd"><td>227</td>
+<td>A pump has an invalid pump
+curve. A valid pump curve must
+have decreasing head with
+increasing flow.</td>
+</tr>
+<tr class="row-even"><td>230</td>
+<td>A curve has non-increasing
+X-values.</td>
+</tr>
+<tr class="row-odd"><td>233</td>
+<td>A node is not connected to any
+links.</td>
+</tr>
+<tr class="row-even"><td>302</td>
+<td>The system cannot open the
+temporary input file. Make
+sure that the EPANET Temporary
+Folder selected has write
+privileges assigned to it (see
+Section 4.9).</td>
+</tr>
+<tr class="row-odd"><td>303</td>
+<td>The system cannot open the
+status report file. See Error
+302.</td>
+</tr>
+<tr class="row-even"><td>304</td>
+<td>The system cannot open the
+binary output file. See Error
+302.</td>
+</tr>
+<tr class="row-odd"><td>308</td>
+<td>Could not save results to
+file. This can occur if the
+disk becomes full.</td>
+</tr>
+<tr class="row-even"><td>309</td>
+<td>Could not write results to
+report file. This can occur if
+the disk becomes full.</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="C_command_line_EPANET.html" class="btn btn-neutral float-right" title="C. COMMAND LINE EPANET" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="A_units.html" class="btn btn-neutral" title="A. UNITS OF MEASUREMENT" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

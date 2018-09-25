@@ -1,0 +1,837 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>D. ANALYSIS ALGORITHMS &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="E. REFERENCES" href="E_references.html" />
+    <link rel="prev" title="C. COMMAND LINE EPANET" href="C_command_line_EPANET.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">D. ANALYSIS ALGORITHMS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#hydraulics">Hydraulics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#water-quality">Water Quality</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#advective-transport-in-pipes">Advective Transport in Pipes</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixing-at-pipe-junctions">Mixing at Pipe Junctions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixing-in-storage-facilities">Mixing in Storage Facilities</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bulk-flow-reactions">Bulk Flow Reactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipe-wall-reactions">Pipe Wall Reactions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-of-equations">System of Equations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#lagrangian-transport-algorithm">Lagrangian Transport Algorithm</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>D. ANALYSIS ALGORITHMS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/D_analysis_algorithms.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="d-analysis-algorithms">
+<h1>D. ANALYSIS ALGORITHMS<a class="headerlink" href="#d-analysis-algorithms" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="hydraulics">
+<h2>Hydraulics<a class="headerlink" href="#hydraulics" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The method used in EPANET to solve the flow continuity and headloss
+equations that characterize the hydraulic state of the pipe network
+at a given point in time can be termed a hybrid node-loop approach.
+Todini and Pilati (1987) and later Salgado et al. (1988) chose to
+call it the “Gradient Method”. Similar approaches have been described
+by Hamam and Brameller (1971) (the “Hybrid Method) and by Osiadacz
+(1987) (the “Newton Loop-Node Method”). The only difference between
+these methods is the way in which link flows are updated after a new
+trial solution for nodal heads has been found. Because Todini’s
+approach is simpler, it was chosen for use in EPANET.</p>
+<p>Assume we have a pipe network with N junction nodes and NF fixed
+grade nodes (tanks and reservoirs). Let the flow-headloss relation in
+a pipe between nodes i and j be given as: <span class="math notranslate nohighlight">\(\boldsymbol{\nabla}\)</span> is the nabla operator.</p>
+<div class="math notranslate nohighlight">
+\[H _{i} -H _{j} =h _{ij} =rQ _{ij}^{n} +mQ _{ij}^{2} ~~~~~~
+(D.1)\]</div>
+<p>where <em>H</em> = nodal head, <em>h</em> = headloss, <em>r</em> = resistance coefficient,
+<em>Q</em> = flow rate, <em>n</em> = flow exponent, and <em>m</em> = minor loss
+coefficient. The value of the resistance coefficient will depend on
+which friction headloss formula is being used (see below). For pumps,
+the headloss (negative of the head gain) can be represented by a
+power law of the form</p>
+<div class="math notranslate nohighlight">
+\[{ h}_{ij }={ -ω}^{ 2} ( { h}_{0}-r { ( { Q}_{ij }/ω   )}^{2 }   )\]</div>
+<p>where <em>h0</em> is the shutoff head for the pump, ω is a relative speed
+setting, and r and n are the pump curve coefficients. The second set
+of equations that must be satisfied is flow continuity around all
+nodes:</p>
+<div class="math notranslate nohighlight">
+\[\sum_{j} {Q}_{ij }-{ D}_{i }=0  ~~~~~~~\text{  for i = 1,... N. }~~~~~~
+(D.2)\]</div>
+<p>where <em>Di</em> is the flow demand at node i and by convention, flow
+into a node is positive. For a set of known heads at the fixed grade
+nodes, we seek a solution for all heads <em>Hi</em> and flows <em>Qij</em> that
+satisfy Eqs. (D.1) and (D.2).</p>
+<p>The Gradient solution method begins with an initial estimate of flows
+in each pipe that may not necessarily satisfy flow continuity. At
+each iteration of the method, new nodal heads are found by solving
+the matrix equation:</p>
+<div class="math notranslate nohighlight">
+\[\boldsymbol{AH} = \boldsymbol{F} ~~~~~~
+(D.3)\]</div>
+<p>where <strong>A</strong> = an (NxN) Jacobian matrix, <strong>H</strong> = an (Nx1) vector of
+unknown nodal heads, and <strong>F</strong> = an (Nx1) vector of right hand side
+terms</p>
+<p>The diagonal elements of the Jacobian matrix are:</p>
+<div class="math notranslate nohighlight">
+\[{ A}_{ij }= \sum_{j} { P}_{ij }\]</div>
+<p>while the non-zero, off-diagonal terms are:</p>
+<div class="math notranslate nohighlight">
+\[{ A}_{ij }= -{ P}_{ij }\]</div>
+<p>where <em>pij</em> is the inverse derivative of the headloss in the link
+between nodes i and j with respect to flow. For pipes,</p>
+<div class="math notranslate nohighlight">
+\[{ P}_{ij }= \frac{ 1}{nr {{   | { Q}_{ji }   |}^{ n-1}}+2m   | { Q}_{ji }   |}\]</div>
+<p>while for pumps</p>
+<div class="math notranslate nohighlight">
+\[{ P}_{ij }=\frac{ 1} {n{ ω}^{2 }r{ ({ Q}_{ij }/ω )}^{n-1 }}\]</div>
+<p>Each right hand side term consists of the net flow imbalance at a
+node plus a flow correction factor:</p>
+<div class="math notranslate nohighlight">
+\[{ F}_{i }=  ( \sum_{{ j}}{ Q}_{ij }-{ D}_{i }  )+ \sum_{{ j}}{ y}_{ij } + \sum_{{ f}}{ P}_{ij }{ H}_{f }\]</div>
+<p>where the last term applies to any links connecting node i to a fixed
+grade node f and the flow correction factor <em>yij</em> is:</p>
+<div class="math notranslate nohighlight">
+\[{ y}_{ij }={ P}_{ij }  ( r{   | { Q}_{ij }   |}^{n }  +m{   | { Q}_{ij }   |}^{2 }   )sgn ( { Q}_{ij }   )\]</div>
+<p>for pipes and</p>
+<div class="math notranslate nohighlight">
+\[{ y}_{ij }={- P}_{ij }{ ω}^{ 2}  ( { h}_{0 } -r {   ({ Q}_{ij }/ω    )}^{n }  )\]</div>
+<p>for pumps, where sgn(x) is 1 if x &gt; 0 and -1 otherwise. (<em>Qij</em> is
+always positive for pumps.)</p>
+<p>After new heads are computed by solving Eq. (D.3), new flows are
+found from:</p>
+<div class="math notranslate nohighlight">
+\[{Q}_{ij }={Q}_{ij } - ( { y}_{ij } -{ P}_{ij}  ({ H}_{i }- { H}_{j } ) )  ~~~~~~
+(D.4)\]</div>
+<p>If the sum of absolute flow changes relative to the total flow in all
+links is larger than some tolerance (e.g., 0.001), then Eqs. (D.3)
+and (D.4) are solved once again. The flow update formula (D.4) always
+results in flow continuity around each node after the first
+iteration.</p>
+<p>EPANET implements this method using the following steps:</p>
+<ol class="arabic">
+<li><p class="first">The linear system of equations D.3 is solved using a sparse matrix
+method based on node re-ordering (George and Liu, 1981). After re-
+ordering the nodes to minimize the amount of fill-in for matrix A, a
+symbolic factorization is carried out so that only the non-zero
+elements of A need be stored and operated on in memory. For extended
+period simulation this re-ordering and factorization is only carried
+out once at the start of the analysis.</p>
+</li>
+<li><p class="first">For the very first iteration, the flow in a pipe is chosen equal to
+the flow corresponding to a velocity of 1 ft/sec, while the flow
+through a pump equals the design flow specified for the pump. (All
+computations are made with head in feet and flow in cfs).</p>
+</li>
+<li><p class="first">The resistance coefficient for a pipe (<em>r</em>) is computed as described
+in Table 3.1. For the Darcy-Weisbach headloss equation, the friction
+factor <em>f</em> is computed by different equations depending on the flow’s
+Reynolds Number (Re):</p>
+<p>Hagen – Poiseuille formula for Re &lt; 2,000 (Bhave, 1991):</p>
+<div class="math notranslate nohighlight">
+\[f= \frac{ 64} {Re }\]</div>
+<p>Swamee and Jain approximation to the Colebrook - White equation for
+Re &gt; 4,000 (Bhave, 1991):</p>
+<div class="math notranslate nohighlight">
+\[f= \frac{0.25} {{ [ Ln   ( \frac{ ε}{3.7d }    +\frac{ 5.74}{{ Re}^{0.9 } }) ] }^{ 2} }\]</div>
+<p>Cubic Interpolation From Moody Diagram for 2,000 &lt; Re &lt; 4,000
+(Dunlop, 1991):</p>
+<div class="math notranslate nohighlight">
+\[f=  ( X1+R  ( X2+R   (X3+X4    )   )   )\]</div>
+<div class="math notranslate nohighlight">
+\[R= \frac{ Re} {2000 }\]</div>
+<div class="math notranslate nohighlight">
+\[X1=7FA-FB\]</div>
+<div class="math notranslate nohighlight">
+\[X2=0.128-17FA+2.5FB\]</div>
+<div class="math notranslate nohighlight">
+\[X3=-0.128+13FA-2FB\]</div>
+<div class="math notranslate nohighlight">
+\[X4=R   ( 0.032-3FA+0.5FB   )\]</div>
+<div class="math notranslate nohighlight">
+\[FA={   ( Y3   )}^{-2 }\]</div>
+<div class="math notranslate nohighlight">
+\[FB=FA   ( 2-\frac{ 0.00514215}  {  ( Y2   )  ( Y3   ) }   )\]</div>
+<div class="math notranslate nohighlight">
+\[Y2= \frac{ ε} {3.7d }+\frac{ 5.74}{{ Re}^{ 0.9} }\]</div>
+<div class="math notranslate nohighlight">
+\[Y3=-0.86859 Ln   ( \frac{ ε}{ 3.7d}+\frac{ 5.74}{{ 4000}^{0.9 } }   )\]</div>
+<p>where <em>σ</em> = pipe roughness and <em>d</em> = pipe diameter.</p>
+</li>
+<li><p class="first">The minor loss coefficient based on velocity head (<em>K</em>) is converted
+to one based on flow (<em>m</em>) with the following relation:</p>
+<div class="math notranslate nohighlight">
+\[m=\frac{ 0.02517K} {{ d}^{4 } }\]</div>
+</li>
+<li><p class="first">Emitters at junctions are modeled as a fictitious pipe between the
+junction and a fictitious reservoir. The pipe’s headloss parameters
+are <em>n</em> = (1/γ), <em>r</em> = (1/C):sup:<cite>n</cite>, and <em>m</em> = 0 where C is the
+emitter’s discharge coefficient and γ is its pressure exponent. The
+head at the fictitious reservoir is the elevation of the junction.
+The computed flow through the fictitious pipe becomes the flow
+associated with the emitter.</p>
+</li>
+<li><p class="first">Open valves are assigned an <em>r</em>-value by assuming the open valve acts
+as a smooth pipe (f = 0.02) whose length is twice the valve diameter.
+Closed links are assumed to obey a linear headloss relation with a
+large resistance factor, i.e., <em>h</em> = 10<sup>8</sup><em>Q</em>, so that <em>p</em> =
+10<sup>-8</sup> and <em>y</em> = <em>Q</em>. For links where <em>(r+m)Q</em> &lt;
+10<sup>-7</sup>, <em>p</em> = 10<sup>7</sup> and <em>y = Q/n</em>.</p>
+</li>
+<li><p class="first">Status checks on pumps, check valves (CVs), flow control valves, and
+pipes connected to full/empty tanks are made after every other
+iteration, up until the 10th iteration. After this, status checks are
+made only after convergence is achieved. Status checks on pressure
+control valves (PRVs and PSVs) are made after each iteration.</p>
+</li>
+<li><p class="first">During status checks, pumps are closed if the head gain is greater
+than the shutoff head (to prevent reverse flow). Similarly, check
+valves are closed if the headloss through them is negative (see
+below). When these conditions are not present, the link is re-opened.
+A similar status check is made for links connected to empty/full
+tanks. Such links are closed if the difference in head across the
+link would cause an empty tank to drain or a full tank to fill. They
+are re- opened at the next status check if such conditions no longer
+hold.</p>
+</li>
+<li><p class="first">Simply checking if <em>h</em> &lt; 0 to determine if a check valve should be
+closed or open was found to cause cycling between these two states in
+some networks due to limits on numerical precision. The following
+procedure was devised to provide a more robust test of the status of
+a check valve (CV):</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">if</span> <span class="o">|</span><span class="n">h</span><span class="o">|</span> <span class="o">&gt;</span> <span class="n">Htol</span> <span class="n">then</span>
+  <span class="k">if</span> <span class="n">h</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">Htol</span> <span class="n">then</span>     <span class="n">status</span> <span class="o">=</span> <span class="n">CLOSED</span>
+  <span class="k">if</span> <span class="n">Q</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">Qtol</span> <span class="n">then</span>     <span class="n">status</span> <span class="o">=</span> <span class="n">CLOSED</span>
+  <span class="k">else</span>                  <span class="n">status</span> <span class="o">=</span> <span class="n">OPEN</span>
+
+<span class="k">else</span>
+  <span class="k">if</span> <span class="o">*</span><span class="n">Q</span><span class="o">*</span> <span class="o">&lt;</span> <span class="o">-</span><span class="n">Qtol</span> <span class="n">then</span>   <span class="n">status</span> <span class="o">=</span> <span class="n">CLOSED</span>
+  <span class="k">else</span>                  <span class="n">status</span> <span class="o">=</span> <span class="n">unchanged</span>
+</pre></div>
+</div>
+<p>where Htol = 0.0005 ft and Qtol = 0.001 cfs.</p>
+</div></blockquote>
+</li>
+<li><p class="first">If the status check closes an open pump, pipe, or CV, its flow is
+set to 10<sup>-6</sup> cfs. If a pump is re-opened, its flow is
+computed by applying the current head gain to its characteristic
+curve. If a pipe or CV is re- opened, its flow is determined by
+solving Eq. (D.1) for <em>Q</em> under the current headloss <em>h</em>, ignoring
+any minor losses.</p>
+</li>
+<li><p class="first">Matrix coefficients for pressure breaker valves (PBVs) are set to
+the following: <em>p</em> = 10<sup>8</sup> and <em>y</em> = 10<sup>8</sup>Hset,
+where Hset is the pressure drop setting for the valve (in feet).
+Throttle control valves (TCVs) are treated as pipes with <em>r</em> as
+described in item 6 above and <em>m</em> taken as the converted value of
+the valve setting (see item 4 above).</p>
+</li>
+<li><p class="first">Matrix coefficients for pressure reducing, pressure sustaining, and
+flow control valves (PRVs, PSVs, and FCVs) are computed after all
+other links have been analyzed. Status checks on PRVs and PSVs are
+made as described in item 7 above. These valves can either be
+completely open, completely closed, or active at their pressure or
+flow setting.</p>
+</li>
+<li><p class="first">The logic used to test the status of a PRV is as follows:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>If current status = ACTIVE then
+  if Q &lt; -Qtol then              new status = CLOSED
+  if Hi &lt; Hset + Hml – Htol then new status = OPEN
+                            else new status = ACTIVE
+
+If curent status = OPEN then
+  if Q &lt; -Qtol then              new status = CLOSED
+  if Hi &gt; Hset + Hml + Htol then new status = ACTIVE
+                            else new status = OPEN
+
+If current status = CLOSED then
+  if  Hi &gt; Hj + Htol
+  and Hi &lt; Hset – Htol      then new status = OPEN
+
+  if  Hi &gt; Hj + Htol
+  and Hj &lt; Hset - Htol      then new status = ACTIVE
+                            else new status = CLOSED
+</pre></div>
+</div>
+<p>where Q is the current flow through the valve, Hi is its upstream
+head, Hj is its downstream head, Hset is its pressure setting
+converted to head, Hml is the minor loss when the valve is open (=
+mQ<sup>2</sup>), and Htol and Qtol are the same values used for check
+valves in</p>
+<p>item 9 above. A similar set of tests is used for PSVs, except that
+when testing against Hset, the i and j subscripts are switched as are
+the &gt; and &lt; operators.</p>
+</div></blockquote>
+</li>
+<li><p class="first">Flow through an active PRV is maintained to force continuity at its
+downstream node while flow through a PSV does the same at its
+upstream node. For an active PRV from node i to j:</p>
+<div class="math notranslate nohighlight">
+\[{p}_{ij} = 0\]</div>
+<div class="math notranslate nohighlight">
+\[{F}_{j } = {F}_{j} + {10}^{8} Hset\]</div>
+<div class="math notranslate nohighlight">
+\[{A}_{jj }= {A}_{jj} + {10}^{8 }\]</div>
+<p>This forces the head at the downstream node to be at the valve
+setting Hset. An equivalent assignment of coefficients is made for an
+active PSV except the subscript for F and A is the upstream node i.
+Coefficients for open/closed PRVs and PSVs are handled in the same
+way as for pipes.</p>
+</li>
+<li><p class="first">For an active FCV from node i to j with flow setting Qset, Qset is
+added to the flow leaving node i and entering node j, and is
+subtracted from <em>Fi</em> and added to <em>Fj</em>. If the head at node i is
+less than that at node j, then the valve cannot deliver the flow and
+it is treated as an open pipe.</p>
+</li>
+<li><p class="first">After initial convergence is achieved (flow convergence plus no
+change in status for PRVs and PSVs), another status check on pumps,
+CVs, FCVs, and links to tanks is made. Also, the status of links
+controlled by pressure switches (e.g., a pump controlled by the
+pressure at a junction node) is checked. If any status change
+occurs, the iterations must continue for at least two more
+iterations (i.e., a convergence check is skipped on the very next
+iteration). Otherwise, a final solution has been obtained.</p>
+</li>
+<li><p class="first">For extended period simulation (EPS), the following procedure is
+implemented:</p>
+<ol class="loweralpha simple">
+<li>After a solution is found for the current time period, the time
+step for the next solution is the minimum of:</li>
+</ol>
+<blockquote>
+<div><ul class="simple">
+<li>the time until a new demand period begins,</li>
+<li>the shortest time for a tank to fill or drain,</li>
+<li>the shortest time until a tank level reaches a point that
+triggers a change in status for some link (e.g., opens or
+closes a pump) as stipulated in a simple control,</li>
+<li>the next time until a simple timer control on a link kicks in,</li>
+<li>the next time at which a rule-based control causes a status
+change somewhere in the network.</li>
+</ul>
+<p>In computing the times based on tank levels, the latter are assumed
+to change in a linear fashion based on the current flow solution. The
+activation time of rule-based controls is computed as follows:</p>
+<ul class="simple">
+<li>Starting at the current time, rules are evaluated at a rule time
+step. Its default value is 1/10 of the normal hydraulic time step
+(e.g., if hydraulics are updated every hour, then rules are evaluated
+every 6 minutes).</li>
+<li>Over this rule time step, clock time is updated, as are the water
+levels in storage tanks (based on the last set of pipe flows
+computed).</li>
+<li>If a rule’s conditions are satisfied, then its actions are added to a
+list. If an action conflicts with one for the same link already on
+the list then the action from the rule with the higher priority stays
+on the list and the other is removed. If the priorities are the same
+then the original action stays on the list.</li>
+<li>After all rules are evaluated, if the list is not empty then the new
+actions are taken. If this causes the status of one or more links to
+change then a new hydraulic solution is computed and the process
+begins anew.</li>
+<li>If no status changes were called for, the action list is cleared and
+the next rule time step is taken unless the normal hydraulic time
+step has elapsed.</li>
+</ul>
+</div></blockquote>
+<ol class="loweralpha simple" start="2">
+<li>Time is advanced by the computed time step, new demands are found,
+tank levels are adjusted based on the current flow solution, and link
+control rules are checked to determine which links change status.</li>
+<li>A new set of iterations with Eqs. (D.3) and (D.4) are begun at the
+current set of flows.</li>
+</ol>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="water-quality">
+<h2>Water Quality<a class="headerlink" href="#water-quality" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>The governing equations for EPANET’s water quality solver are based
+on the principles of conservation of mass coupled with reaction
+kinetics. The following phenomena are represented (Rossman et al.,
+1993; Rossman and Boulos, 1996):</div></blockquote>
+<div class="section" id="advective-transport-in-pipes">
+<h3>Advective Transport in Pipes<a class="headerlink" href="#advective-transport-in-pipes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A dissolved substance will travel down the length of a pipe with the
+same average velocity as the carrier fluid while at the same time
+reacting (either growing or decaying) at some given rate.
+Longitudinal dispersion is usually not an important transport
+mechanism under most operating conditions. This means there is no
+intermixing of mass between adjacent parcels of water traveling down
+a pipe. Advective transport within a pipe is represented with the
+following equation:</p>
+<div class="math notranslate nohighlight">
+\[\frac{ \partial{C}_{i}} {∂t} = - u_{i} \frac{\partial{C}_{i}}{\partial x} + r({ C}_{i }) ~~~~~~
+(D.5)\]</div>
+<p>where <em>Ci</em> = concentration (mass/volume) in pipe i as a function of
+distance x and time t, <em>ui</em> = flow velocity (length/time) in pipe
+i, and <em>r</em> = rate of reaction (mass/volume/time) as a function of
+concentration.</p>
+</div></blockquote>
+</div>
+<div class="section" id="mixing-at-pipe-junctions">
+<h3>Mixing at Pipe Junctions<a class="headerlink" href="#mixing-at-pipe-junctions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>At junctions receiving inflow from two or more pipes, the mixing of
+fluid is taken to be complete and instantaneous. Thus the
+concentration of a substance in water leaving the junction is simply
+the flow-weighted sum of the concentrations from the inflowing pipes.
+For a specific node k one can write:</p>
+<div class="math notranslate nohighlight">
+\[C_{i|x=0} = \frac{\sum_{ j \in I_k} Q_{j} C_{j|x= L_j}+Q_{k,ext} C_{k,ext}} {\sum_{j \in I_k} Q_j + Q_{k,ext}} ~~~~~~
+(D.6)\]</div>
+<p>where i = link with flow leaving node k, <em>Ik</em> = set of links with
+flow into k, <em>Lj</em> = length of link j, <em>Qj</em> = flow (volume/time)
+in link j, <em>Qk,ext</em> = external source flow entering the network at
+node k, and <em>Ck,ext</em> = concentration of the external flow entering
+at node k. The notation <em>Ci|x=0</em> represents the concentration at
+the start of link i, while <em>Ci|x=L</em> is the concentration at the end
+of the link.</p>
+</div></blockquote>
+</div>
+<div class="section" id="mixing-in-storage-facilities">
+<h3>Mixing in Storage Facilities<a class="headerlink" href="#mixing-in-storage-facilities" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>It is convenient to assume that the contents of storage facilities
+(tanks and reservoirs) are completely mixed. This is a reasonable
+assumption for many tanks operating under fill-and-draw conditions
+providing that sufficient momentum flux is imparted to the inflow
+(Rossman and Grayman, 1999). Under completely mixed conditions the
+concentration throughout the tank is a blend of the current contents
+and that of any entering water. At the same time, the internal
+concentration could be changing due to reactions. The following
+equation expresses these phenomena:</p>
+<div class="math notranslate nohighlight">
+\[\frac{\partial ({ V}_{s } { C}_{s }) }{\partial t} = \sum_{i \in I_{s}} {Q}_{i}{C}_{ i | x={L}_{i}} - \sum_{j \in O_{s}} {Q}_{j}{C}_{s} + r ({C}_{s})  ~~~~~~
+(D.7)\]</div>
+<p>where <em>Vs</em> = volume in storage at time t, <em>Cs</em> = concentration
+within the storage facility, <em>Is</em> = set of links providing flow
+into the facility, and <em>Os</em> = set of links withdrawing flow from
+the facility.</p>
+</div></blockquote>
+</div>
+<div class="section" id="bulk-flow-reactions">
+<h3>Bulk Flow Reactions<a class="headerlink" href="#bulk-flow-reactions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>While a substance moves down a pipe or resides in storage it can
+undergo reaction with constituents in the water column. The rate of
+reaction can generally be described as a power function of
+concentration:</p>
+<div class="math notranslate nohighlight">
+\[r=k{ C}^{n }\]</div>
+<p>where <em>k</em> = a reaction constant and <em>n</em> = the reaction order. When a
+limiting concentration exists on the ultimate growth or loss of a
+substance then the rate expression becomes</p>
+<div class="math notranslate nohighlight">
+\[R={ K}_{b }   ( { C}_{L }-C   ) { C}^{n-1 }\]</div>
+<div class="math notranslate nohighlight">
+\[R={ K}_{b }   ( C-{ C}_{L }   ) { C}^{n-1 }\]</div>
+<p>for <em>n</em> &gt; 0, <em>Kb</em> &gt; 0 for <em>n</em> &gt; 0, <em>Kb</em> &lt; 0</p>
+<p>where <em>CL</em> = the limiting concentration.</p>
+<p>Some examples of different reaction rate expressions are:</p>
+<blockquote>
+<div><ul>
+<li><p class="first"><em>Simple First-Order Decay (CL = 0, Kb &lt; 0, n = 1)</em></p>
+<div class="math notranslate nohighlight">
+\[R={ K}^{b }C\]</div>
+<p>The decay of many substances, such as chlorine, can be modeled
+adequately as a simple first-order reaction.</p>
+</li>
+<li><p class="first"><em>First-Order Saturation Growth (CL &gt; 0, Kb &gt; 0, n = 1):</em></p>
+<div class="math notranslate nohighlight">
+\[R={ K}_{b }   ( { C}_{L }-C   )\]</div>
+<p>This model can be applied to the growth of disinfection by-products,
+such as trihalomethanes, where the ultimate formation of by-product
+(<em>CL</em>) is limited by the amount of reactive precursor present.</p>
+</li>
+<li><p class="first"><em>Two-Component, Second Order Decay (CL</em> ≠ <em>0, Kb &lt; 0, n = 2):</em></p>
+<div class="math notranslate nohighlight">
+\[R={ K}_{b }C   ( { C}_{L }-C   )\]</div>
+<p>This model assumes that substance A reacts with substance B in some
+unknown ratio to produce a product P. The rate of disappearance of A
+is proportional to the product of A and B remaining. <em>CL</em> can be
+either positive or negative, depending on whether either component A
+or B is in excess, respectively. Clark (1998) has had success in
+applying this model to chlorine decay data that did not conform to
+the simple first-order model.</p>
+</li>
+<li><p class="first"><em>Michaelis-Menton Decay Kinetics (CL &gt; 0, Kb &lt; 0, n &lt; 0):</em></p>
+<div class="math notranslate nohighlight">
+\[R = \frac{ { K}_{b }C}  {{ C}_{L }-C }\]</div>
+<p>As a special case, when a negative reaction order <em>n</em> is specified,
+EPANET will utilize the Michaelis-Menton rate equation, shown above
+for a decay reaction. (For growth reactions the denominator becomes
+<em>CL + C</em>.) This rate equation is often used to describe
+enzyme-catalyzed reactions and microbial growth. It produces first-
+order behavior at low concentrations and zero-order behavior at
+higher concentrations. Note that for decay reactions, <em>CL</em> must be
+set higher than the initial concentration present.</p>
+<p>Koechling (1998) has applied Michaelis-Menton kinetics to model
+chlorine decay in a number of different waters and found that both
+<em>Kb</em> and <em>CL</em> could be related to the water’s organic content and
+its ultraviolet absorbance as follows:</p>
+<div class="math notranslate nohighlight">
+\[{ K}_{b }=-0.32UV{ A}^{1.365 }\frac{   ( 100UVA   )}{DOC }\]</div>
+<div class="math notranslate nohighlight">
+\[{ C}_{L }=4.98UVA-1.91DOC\]</div>
+<p>where UVA = ultraviolet absorbance at 254 nm (1/cm) and DOC =
+dissolved organic carbon concentration (mg/L).</p>
+<p>Note: These expressions apply only for values of <em>Kb</em> and <em>CL</em> used with Michaelis-Menton kinetics.</p>
+</li>
+<li><p class="first"><em>Zero-Order growth (CL = 0, Kb = 1, n = 0) R = 1.0</em></p>
+<p>This special case can be used to model water age, where with each
+unit of time the “concentration” (i.e., age) increases by one unit.</p>
+<p>The relationship between the bulk rate constant seen at one
+temperature (T1) to that at another temperature (T2) is often
+expressed using a van’t Hoff - Arrehnius equation of the form:</p>
+<div class="math notranslate nohighlight">
+\[{ K}_{b2 }={ K}_{b1 }{ θ}^{T2-T1 }\]</div>
+<p>where θ is a constant. In one investigation for chlorine, θ was
+estimated to be 1.1 when T1 was 20 deg. C (Koechling, 1998).</p>
+</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pipe-wall-reactions">
+<h3>Pipe Wall Reactions<a class="headerlink" href="#pipe-wall-reactions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>While flowing through pipes, dissolved substances can be transported
+to the pipe wall and react with material such as corrosion products
+or biofilm that are on or close to the wall. The amount of wall area
+available for reaction and the rate of mass transfer between the bulk
+fluid and the wall will also influence the overall rate of this
+reaction. The surface area per unit volume, which for a pipe equals 2
+divided by the radius, determines the former factor. The latter
+factor can be represented by a mass transfer coefficient whose value
+depends on the molecular diffusivity of the reactive species and on
+the Reynolds number of the flow (Rossman et. al, 1994). For first-
+order kinetics, the rate of a pipe wall reaction can be expressed as:</p>
+<div class="math notranslate nohighlight">
+\[r=\frac{ 2{ k}_{w }{ k}_{f }C} {R   ( { k}_{w }+{ k}_{f }   ) }\]</div>
+<p>where <em>kw</em> = wall reaction rate constant (length/time), <em>kf</em> =
+mass transfer coefficient (length/time), and R = pipe radius. For
+zero-order kinetics the reaction rate cannot be any higher than the
+rate of mass transfer, so</p>
+<div class="math notranslate nohighlight">
+\[r=MIN   ( { k}_{w },{ k}_{f }C   )   ( 2/R   )\]</div>
+<p>where <em>kw</em> now has units of mass/area/time.</p>
+<p>Mass transfer coefficients are usually expressed in terms of a
+dimensionless Sherwood number (<em>Sh</em>):</p>
+<div class="math notranslate nohighlight">
+\[{ k}_{f }=Sh \frac{ D} {d }\]</div>
+<p>in which <em>D</em> = the molecular diffusivity of the species being
+transported (length:sup:<cite>2</cite>/time) and <em>d</em> = pipe diameter. In fully
+developed laminar flow, the average Sherwood number along the length
+of a pipe can be expressed as</p>
+<div class="math notranslate nohighlight">
+\[Sh=3.65+\frac{ 0.0668   ( d/L   )ReSc} {1+0.04{   [   ( d/L   )ReSc   ]}^{2/3 } }\]</div>
+<p>in which <em>Re</em> = Reynolds number and <em>Sc</em> = Schmidt number (kinematic
+viscosity of water divided by the diffusivity of the chemical)
+(Edwards et.al, 1976). For turbulent flow the empirical correlation
+of Notter and Sleicher (1971) can be used:</p>
+<div class="math notranslate nohighlight">
+\[Sh=0.0149{ Re}^{0.88 }{ Sc}^{1/3 }\]</div>
+</div></blockquote>
+</div>
+<div class="section" id="system-of-equations">
+<h3>System of Equations<a class="headerlink" href="#system-of-equations" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>When applied to a network as a whole, Equations D.5-D.7 represent a
+coupled set of differential/algebraic equations with time-varying
+coefficients that must be solved for <em>Ci</em> in each pipe i and <em>Cs</em>
+in each storage facility s. This solution is subject to the following
+set of externally imposed conditions:</p>
+<ul class="simple">
+<li>initial conditions that specify <em>Ci</em> for all x in each pipe i and
+<em>Cs</em> in each storage facility s at time 0,</li>
+<li>boundary conditions that specify values for <em>Ck,ext</em> and <em>Qk,ext</em>
+for all time t at each node k which has external mass inputs</li>
+<li>hydraulic conditions which specify the volume <em>Vs</em> in each storage
+facility s and the flow <em>Qi</em> in each link i at all times t.</li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="lagrangian-transport-algorithm">
+<h3>Lagrangian Transport Algorithm<a class="headerlink" href="#lagrangian-transport-algorithm" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>EPANET’s water quality simulator uses a Lagrangian time-based
+approach to track the fate of discrete parcels of water as they move
+along pipes and mix together at junctions between fixed-length time
+steps (Liou and Kroon, 1987). These water quality time steps are
+typically much shorter than the hydraulic time step (e.g., minutes
+rather than hours) to accommodate the short times of travel that can
+occur within pipes. As time progresses, the size of the most upstream
+segment in a pipe increases as water enters the pipe while an equal
+loss in size of the most downstream segment occurs as water leaves
+the link. The size of the segments in between these remains
+unchanged. (See Figure D.1).</p>
+<p>The following steps occur at the end of each such time step:</p>
+<ol class="arabic">
+<li><p class="first">The water quality in each segment is updated to reflect any reaction
+that may have occurred over the time step.</p>
+</li>
+<li><p class="first">The water from the leading segments of pipes with flow into each
+junction is blended together to compute a new water quality value at
+the junction. The volume contributed from each segment equals the
+product of its pipe’s flow rate and the time step. If this volume
+exceeds that of the segment then the segment is destroyed and the
+next one in line behind it begins to contribute its volume.</p>
+</li>
+<li><p class="first">Contributions from outside sources are added to the quality values at
+the junctions. The quality in storage tanks is updated depending on
+the method used to model mixing in the tank (see below).</p>
+</li>
+<li><p class="first">New segments are created in pipes with flow out of each junction,
+reservoir, and tank. The segment volume equals the product of the
+pipe flow and the time step. The segment’s water quality equals the
+new quality value computed for the node.</p>
+<p>To cut down on the number of segments, Step 4 is only carried out if
+the new node quality differs by a user-specified tolerance from that
+of the last segment in the outflow pipe. If the difference in quality
+is below the tolerance then the size of the current last segment in
+the outflow pipe is simply increased by the volume flowing into the
+pipe over the time step.</p>
+<p>This process is then repeated for the next water-quality time step.
+At the start of the next hydraulic time step the order of segments in
+any links that experience a flow reversal is switched. Initially each
+pipe in the network consists of a single segment whose quality equals
+the initial quality assigned to the upstream node.</p>
+</li>
+</ol>
+<blockquote>
+<div><p><img alt="image147" src="_images/image96.png" /></p>
+<p><img alt="image148" src="_images/image98.png" /></p>
+</div></blockquote>
+<p><strong>Figure D.1</strong> Behavior of Segments in the Lagrangian Solution Method</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="E_references.html" class="btn btn-neutral float-right" title="E. REFERENCES" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="C_command_line_EPANET.html" class="btn btn-neutral" title="C. COMMAND LINE EPANET" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>INTRODUCTION &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>INTRODUCTION</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/my_package.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="introduction">
+<h1>INTRODUCTION<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
+<p>Modules</p>
+<hr class="docutils" />
+<div class="section" id="what-is-epanet">
+<h2>What is EPANET<a class="headerlink" href="#what-is-epanet" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET is a computer program that performs extended period simulation
+of hydraulic and water quality behavior within pressurized pipe
+networks. A network consists of pipes, nodes (pipe junctions), pumps,
+valves and storage tanks or reservoirs. EPANET tracks the flow of
+water in each pipe, the pressure at each node, the height of water in
+each tank, and the concentration of a chemical species throughout the
+network during a simulation period comprised of multiple time steps.
+In addition to chemical species, water age and source tracing can
+also be simulated.</p>
+<p>EPANET is designed to be a research tool for improving our
+understanding of the movement and fate of drinking water constituents
+within distribution systems. It can be used for many different kinds
+of applications in distribution systems analysis. Sampling program
+design, hydraulic model calibration, chlorine residual analysis, and
+consumer exposure assessment are some examples. EPANET can help
+assess alternative management strategies for improving water quality
+throughout a system. These can include:</p>
+</div></blockquote>
+<ul class="simple">
+<li>altering source utilization within multiple source systems,</li>
+<li>altering pumping and tank filling/emptying schedules,</li>
+<li>use of satellite treatment, such as re-chlorination at storage tanks,</li>
+<li>targeted pipe cleaning and replacement.</li>
+</ul>
+<blockquote>
+<div>Running under Windows, EPANET provides an integrated environment for
+editing network input data, running hydraulic and water quality
+simulations, and viewing the results in a variety of formats. These
+include color-coded network maps, data tables, time series graphs,
+and contour plots.</div></blockquote>
+</div>
+<div class="section" id="hydraulic-modeling-capabilities">
+<h2>Hydraulic Modeling Capabilities<a class="headerlink" href="#hydraulic-modeling-capabilities" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>Full-featured and accurate hydraulic modeling is a prerequisite for
+doing effective water quality modeling. EPANET contains a
+state-of-the-art hydraulic analysis engine that includes the
+following capabilities:</div></blockquote>
+<ul class="simple">
+<li>places no limit on the size of the network that can be analyzed</li>
+<li>computes friction headloss using the Hazen-Williams, Darcy- Weisbach,
+or Chezy-Manning formulas</li>
+<li>includes minor head losses for bends, fittings, etc.</li>
+<li>models constant or variable speed pumps</li>
+<li>computes pumping energy and cost</li>
+<li>models various types of valves including shutoff, check, pressure
+regulating, and flow control valves</li>
+<li>allows storage tanks to have any shape (i.e., diameter can vary with
+height)</li>
+<li>considers multiple demand categories at nodes, each with its own
+pattern of time variation</li>
+<li>models pressure-dependent flow issuing from emitters (sprinkler
+heads)</li>
+<li>can base system operation on both simple tank level or timer controls
+and on complex rule-based controls.</li>
+</ul>
+</div>
+<div class="section" id="water-quality-modeling-capabilities">
+<h2>Water Quality Modeling Capabilities<a class="headerlink" href="#water-quality-modeling-capabilities" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>In addition to hydraulic modeling, EPANET provides the following
+water quality modeling capabilities:</div></blockquote>
+<ul class="simple">
+<li>models the movement of a non-reactive tracer material through the
+network over time</li>
+<li>models the movement and fate of a reactive material as it grows
+(e.g., a disinfection by-product) or decays (e.g., chlorine residual)
+with time</li>
+<li>models the age of water throughout a network</li>
+<li>tracks the percent of flow from a given node reaching all other nodes
+over time</li>
+<li>models reactions both in the bulk flow and at the pipe wall</li>
+<li>uses n-th order kinetics to model reactions in the bulk flow</li>
+<li>uses zero or first order kinetics to model reactions at the pipe wall</li>
+<li>accounts for mass transfer limitations when modeling pipe wall
+reactions</li>
+<li>allows growth or decay reactions to proceed up to a limiting
+concentration</li>
+<li>employs global reaction rate coefficients that can be modified on a
+pipe-by-pipe basis</li>
+<li>allows wall reaction rate coefficients to be correlated to pipe
+roughness</li>
+<li>allows for time-varying concentration or mass inputs at any location
+in the network</li>
+<li>models storage tanks as being either complete mix, plug flow, or
+two-compartment reactors.</li>
+</ul>
+<blockquote>
+<div>By employing these features, EPANET can study such water quality
+phenomena as:</div></blockquote>
+<ul class="simple">
+<li>blending water from different sources</li>
+<li>age of water throughout a system</li>
+<li>loss of chlorine residuals</li>
+<li>growth of disinfection by-products</li>
+<li>tracking contaminant propagation events.</li>
+</ul>
+</div>
+<div class="section" id="steps-in-using-epanet">
+<h2>Steps in Using EPANET<a class="headerlink" href="#steps-in-using-epanet" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div>One typically carries out the following steps when using EPANET to
+model a water distribution system:</div></blockquote>
+<ol class="arabic simple">
+<li>Draw a network representation of your distribution system (see
+Section 6.1) or import a basic description of the network placed in a
+text file (see Section 11.4).</li>
+<li>Edit the properties of the objects that make up the system (see
+Section 6.4)</li>
+<li>Describe how the system is operated (see Section 6.5)</li>
+<li>Select a set of analysis options (see Section 8.1)</li>
+<li>Run a hydraulic/water quality analysis (see Section 8.2)</li>
+<li>View the results of the analysis (see Chapter 9).</li>
+</ol>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

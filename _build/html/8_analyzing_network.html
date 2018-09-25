@@ -1,0 +1,872 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>8. ANALYZING A NETWORK &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="9. VIEWING RESULTS" href="9_viewing_results.html" />
+    <link rel="prev" title="7. WORKING WITH THE MAP" href="7_map.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">8. ANALYZING A NETWORK</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#setting-analysis-options">Setting Analysis Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#hydraulic-options">Hydraulic Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#water-quality-options">Water Quality Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reaction-options">Reaction Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#times-options">Times Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-options">Energy Options</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#running-an-analysis">Running an Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshooting-results">Troubleshooting Results</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#pumps-cannot-deliver-flow-or-head">Pumps Cannot Deliver Flow or Head</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#network-is-disconnected">Network is Disconnected</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#negative-pressures-exist">Negative Pressures Exist</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#system-unbalanced">System Unbalanced</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#hydraulic-equations-unsolvable">Hydraulic Equations Unsolvable</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>8. ANALYZING A NETWORK</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/8_analyzing_network.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="analyzing-a-network">
+<h1>8. ANALYZING A NETWORK<a class="headerlink" href="#analyzing-a-network" title="Permalink to this headline">¶</a></h1>
+<p><em>After a network has been suitably described, its hydraulic and water
+quality behavior can be analyzed. This chapter describes how to
+specify options to use in the analysis, how to run the analysis and
+how to troubleshoot problems that might have occurred with the
+analysis.</em></p>
+<hr class="docutils" />
+<div class="section" id="setting-analysis-options">
+<h2>Setting Analysis Options<a class="headerlink" href="#setting-analysis-options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>There are five categories of options that control how EPANET analyzes
+a network: Hydraulics, Quality, Reactions, Times, and Energy. To set
+any of these options:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the Options category from the Data Browser or select
+<strong>Project &gt;&gt; Analysis Options</strong> from the menu bar.</li>
+<li>Select Hydraulics, Quality, Reactions, Times, or Energy from the
+Browser.</li>
+<li>If the Property Editor is not already visible, click the Browser’s
+Edit button <img alt="image112" src="_images/image14.jpeg" /> (or hit the <strong>Enter</strong> key).</li>
+<li>Edit your option choices in the Property Editor.</li>
+</ol>
+</div></blockquote>
+<p>As you are editing a category of options in the Property Editor you
+can move to the next or previous category by simply hitting the
+<strong>Page Down</strong> or <strong>Page Up</strong> keys, respectively.</p>
+</div></blockquote>
+<div class="section" id="hydraulic-options">
+<h3>Hydraulic Options<a class="headerlink" href="#hydraulic-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>Hydraulic options control how the hydraulic computations are carried
+out. They consist of the following items:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Flow Units</td>
+<td>Units in which nodal demands and
+link flow rates are expressed.
+Choosing units in gallons, cubic
+feet, or acre-feet implies that
+the units for all other network
+quantities are Customary US.
+Selecting liters or cubic meters
+causes all other units to be SI
+metric. Use caution when changing
+flow units as it might affect all
+other data supplied to the
+project. (See Appendix A, Units
+of Measurement.)</td>
+</tr>
+<tr class="row-odd"><td>Headloss Formula</td>
+<td>Formula used to compute headloss
+as a function of flow rate in a
+pipe. Choices are:</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Hazen-Williams</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Darcy-Weisbach</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Chezy-Manning</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Because each formula measures
+pipe roughness differently,
+switching formulas might require
+that all pipe roughness
+coefficients be updated.</td>
+</tr>
+<tr class="row-even"><td>Specific Gravity</td>
+<td>Ratio of the density of the fluid
+being modeled to that of water at
+4 deg. C (unitless).</td>
+</tr>
+<tr class="row-odd"><td>Relative Viscosity</td>
+<td>Ratio of the kinematic viscosity
+of the fluid to that of water at
+20 deg. C (1.0 centistokes or
+0.94 sq ft/day) (unitless).</td>
+</tr>
+<tr class="row-even"><td>Maximum Trials</td>
+<td>Maximum number of trials used to
+solve the nonlinear equations
+that govern network hydraulics at
+a given point in time. Suggested
+value is 40.</td>
+</tr>
+<tr class="row-odd"><td>Accuracy</td>
+<td>Convergence criterion used to
+signal that a solution has been
+found to the nonlinear equations
+that govern network hydraulics.
+Trials end when the sum of all
+flow changes divided by the sum
+of all link flows is less than
+this number. Suggested value is
+0.001.</td>
+</tr>
+<tr class="row-even"><td>If Unbalanced</td>
+<td>Action to take if a hydraulic
+solution is not found within the
+maximum number of trials. Choices
+are STOP to stop the simulation
+at this point or CONTINUE to use
+another 10 trials, with no link
+status changes allowed, in an
+attempt to achieve convergence.</td>
+</tr>
+<tr class="row-odd"><td>Default Pattern</td>
+<td>ID label of a time pattern to be
+applied to demands at those
+junctions where no time pattern
+is specified. If no such pattern
+exists then demands will not vary
+at these locations.</td>
+</tr>
+<tr class="row-even"><td>Demand Multiplier</td>
+<td>Global multiplier applied to all
+demands to make total system
+consumption vary up or down by a
+fixed amount. E.g., 2.0 doubles
+all demands, 0.5 halves them, and
+1.0 leaves them as is.</td>
+</tr>
+<tr class="row-odd"><td>Emitter Exponent</td>
+<td>Power to which pressure is raised
+when computing the flow through
+an emitter device. The textbook
+value for nozzles and sprinklers
+is ½. This may not apply to pipe
+leakage. Consult the discussion
+of Emitters in Section 3.1 for
+more details.</td>
+</tr>
+<tr class="row-even"><td>Status Report</td>
+<td>Amount of status information to
+report after an analysis is made.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Choices are:</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NONE (no status
+reporting)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; YES (normal status
+reporting – lists all changes in
+link status throughout the
+simulation )</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; FULL (full reporting –
+normal reporting plus the
+convergence error from each trial
+of the hydraulic analysis made in
+each time period)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Full status reporting is only
+useful for debugging purposes.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note</strong>: Choices for Hydraulic Options can also be set from the
+<strong>Project &gt;&gt; Defaults</strong> menu and saved for use with all future projects (see Section 5.2).</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="water-quality-options">
+<h3>Water Quality Options<a class="headerlink" href="#water-quality-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>Water Quality Options control how the water quality analysis is
+carried out. They consist of the following:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Parameter</td>
+<td>Type of water quality parameter
+being modeled. Choices include:</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NONE (no quality
+analysis),</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; CHEMICAL (compute
+chemical concentration),</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AGE (compute water
+age),</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; TRACE (trace the
+percent of flow originating from
+a specific node).</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>In lieu of CHEMICAL, you can
+enter the actual name of the
+chemical being modeled (e.g.,
+Chlorine).</td>
+</tr>
+<tr class="row-even"><td>Mass Units</td>
+<td>Mass units used to express
+concentration. Choices are mg/L
+or μg/L. Units for Age and Trace
+analyses are fixed at hours and
+percent, respectively.</td>
+</tr>
+<tr class="row-odd"><td>Relative Diffusivity</td>
+<td>Ratio of the molecular
+diffusivity of the chemical being
+modeled to that of chlorine at 20
+deg. C (0.00112 sq ft/day). Use 2
+if the chemical diffuses twice as
+fast as chlorine, 0.5 if half as
+fast, etc. Applies only when
+modeling mass transfer for pipe
+wall reactions. Set to zero to
+ignore mass transfer effects.</td>
+</tr>
+<tr class="row-even"><td>Trace Node</td>
+<td>ID label of the node whose flow
+is being traced. Applies only to
+flow tracing analyses.</td>
+</tr>
+<tr class="row-odd"><td>Quality Tolerance</td>
+<td>Smallest change in quality that
+will cause a new parcel of water
+to be created in a pipe. A
+typical setting might be 0.01 for
+chemicals measured in mg/L as
+well as water age and source
+tracing.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note</strong>: The Quality Tolerance determines when the quality of one
+parcel of water is essentially the same as another parcel. For
+chemical analysis this might be the detection limit of the procedure
+used to measure the chemical, adjusted by a suitable factor of
+safety. Using too large a value for this tolerance might affect
+simulation accuracy. Using too small a value will affect
+computational efficiency. Some experimentation with this setting
+might be called for.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="reaction-options">
+<h3>Reaction Options<a class="headerlink" href="#reaction-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>Reaction Options set the types of reactions that apply to a water
+quality analysis. They include the following:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Bulk Reaction Order</td>
+<td>Power to which concentration is
+raised when computing a bulk flow
+reaction rate. Use 1 for
+first-order reactions, 2 for
+second-order reactions, etc. Use
+any negative number for
+Michaelis-Menton kinetics. If no
+global or pipe-specific bulk
+reaction coefficients are
+assigned then this option is
+ignored.</td>
+</tr>
+<tr class="row-odd"><td>Wall Reaction Order</td>
+<td>Power to which concentration is
+raised when computing a bulk flow
+reaction rate. Choices are FIRST
+(1) for first-order reactions or
+ZERO (0) for constant rate
+reactions. If no global or
+pipe-specific wall reaction
+coefficients are assigned then
+this option is ignored.</td>
+</tr>
+<tr class="row-even"><td>Global Bulk Coefficient</td>
+<td>Default bulk reaction rate
+coefficient (K:sub:<cite>b</cite>) assigned
+to all pipes. This global
+coefficient can be overridden by
+editing this property for
+specific pipes. Use a positive
+number for growth, a negative
+number for decay, or 0 if no bulk
+reaction occurs. Units are
+concentration raised to the (1-n)
+power divided by days, where n is
+the bulk reaction order.</td>
+</tr>
+<tr class="row-odd"><td>Global Wall Coefficient</td>
+<td>Wall reaction rate coefficient
+(K:sub:<cite>w</cite>) assigned to all
+pipes. Can be overridden by
+editing this property for
+specific pipes. Use a positive
+number for growth, a negative
+number for decay, or 0 if no wall
+reaction occurs. Units are ft/day
+(US) or m/day (SI) for
+first-order reactions and mass/sq
+ft/day (US) or mass/sq m/day (SI)
+for zero- order reactions.</td>
+</tr>
+<tr class="row-even"><td>Limiting Concentration</td>
+<td>Maximum concentration that a
+substance can grow to or minimum
+value it can decay to. Bulk
+reaction rates will be
+proportional to the difference
+between the current concentration
+and this value. See discussion of
+Bulk Reactions in Section 3.4 for
+more details. Set to zero if not
+applicable.</td>
+</tr>
+<tr class="row-odd"><td>Wall Coefficient Correlation</td>
+<td>Factor correlating wall reaction
+coefficient to pipe roughness.
+See discussion of Wall Reactions
+in Section 3.4 for more details.
+Set to zero if not applicable.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="times-options">
+<h3>Times Options<a class="headerlink" href="#times-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>Times options set values for the various time steps used in an
+extended period simulation. These are listed below (times can be
+entered as decimal hours or in hours:minutes notation):</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Total Duration</td>
+<td>Total length of a simulation in
+hours. Use 0 to run a single
+period (snapshot) hydraulic
+analysis.</td>
+</tr>
+<tr class="row-odd"><td>Hydraulic Time Step</td>
+<td>Time interval between
+re-computation of system
+hydraulics. Normal default is 1
+hour.</td>
+</tr>
+<tr class="row-even"><td>Quality Time Step</td>
+<td>Time interval between routing of
+water quality constituent. Normal
+default is 5 minutes (0:05
+hours).</td>
+</tr>
+<tr class="row-odd"><td>Pattern Time Step</td>
+<td>Time interval used with all time
+patterns. Normal default is 1
+hour.</td>
+</tr>
+<tr class="row-even"><td>Pattern Start Time</td>
+<td>Hours into all time patterns at
+which the simulation begins
+(e.g., a value of 2 means that
+the simulation begins with all
+time patterns starting at their
+second hour). Normal default is
+0.</td>
+</tr>
+<tr class="row-odd"><td>Reporting Time Step</td>
+<td>Time interval between times at
+which computed results are
+reported. Normal default is 1
+hour.</td>
+</tr>
+<tr class="row-even"><td>Report Start Time</td>
+<td>Hours into simulation at which
+computed results begin to be
+reported. Normal default is 0.</td>
+</tr>
+<tr class="row-odd"><td>Starting Time of Day</td>
+<td>Clock time (e.g., 7:30 am, 10:00
+pm) at which simulation begins.
+Default is 12:00 am (midnight).</td>
+</tr>
+<tr class="row-even"><td>Statistic</td>
+<td>Type of statistical processing
+used to summarize the results of
+an extended period simulation.
+Choices are:</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; NONE (results reported
+at each reporting time step)</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; AVERAGE (time-averaged
+results reported)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MINIMUM (minimum value
+results reported)</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; MAXIMUM (maximum value
+results reported)</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>•&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; RANGE (difference
+between maximum and minimum
+results reported)</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Statistical processing is applied
+to all node and link results
+obtained between the Report Start
+Time and the Total Duration.</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note:</strong> To run a single-period hydraulic analyses (also called a
+snapshot analysis) enter 0 for Total Duration. In this case entries
+for all of the other time options, with the exception of Starting
+Time of Day, are not used. Water quality analyses always require that
+a non-zero Total Duration be specified.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="energy-options">
+<h3>Energy Options<a class="headerlink" href="#energy-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>Energy Analysis Options provide default values used to compute
+pumping energy and cost when no specific energy parameters are
+assigned to a given pump. They consist of the following:</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Pump Efficiency (%)</td>
+<td>Default pump efficiency.</td>
+</tr>
+<tr class="row-odd"><td>Energy Price per Kwh</td>
+<td>Price of energy per
+kilowatt-hour. Monetary units are
+not explicitly represented.</td>
+</tr>
+<tr class="row-even"><td>Price Pattern</td>
+<td>ID label of a time pattern used
+to represent variations in energy
+price with time. Leave blank if
+not applicable.</td>
+</tr>
+<tr class="row-odd"><td>Demand Charge</td>
+<td>Additional energy charge per
+maximum kilowatt usage.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="running-an-analysis">
+<h2>Running an Analysis<a class="headerlink" href="#running-an-analysis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To run a hydraulic/water quality analysis:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Project &gt;&gt; Run Analysis</strong> or click <img alt="image113" src="_images/image18.png" /> on the
+Standard Toolbar.</li>
+<li>The progress of the analysis will be displayed in a Run Status
+window.</li>
+<li>Click <strong>OK</strong> when the analysis ends.</li>
+</ol>
+</div></blockquote>
+<p>If the analysis runs successfully the <img alt="image114" src="_images/image73.png" /> icon will appear in
+the Run Status section of the Status Bar at the bottom of the EPANET
+workspace. Any error or warning messages will appear in a Status
+Report window. If you edit the properties of the network after a
+successful run has been made, the faucet icon changes to a broken
+faucet indicating that the current computed results no longer apply
+to the modified network.</p>
+</div></blockquote>
+</div>
+<div class="section" id="troubleshooting-results">
+<h2>Troubleshooting Results<a class="headerlink" href="#troubleshooting-results" title="Permalink to this headline">¶</a></h2>
+<p>EPANET will issue specific Error and Warning messages when problems
+are encountered in running a hydraulic/water quality analysis (see
+Appendix B for a complete listing). The most common problems are
+discussed below.</p>
+<div class="section" id="pumps-cannot-deliver-flow-or-head">
+<h3>Pumps Cannot Deliver Flow or Head<a class="headerlink" href="#pumps-cannot-deliver-flow-or-head" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>EPANET will issue a warning message when a pump is asked to operate
+outside the range of its pump curve. If the pump is required to
+deliver more head than its shutoff head, EPANET will close the pump
+down. This might lead to portions of the network becoming
+disconnected from any source of water.</div></blockquote>
+</div>
+<div class="section" id="network-is-disconnected">
+<h3>Network is Disconnected<a class="headerlink" href="#network-is-disconnected" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>EPANET classifies a network as being disconnected if there is no way
+to provide water to all nodes that have demands. This can occur if
+there is no path of open links between a junction with demand and
+either a reservoir, a tank, or a junction with a negative demand. If
+the problem is caused by a closed link EPANET will still compute a
+hydraulic solution (probably with extremely large negative pressures)
+and attempt to identify the problem link in its Status Report. If no
+connecting link(s) exist EPANET will be unable to solve the hydraulic
+equations for flows and pressures and will return an Error 110
+message when an analysis is made. Under an extended period simulation
+it is possible for nodes to become disconnected as links change
+status over time.</div></blockquote>
+</div>
+<div class="section" id="negative-pressures-exist">
+<h3>Negative Pressures Exist<a class="headerlink" href="#negative-pressures-exist" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>EPANET will issue a warning message when it encounters negative
+pressures at junctions that have positive demands. This usually
+indicates that there is some problem with the way the network has
+been designed or operated. Negative pressures can occur when portions
+of the network can only receive water through links that have been
+closed off. In such cases an additional warning message about the
+network being disconnected is also issued.</div></blockquote>
+</div>
+<div class="section" id="system-unbalanced">
+<h3>System Unbalanced<a class="headerlink" href="#system-unbalanced" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A System Unbalanced condition can occur when EPANET cannot converge
+to a hydraulic solution in some time period within its allowed
+maximum number of trials. This situation can occur when valves,
+pumps, or pipelines keep switching their status from one trial to the
+next as the search for a hydraulic solution proceeds. For example,
+the pressure limits that control the status of a pump may be set too
+close together. Or a pump’s head curve might be too flat causing it
+to keep shutting on and off.</p>
+<p>To eliminate the unbalanced condition one can try to increase the
+allowed maximum number of trials or loosen the convergence accuracy
+requirement. Both of these parameters are set with the project’s
+Hydraulic Options. If the unbalanced condition persists, then another
+hydraulic option, labeled “If Unbalanced”, offers two ways to handle
+it. One is to terminate the entire analysis once the condition is
+encountered. The other is to continue seeking a hydraulic solution
+for another 10 trials with the status of all links frozen to their
+current values. If convergence is achieved then a warning message is
+issued about the system possibly being unstable. If convergence is
+not achieved then a “System Unbalanced” warning message is issued. In
+either case, the analysis will proceed to the next time period.</p>
+<p>If an analysis in a given time period ends with the system unbalanced
+then the user should recognize that the hydraulic results produced
+for this time period are inaccurate. Depending on circumstances, such
+as errors in flows into or out of storage tanks, this might affect
+the accuracy of results in all future periods as well.</p>
+</div></blockquote>
+</div>
+<div class="section" id="hydraulic-equations-unsolvable">
+<h3>Hydraulic Equations Unsolvable<a class="headerlink" href="#hydraulic-equations-unsolvable" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div>Error 110 is issued if at some point in an analysis the set of
+equations that model flow and energy balance in the network cannot be
+solved. This can occur when some portion of a system demands water
+but has no links physically connecting it to any source of water. In
+such a case EPANET will also issue warning messages about nodes being
+disconnected. The equations might also be unsolvable if unrealistic
+numbers were used for certain network properties.</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="9_viewing_results.html" class="btn btn-neutral float-right" title="9. VIEWING RESULTS" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="7_map.html" class="btn btn-neutral" title="7. WORKING WITH THE MAP" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

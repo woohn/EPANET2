@@ -1,0 +1,1237 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>9. VIEWING RESULTS &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="10. PRINTING AND COPYING" href="10_printing_copying.html" />
+    <link rel="prev" title="8. ANALYZING A NETWORK" href="8_analyzing_network.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">9. VIEWING RESULTS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-results-on-the-map">Viewing Results on the Map</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#submitting-a-map-query">Submitting a Map Query</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-results-with-a-graph">Viewing Results with a Graph</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#general-page">General Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#series-page">Series Page</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-results-with-a-table">Viewing Results with a Table</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#type-page">Type Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#columns-page">Columns Page</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#filters-page">Filters Page</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#viewing-special-reports">Viewing Special Reports</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#status-report">Status Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy-report">Energy Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#calibration-report">Calibration Report</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#statistics-page">Statistics Page</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>9. VIEWING RESULTS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/9_viewing_results.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="viewing-results">
+<h1>9. VIEWING RESULTS<a class="headerlink" href="#viewing-results" title="Permalink to this headline">¶</a></h1>
+<p><em>This chapter describes the different ways in which the results of an
+analysis as well as the basic network input data can be viewed. These
+include different map views, graphs, tables, and special reports.</em></p>
+<hr class="docutils" />
+<div class="section" id="viewing-results-on-the-map">
+<h2>Viewing Results on the Map<a class="headerlink" href="#viewing-results-on-the-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>There are several ways in which database values and results of a
+simulation can be viewed directly on the Network Map:</p>
+<ul class="simple">
+<li>For the current settings on the Map Browser (see Section 4.6), the
+nodes and links of the map will be colored according to the color-
+coding used in the Map Legends (see Section 7.6). The map’s coloring
+will be updated as a new time period is selected in the Browser.</li>
+<li>When the Flyover Map Labeling program preference is selected (see
+Section 4.9), moving the mouse over any node or link will display its
+ID label and the value of the current viewing parameter for that node
+or link in a hint-style box.</li>
+<li>ID labels and viewing parameter values can be displayed next to all
+nodes and/or links by selecting the appropriate options on the
+Notation page of the Map Options dialog form (see Section 7.8).</li>
+<li>Nodes or links meeting a specific criterion can be identified by
+submitting a Map Query (see below).</li>
+<li>You can animate the display of results on the network map either
+forward or backward in time by using the Animation buttons on the Map
+Browser. Animation is only available when a node or link viewing
+parameter is a computed value (e.g., link flow rate can be animated
+but diameter cannot).</li>
+<li>The map can be printed, copied to the Windows clipboard, or saved as
+a DXF file or Windows metafile.</li>
+</ul>
+</div></blockquote>
+<div class="section" id="submitting-a-map-query">
+<h3>Submitting a Map Query<a class="headerlink" href="#submitting-a-map-query" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A Map Query identifies nodes or links on the network map that meet a
+specific criterion (e.g., nodes with pressure less than 20 psi, links
+with velocity above 2 ft/sec, etc.). See Figure 9.1 for an example.
+To submit a map query:</p>
+<blockquote>
+<div><p><img alt="image115" src="_images/image74.png" /></p>
+<p><strong>Figure 9.1</strong> Results of a Map Query</p>
+<ol class="arabic simple">
+<li>Select a time period in which to query the map from the Map Browser.</li>
+<li>Select <strong>View &gt;&gt; Query</strong> or click <img alt="image116" src="_images/image45.png" /> on the Map Toolbar.</li>
+<li>Fill in the following information in the Query dialog form that
+appears:<ul>
+<li>Select whether to search for Nodes or Links</li>
+<li>Select a parameter to compare against</li>
+<li>Select <strong>Above</strong>, <strong>Below,</strong> or <strong>Equals</strong></li>
+<li>Enter a value to compare against</li>
+</ul>
+</li>
+<li>Click the <strong>Submit</strong> button. The objects that meet the criterion will
+be highlighted on the map.</li>
+<li>As a new time period is selected in the Browser, the query results
+are automatically updated.</li>
+<li>You can submit another query using the dialog box or close it by
+clicking the button in the upper right corner.</li>
+</ol>
+</div></blockquote>
+<p>After the Query box is closed the map will revert back to its
+original display.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="viewing-results-with-a-graph">
+<h2>Viewing Results with a Graph<a class="headerlink" href="#viewing-results-with-a-graph" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Analysis results, as well as some design parameters, can be viewed
+using several different types of graphs. Graphs can be printed,
+copied to the Windows clipboard, or saved as a data file or Windows
+metafile. The following types of graphs can be used to view values
+for a selected parameter (see Figure 9.2 for examples of each):</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Type of Plot</em></th>
+<th class="head"><em>Description</em></th>
+<th class="head"><em>Applies To</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Time Series Plot</td>
+<td>Plots value versus
+time</td>
+<td>Specific nodes or
+links</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>over all time periods</td>
+</tr>
+<tr class="row-even"><td>Profile Plot</td>
+<td>Plots value versus
+distance</td>
+<td>A list of nodes at a</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>&#160;</td>
+<td>specific time</td>
+</tr>
+<tr class="row-even"><td>Contour Plot</td>
+<td>Shows regions of the
+map</td>
+<td>All nodes at a
+specific time</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>where values fall
+within specific
+intervals</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>Frequency Plot</td>
+<td>Plots value versus
+fraction of</td>
+<td>All nodes or links at
+a specific time</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>objects at or below
+the value</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-even"><td>System Flow</td>
+<td>Plots total system
+production</td>
+<td>Water demand for all
+nodes over all time
+periods</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>and consumption
+versus time</td>
+<td>&#160;</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note</strong>: When only a single node or link is graphed in a Time Series
+Plot the graph will also display any measured data residing in a
+Calibration File that has been registered with the project (see
+Section 5.3).</div></blockquote>
+<p>To create a graph:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Report &gt;&gt; Graph</strong> or click <img alt="image117" src="_images/image25.png" /> on the Standard
+Toolbar.</li>
+<li>Fill in the choices on the Graph Selection dialog box that appears.</li>
+<li>Click <strong>OK</strong> to create the graph.</li>
+</ol>
+</div></blockquote>
+<p>The Graph Selection dialog, as pictured in Figure 9.3, is used to
+select a type of graph and its contents to display. The choices
+available in the dialog consist of the following:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Item</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Graph Type</td>
+<td>Selects a graph type</td>
+</tr>
+<tr class="row-odd"><td>Parameter</td>
+<td>Selects a parameter to graph</td>
+</tr>
+<tr class="row-even"><td>Time Period</td>
+<td>Selects a time period to graph
+(does not apply to Time Series
+plots)</td>
+</tr>
+<tr class="row-odd"><td>Object Type</td>
+<td>Selects either Nodes or Links
+(only Nodes can be graphed on
+Profile and Contour plots)</td>
+</tr>
+<tr class="row-even"><td>Items to Graph</td>
+<td>Selects items to graph (applies
+only to Time Series and Profile
+plots)</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><blockquote>
+<div><p><img alt="image118" src="_images/image75.png" /></p>
+<p><img alt="image119" src="_images/image76.png" /></p>
+<p><img alt="image120" src="_images/image77.png" /></p>
+<p><img alt="image121" src="_images/image78.png" /></p>
+<p><img alt="image122" src="_images/image79.png" /></p>
+</div></blockquote>
+<p><strong>Figure 9.2</strong> Examples of Different Types of Graphs</p>
+<blockquote>
+<div><img alt="image123" src="_images/image80.png" /></div></blockquote>
+<p><strong>Figure 9.3</strong> Graph Selection Dialog</p>
+</div></blockquote>
+<p>Time Series plots and Profile plots require one or more objects be
+selected for plotting. To select items into the Graph Selection
+dialog for plotting:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select the object (node or link) either on the Network Map or on the
+Data Browser. (The Graph Selection dialog will remain visible during
+this process).</li>
+<li>Click the <strong>Add</strong> button on the Graph Selection dialog to add the
+selected item to the list.</li>
+</ol>
+</div></blockquote>
+<p>In place of Step 2, you can also drag the object’s label from the
+Data Browser onto the Form’s title bar or onto the Items to Graph
+list box.</p>
+<p>The other buttons on the <strong>Graph Selection</strong> dialog form are used as
+follows:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Button</em></th>
+<th class="head"><em>Purpose</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Load (Profile Plot Only)</td>
+<td>Loads a previously saved list of
+nodes</td>
+</tr>
+<tr class="row-odd"><td>Save (Profile Plot Only)</td>
+<td>Saves current list of nodes to
+file</td>
+</tr>
+<tr class="row-even"><td>Delete</td>
+<td>Deletes selected item from list</td>
+</tr>
+<tr class="row-odd"><td>Move Up</td>
+<td>Moves selected item on list up
+one position</td>
+</tr>
+<tr class="row-even"><td>Move Down</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Moves selected item on list
+down one position</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p>To customize the appearance of a graph:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Make the graph the active window (click on its title bar).</li>
+<li>Select <strong>Report &gt;&gt; Options</strong>, or click <img alt="image124" src="_images/image46.png" /> on the Standard
+Toolbar, or right-click on the graph.</li>
+<li>For a Time Series, Profile, Frequency or System Flow plot, use the
+resulting Graph Options dialog (Figure 9.4) to customize the graph’s
+appearance.</li>
+<li>For a Contour plot use the resulting Contour Options dialog to
+customize the plot.</li>
+</ol>
+<p><strong>Note</strong>: A Time Series, Profile, or Frequency plot can be zoomed by
+holding down the <strong>Ctrl</strong> key while drawing a zoom rectangle with the
+mouse’s left button held down. Drawing the rectangle from left to
+right zooms in, drawing from right to left zooms out. The plot can
+also be panned in any direction by holding down the <strong>Ctrl</strong> key and
+moving the mouse across the plot with the right button held down.</p>
+</div></blockquote>
+<p>The Graph Options dialog form (Figure 9.4) is used to customize the
+appearance of an X-Y graph. To use the dialog box:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select from among the five tabbed pages that cover the following
+categories of options:<ul>
+<li>General</li>
+<li>Horizontal Axis</li>
+<li>Vertical Axis</li>
+<li>Legend</li>
+<li>Series</li>
+</ul>
+</li>
+<li>Check the <strong>Default</strong> box if you wish to use the current settings as
+defaults for all new graphs as well.</li>
+<li>Select <strong>OK</strong> to accept your selections.</li>
+</ol>
+</div></blockquote>
+<p>The items contained on each page of the Graph Options dialog are as
+follows:</p>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="general-page">
+<h3>General Page<a class="headerlink" href="#general-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Panel Color</td>
+<td>Color of the panel which
+surrounds the graph’s plotting
+area</td>
+</tr>
+<tr class="row-odd"><td>Background Color</td>
+<td>Color of graph’s plotting area</td>
+</tr>
+<tr class="row-even"><td>View in 3D</td>
+<td>Check if graph should be drawn in
+3D</td>
+</tr>
+<tr class="row-odd"><td>3D Effect Percent</td>
+<td>Degree to which 3D effect is
+drawn</td>
+</tr>
+<tr class="row-even"><td>Main Title</td>
+<td>Text of graph’s main title</td>
+</tr>
+<tr class="row-odd"><td>Font</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Changes the font used for
+the main title</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><img alt="image125" src="_images/image81.png" /></p>
+<p><strong>Figure 9.4</strong> Graph Options Dialog</p>
+<p>Horizontal and Vertical Axis Pages</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Minimum</td>
+<td>Sets minimum axis value (minimum
+data value is shown in
+parentheses). Can be left blank.</td>
+</tr>
+<tr class="row-odd"><td>Maximum</td>
+<td>Sets maximum axis value (maximum
+data value is shown in
+parentheses). Can be left blank.</td>
+</tr>
+<tr class="row-even"><td>Increment</td>
+<td>Sets increment between axis
+labels. Can be left blank.</td>
+</tr>
+<tr class="row-odd"><td>Auto Scale</td>
+<td>If checked then Minimum, Maximum,
+and Increment settings are
+ignored.</td>
+</tr>
+<tr class="row-even"><td>Gridlines</td>
+<td>Selects type of gridline to draw.</td>
+</tr>
+<tr class="row-odd"><td>Axis Title</td>
+<td>Text of axis title</td>
+</tr>
+<tr class="row-even"><td>Font</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Click to select a font for
+the axis title.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div>Legend Page</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Position</td>
+<td>Selects where to place the
+legend.</td>
+</tr>
+<tr class="row-odd"><td>Color</td>
+<td>Selects color to use for legend
+background.</td>
+</tr>
+<tr class="row-even"><td>Symbol Width</td>
+<td>Selects width to use (in pixels)
+to draw symbol portion of the
+legend.</td>
+</tr>
+<tr class="row-odd"><td>Framed</td>
+<td>Places a frame around the legend.</td>
+</tr>
+<tr class="row-even"><td>Visible</td>
+<td><table border="1" class="first last docutils">
+<colgroup>
+<col width="100%" />
+</colgroup>
+<tbody valign="top">
+<tr class="row-odd"><td>Makes the legend visible.</td>
+</tr>
+</tbody>
+</table>
+</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="series-page">
+<h3>Series Page<a class="headerlink" href="#series-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Series page (see Figure 9.4) of the Graph Options dialog controls
+how individual data series (or curves) are displayed on a graph. To
+use this page:</p>
+<blockquote>
+<div><ul>
+<li><p class="first">Select a data series to work with from the Series combo box.</p>
+</li>
+<li><p class="first">Edit the title used to identify this series in the legend.</p>
+</li>
+<li><p class="first">Click the Font button to change the font used for the legend. (Other
+legend properties are selected on the Legend page of the dialog.)</p>
+</li>
+<li><p class="first">Select a property of the data series you would like to modify. The
+choices are:</p>
+<ul class="simple">
+<li>Lines</li>
+<li>Markers</li>
+<li>Patterns</li>
+<li>Labels</li>
+</ul>
+<p>(Not all properties are available for some types of graphs.)</p>
+</li>
+</ul>
+</div></blockquote>
+<p>The data series properties that can be modified include the
+following:</p>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Category</em></th>
+<th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Lines</em></td>
+<td>Style</td>
+<td>Selects line
+style.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Color</td>
+<td>Selects line
+color.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Size</td>
+<td>Selects line
+thickness (only
+for solid line
+style).</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Visible</td>
+<td>Determines if line
+is visible.</td>
+</tr>
+<tr class="row-even"><td><em>Markers</em></td>
+<td>Style</td>
+<td>Selects marker
+style.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Color</td>
+<td>Selects marker
+color.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Size</td>
+<td>Selects marker
+size.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Visible</td>
+<td>Determines if
+marker is visible.</td>
+</tr>
+<tr class="row-even"><td><em>Patterns</em></td>
+<td>Style</td>
+<td>Selects pattern
+style.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Color</td>
+<td>Selects pattern
+color.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Stacking</td>
+<td>Not used with
+EPANET.</td>
+</tr>
+<tr class="row-odd"><td><em>Labels</em></td>
+<td>Style</td>
+<td>Selects what type
+of information is
+displayed in the
+label.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Color</td>
+<td>Selects the color
+of the label’s
+background.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Transparent</td>
+<td>Determines if
+graph shows
+through label or
+not.</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Show Arrows</td>
+<td>Determines if
+arrows are
+displayed on pie
+charts.</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Visible</td>
+<td>Determines if
+labels are visible
+or not.</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+<p>The Contour Options dialog form (Figure 9.5) is used to customize the
+appearance of a contour graph. A description of each option is
+provided below:</p>
+<blockquote>
+<div><p><img alt="image126" src="_images/image82.png" /></p>
+<p><strong>Figure 9.5</strong> Contour Plot Options Dialog</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="33%" />
+<col width="33%" />
+<col width="33%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Category</em></th>
+<th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td><em>Legend</em></td>
+<td>Display Legend</td>
+<td>Toggles display of
+legend on/off</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Modify Legend</td>
+<td>Changes colors and
+contour intervals</td>
+</tr>
+<tr class="row-even"><td><em>Network</em></td>
+<td>&#160;</td>
+<td>&#160;</td>
+</tr>
+<tr class="row-odd"><td><em>Backdrop</em></td>
+<td>Foreground</td>
+<td>Color of network
+image displayed on
+plot</td>
+</tr>
+<tr class="row-even"><td>&#160;</td>
+<td>Background</td>
+<td>Background color
+used for line
+contour plot</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Link Size</td>
+<td>Thickness of lines
+used to display
+network</td>
+</tr>
+<tr class="row-even"><td><em>Style</em></td>
+<td>Filled Contours</td>
+<td>Plot uses colored
+area-filled
+contours</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Line Contours</td>
+<td>Plot uses colored
+line contours</td>
+</tr>
+<tr class="row-even"><td><em>Contour Lines</em></td>
+<td>Thickness</td>
+<td>Thickness of lines
+used for contour
+intervals</td>
+</tr>
+<tr class="row-odd"><td>&#160;</td>
+<td>Lines per Level</td>
+<td>Number of
+sub-contours per
+major contour
+level</td>
+</tr>
+<tr class="row-even"><td><em>Default</em></td>
+<td>&#160;</td>
+<td>Saves choices as
+defaults for next
+contour plot</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="viewing-results-with-a-table">
+<h2>Viewing Results with a Table<a class="headerlink" href="#viewing-results-with-a-table" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET allows you to view selected project data and analysis results
+in a tabular format:</p>
+<blockquote>
+<div><ul class="simple">
+<li>A Network Table lists properties and results for all nodes or links
+at a specific period of time.</li>
+<li>A Time Series Table lists properties and results for a specific node
+or link in all time periods.</li>
+</ul>
+</div></blockquote>
+<p>Tables can be printed, copied to the Windows clipboard, or saved to
+file. An example table is shown in Figure 9.6.</p>
+<p>To create a table:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Table</strong> or click <img alt="image127" src="_images/image19.png" /> on the Standard Toolbar.</li>
+<li>Use the Table Options dialog box that appears to select:<ul>
+<li>the type of table</li>
+<li>the quantities to display in each column</li>
+<li>any filters to apply to the data</li>
+</ul>
+</li>
+</ol>
+<blockquote>
+<div><blockquote>
+<div><img alt="image128" src="_images/image83.png" /></div></blockquote>
+<p><strong>Figure 9.6</strong> Example Network Nodes Table</p>
+</div></blockquote>
+</div></blockquote>
+<p>The Table Options dialog form has three tabbed pages as shown in
+Figure 9.7. All three pages are available when a table is first
+created. After the table is created, only the Columns and Filters
+tabs will appear. The options available on each page are as follows:</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image129" src="_images/image84.png" /></div></blockquote>
+<p><strong>Figure 9.7</strong> Table Selection Dialog</p>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="type-page">
+<h3>Type Page<a class="headerlink" href="#type-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Type page of the Table Options dialog is used to select the type
+of table to create. The choices are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>All network nodes at a specific time period</li>
+<li>All network links at a specific time period</li>
+<li>All time periods for a specific node</li>
+<li>All time periods for a specific link</li>
+</ul>
+</div></blockquote>
+<p>Data fields are available for selecting the time period or node/link
+to which the table applies.</p>
+</div></blockquote>
+</div>
+<div class="section" id="columns-page">
+<h3>Columns Page<a class="headerlink" href="#columns-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Columns page of the Table Options dialog form (Figure 9.8)
+selects the parameters that are displayed in the table’s columns.</p>
+<blockquote>
+<div><ul class="simple">
+<li>Click the checkbox next to the name of each parameter you wish to
+include in the table, or if the item is already selected, click in
+the box to deselect it. (The keyboard’s Up and Down Arrow keys can be
+used to move between the parameter names, and the spacebar can be
+used to select/deselect choices).</li>
+<li>To sort a Network-type table with respect to the values of a
+particular parameter, select the parameter from the list and check
+off the <strong>Sorted By</strong> box at the bottom of the form. (The sorted
+parameter does not have to be selected as one of the columns in the
+table.) Time Series tables cannot be sorted.</li>
+</ul>
+<blockquote>
+<div><blockquote>
+<div><img alt="image130" src="_images/image85.png" /></div></blockquote>
+<p><strong>Figure 9.8</strong> Columns Page of the Table Selection Dialog</p>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="filters-page">
+<h3>Filters Page<a class="headerlink" href="#filters-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Filters page of the Table Options dialog form (Figure 9.9) is
+used to define conditions for selecting items to appear in a table.
+To filter the contents of a table:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use the controls at the top of the page to create a condition (e.g.,
+Pressure Below 20).</li>
+<li>Click the <strong>Add</strong> button to add the condition to the list.</li>
+<li>Use the <strong>Delete</strong> button to remove a selected condition from the
+list.</li>
+</ul>
+</div></blockquote>
+<p>Multiple conditions used to filter the table are connected by AND’s.
+If a table has been filtered, a re-sizeable panel will appear at the
+bottom indicating how many items have satisfied the filter
+conditions.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image131" src="_images/image86.png" /></div></blockquote>
+<p><strong>Figure 9.9</strong> Filters Page of the Table Selection Dialog</p>
+</div></blockquote>
+<p>Once a table has been created you can add/delete columns or sort or
+filter its data:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select <strong>Report &gt;&gt; Options</strong> or click <img alt="image132" src="_images/image46.png" /> on the Standard
+Toolbar or right-click on the table.</li>
+<li>Use the Columns and Filters pages of the Table Selection dialog form
+to modify your table.</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="viewing-special-reports">
+<h2>Viewing Special Reports<a class="headerlink" href="#viewing-special-reports" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>In addition to graphs and tables, EPANET can generate several other
+specialized reports. These include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Status Report</li>
+<li>Energy Report</li>
+<li>Calibration Report</li>
+<li>Reaction Report</li>
+<li>Full Report</li>
+</ul>
+</div></blockquote>
+<p>All of these reports can be printed, copied to a file, or copied to
+the Windows clipboard (the Full Report can only be saved to file.)</p>
+</div></blockquote>
+<div class="section" id="status-report">
+<h3>Status Report<a class="headerlink" href="#status-report" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>EPANET writes all error and warning messages generated during an
+analysis to a Status Report (see Figure 9.10). Additional information
+on when network objects change status is also written to this report
+if the Status Report option in the project’s Hydraulics Options was
+set to Yes or Full. To view a status report on the most recently
+completed analysis select <strong>Report &gt;&gt; Status</strong> from the main menu.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image133" src="_images/image87.png" /></div></blockquote>
+<p><strong>Figure 9.10</strong> Excerpt from a Status Report</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="energy-report">
+<h3>Energy Report<a class="headerlink" href="#energy-report" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>EPANET can generate an Energy Report that displays statistics about
+the energy consumed by each pump and the cost of this energy usage
+over the duration of a simulation (see Figure 9.11). To generate an
+Energy Report select <strong>Report &gt;&gt; Energy</strong> from the main menu. The
+report has two tabbed pages. One displays energy usage by pump in a
+tabular format. The second compares a selected energy statistic
+between pumps using a bar chart.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image134" src="_images/image88.png" /></div></blockquote>
+<p><strong>Figure 9.11</strong> Example Energy Report</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="calibration-report">
+<h3>Calibration Report<a class="headerlink" href="#calibration-report" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>A Calibration Report can show how well EPANET’s simulated results
+match measurements taken from the system being modeled. To create a
+Calibration Report:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>First make sure that Calibration Data for the quantity being
+calibrated has been registered with the project (see Section 5.3).</li>
+<li>Select <strong>Report &gt;&gt; Calibration</strong> from the main menu.</li>
+<li>In the Calibration Report Options form that appears (see Figure
+9.12):<ul>
+<li>select a parameter to calibrate against</li>
+<li>select the measurement locations to use in the report</li>
+</ul>
+</li>
+<li>Click <strong>OK</strong> to create the report.</li>
+</ol>
+</div></blockquote>
+<p>After the report is created the Calibration Report Options form can
+be recalled to change report options by selecting <strong>Report &gt;&gt;
+Options</strong> or by clicking <img alt="image135" src="_images/image46.png" /> on the Standard Toolbar when the
+report is the current active window in EPANET’s workspace.</p>
+<p>A sample Calibration Report is shown in Figure 9.13. It contains
+three tabbed pages: Statistics, Correlation Plot, and Mean
+Comparisons.</p>
+</div></blockquote>
+</div>
+<div class="section" id="statistics-page">
+<h3>Statistics Page<a class="headerlink" href="#statistics-page" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The Statistics page of a Calibration Report lists various error
+statistics between simulated and observed values at each measurement
+location and for the network as a whole. If a measured value at a
+location was taken at a time in-between the simulation’s reporting
+time intervals then a simulated value for that time is found by
+interpolating between the simulated values at either end of the
+interval.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image136" src="_images/image89.png" /></div></blockquote>
+<p><strong>Figure 9.12</strong> Calibration Report Options Dialog</p>
+<blockquote>
+<div><img alt="image137" src="_images/image90.png" /></div></blockquote>
+<p><strong>Figure 9.13</strong> Example Calibration Report</p>
+</div></blockquote>
+<p>The statistics listed for each measurement location are:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Number of observations</li>
+<li>Mean of the observed values</li>
+<li>Mean of the simulated values</li>
+<li>Mean absolute error between each observed and simulated value</li>
+<li>Root mean square error (square root of the mean of the squared errors
+between the observed and simulated values).</li>
+</ul>
+</div></blockquote>
+<p>These statistics are also provided for the network as a whole (i.e.,
+all measurements and model errors pooled together). Also listed is
+the correlation between means (correlation coefficient between the
+mean observed value and mean simulated value at each location).</p>
+<p><strong>Correlation Plot Page</strong></p>
+<p>The Correlation Plot page of a Calibration Report displays a scatter
+plot of the observed and simulated values for each measurement made
+at each location. Each location is assigned a different color in the
+plot. The closer that the points come to the 45-degree angle line on
+the plot the closer is the match between observed and simulated
+values.</p>
+<p><strong>Mean Comparisons Page</strong></p>
+<p>The Mean Comparisons page of a Calibration Report presents a bar
+chart that compares the mean observed and mean simulated value for a
+calibration parameter at each location where measurements were taken.</p>
+<p><strong>Reaction Report</strong></p>
+<p>A Reaction Report, available when modeling the fate of a reactive
+water quality constituent, graphically depicts the overall average
+reaction rates occurring throughout the network in the following
+locations:</p>
+<blockquote>
+<div><ul class="simple">
+<li>the bulk flow</li>
+<li>the pipe wall</li>
+<li>within storage tanks.</li>
+</ul>
+</div></blockquote>
+<p>A pie chart shows what percent of the overall reaction rate is
+occurring in each location. The chart legend displays the average
+rates in mass units per hour. A footnote on the chart shows the
+inflow rate of the reactant into the system.</p>
+<p>The information in the Reaction Report can show at a glance what
+mechanism is responsible for the majority of growth or decay of a
+substance in the network. For example, if one observes that most of
+the chlorine decay in a system is occurring in the storage tanks and
+not at the walls of the pipes then one might infer that a corrective
+strategy of pipe cleaning and replacement will have little effect in
+improving chlorine residuals.</p>
+<p>A Graph Options dialog box can be called up to modify the appearance
+of the pie chart by selecting <strong>Report &gt;&gt; Options</strong> or by clicking
+<img alt="image138" src="_images/image46.png" /> on the Standard Toolbar, or by right-clicking anywhere on
+the chart.</p>
+<p><strong>Full Report</strong></p>
+<p>When the <img alt="image139" src="_images/image73.png" /> icon appears in the Run Status section of the
+Status Bar, a report of computed results for all nodes, links and
+time periods can be saved to file by selecting <strong>Full</strong> from the
+<strong>Report</strong> menu. This report, which can be viewed or printed outside
+of EPANET using any text editor or word processor, contains the
+following information:</p>
+<blockquote>
+<div><ul class="simple">
+<li>project title and notes</li>
+<li>a table listing the end nodes, length, and diameter of each link</li>
+<li>a table listing energy usage statistics for each pump</li>
+<li>a pair of tables for each time period listing computed values for
+each node (demand, head, pressure, and quality) and for each link
+(flow, velocity, headloss, and status).</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<blockquote>
+<div>This feature is useful mainly for documenting the final results of a
+network analysis on small to moderately sized networks (full report
+files for large networks analyzed over many time periods can easily
+consume dozens of megabytes of disk space). The other reporting tools
+described in this chapter are available for viewing computed results
+on a more selective basis.</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="10_printing_copying.html" class="btn btn-neutral float-right" title="10. PRINTING AND COPYING" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="8_analyzing_network.html" class="btn btn-neutral" title="8. ANALYZING A NETWORK" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

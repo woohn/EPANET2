@@ -1,0 +1,783 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>2. QUICK START TUTORIAL &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3. THE NETWORK MODEL" href="3_network_model.html" />
+    <link rel="prev" title="1. INTRODUCTION" href="1_introduction.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2. QUICK START TUTORIAL</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#installing-epanet">Installing EPANET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#example-network">Example Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#project-setup">Project Setup</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#drawing-the-network">Drawing the Network</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-object-properties">Setting Object Properties</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#saving-and-opening-projects">Saving and Opening Projects</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-single-period-analysis">Running a Single Period Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-an-extended-period-analysis">Running an Extended Period Analysis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#running-a-water-quality-analysis">Running a Water Quality Analysis</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>2. QUICK START TUTORIAL</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/2_quickstart.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="quick-start-tutorial">
+<h1>2. QUICK START TUTORIAL<a class="headerlink" href="#quick-start-tutorial" title="Permalink to this headline">¶</a></h1>
+<p><em>This chapter provides a tutorial on how to use EPANET. If you are
+not familiar with the components that comprise a water distribution
+system and how these are represented in pipe network models you might
+want to review the first two sections of Chapter 3 first.</em></p>
+<hr class="docutils" />
+<div class="section" id="installing-epanet">
+<h2>Installing EPANET<a class="headerlink" href="#installing-epanet" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET Version 2 is designed to run under the Windows 95/98/NT
+operating system of an IBM/Intel-compatible personal computer. It is
+distributed as a single file, <strong>en2setup.exe</strong>, which contains a
+self-extracting setup program. To install EPANET:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Run</strong> from the Windows Start menu.</li>
+<li>Enter the full path and name of the <strong>en2setup.exe</strong> file or click
+the <strong>Browse</strong> button to locate it on your computer.</li>
+<li>Click the <strong>OK</strong> button type to begin the setup process.</li>
+</ol>
+</div></blockquote>
+<p>The setup program will ask you to choose a folder (directory) where
+the EPANET files will be placed. The default folder is <strong>c:Program
+FilesEPANET2</strong>. After the files are installed your Start Menu will
+have a new item named EPANET 2.0. To launch EPANET simply select this
+item off of the Start Menu, then select EPANET 2.0 from the submenu that
+appears. (The name of the executable file that runs EPANET under
+Windows is <strong>epanet2w.exe</strong>.)</p>
+<p>Should you wish to remove EPANET from your computer, you can use the
+following procedure:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>Settings</strong> from the Windows Start menu.</li>
+<li>Select <strong>Control Panel</strong> from the Settings menu.</li>
+<li>Double-click on the <strong>Add/Remove Programs</strong> item.</li>
+<li>Select EPANET 2.0 from the list of programs that appears.</li>
+<li>Click the <strong>Add/Remove</strong> button.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="example-network">
+<h2>Example Network<a class="headerlink" href="#example-network" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>In this tutorial we will analyze the simple distribution network
+shown in Figure 2.1 below. It consists of a source reservoir (e.g., a
+treatment plant clearwell) from which water is pumped into a two-loop
+pipe network. There is also a pipe leading to a storage tank that
+floats on the system. The ID labels for the various components are
+shown in the figure. The nodes in the network have the
+characteristics shown in Table 2.1. Pipe properties are listed in
+Table 2.2. In addition, the pump (Link 9) can
+deliver 150 ft of head at a flow of 600 gpm, and the tank (Node 8)
+has a 60-ft diameter, a 3.5-ft water level, and a maximum level of 20
+feet.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image0" src="_images/image1.jpeg" /></div></blockquote>
+<p><strong>Figure 2.1</strong> Example Pipe Network</p>
+<p><strong>Table 2.1</strong> Example Network Node Properties</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="24%" />
+<col width="44%" />
+<col width="32%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Node</th>
+<th class="head">Elevation
+(ft)</th>
+<th class="head">Demand
+(gpm)</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>700</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>700</td>
+<td>0</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>710</td>
+<td>150</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>700</td>
+<td>150</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>650</td>
+<td>200</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>700</td>
+<td>150</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>700</td>
+<td>0</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>830</td>
+<td>0</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Table 2.2</strong> Example Network Pipe Properties</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="15%" />
+<col width="27%" />
+<col width="37%" />
+<col width="22%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Pipe</th>
+<th class="head">Length (ft)</th>
+<th class="head">Diameter (inches)</th>
+<th class="head">C-Factor</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>1</td>
+<td>3000</td>
+<td>14</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>2</td>
+<td>5000</td>
+<td>12</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>3</td>
+<td>5000</td>
+<td>8</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>4</td>
+<td>5000</td>
+<td>8</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>5</td>
+<td>5000</td>
+<td>8</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>6</td>
+<td>7000</td>
+<td>10</td>
+<td>100</td>
+</tr>
+<tr class="row-even"><td>7</td>
+<td>5000</td>
+<td>6</td>
+<td>100</td>
+</tr>
+<tr class="row-odd"><td>8</td>
+<td>7000</td>
+<td>6</td>
+<td>100</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="project-setup">
+<h2>Project Setup<a class="headerlink" href="#project-setup" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Our first task is to create a new project in EPANET and make sure
+that certain default options are selected. To begin, launch EPANET,
+or if it is already running select <strong>File &gt;&gt; New</strong> (from the menu
+bar) to create a new project. Then select <strong>Project</strong>
+<strong>&gt;&gt; Defaults</strong> to open the dialog form shown in Figure 2.2. We will
+use this dialog to have EPANET automatically label new objects with
+consecutive numbers starting from 1 as they are added to the network.
+On the ID Labels page of the dialog, clear all of the ID Prefix
+fields and set the ID Increment to 1. Then select the Hydraulics page
+of the dialog and set the choice of Flow Units to GPM (gallons per
+minute). This implies that US Customary units will be used for all
+other quantities as well (length in feet, pipe diameter in inches,
+pressure in psi, etc.). Also select Hazen    - Williams (H-W) as the
+headloss formula. If you wanted to save these choices for all future
+new projects you could check the <strong>Save</strong> box at the bottom of the
+form before accepting it by clicking the <strong>OK</strong> button.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image1" src="_images/image2.png" /></div></blockquote>
+<p><strong>Figure 2.2</strong> Project Defaults Dialog</p>
+</div></blockquote>
+<p>Next we will select some map display options so that as we add
+objects to the map, we will see their ID labels and symbols
+displayed. Select <strong>View &gt;&gt; Options</strong> to bring up the Map Options
+dialog form. Select the Notation page on this form and check the
+settings shown in Figure 2.3 below. Then switch to the Symbols page
+and check all of the boxes. Click the <strong>OK</strong> button to accept these
+choices and close the dialog.</p>
+<p>Finally, before drawing our network we should insure that our map
+scale settings are acceptable. Select <strong>View &gt;&gt; Dimensions</strong> to bring
+up the Map Dimensions dialog. Note the default dimensions assigned
+for a new project. These settings will suffice for this example, so
+click the <strong>OK</strong> button.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image2" src="_images/image3.png" /></div></blockquote>
+<p><strong>Figure 2.3</strong> Map Options Dialog</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="drawing-the-network">
+<h2>Drawing the Network<a class="headerlink" href="#drawing-the-network" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>We are now ready to begin drawing our network by making use of our
+mouse and the buttons contained on the Map Toolbar shown below. (If
+the toolbar is not visible then select <strong>View &gt;&gt; Toolbars &gt;&gt; Map</strong>).</p>
+<blockquote>
+<div><img alt="image3" src="_images/image4.png" /></div></blockquote>
+<p>First we will add the reservoir. Click the Reservoir button <img alt="image4" src="_images/image5.png" />.
+Then click the mouse on the map at the location of the reservoir
+(somewhere to the left of the map).</p>
+<p>Next we will add the junction nodes. Click the Junction button
+<img alt="image5" src="_images/image6.png" /> and then click on the map at the locations of nodes 2
+through 7.</p>
+<p>Finally add the tank by clicking the Tank button <img alt="image6" src="_images/image7.png" /> and
+clicking the map where the tank is located. At this point the Network
+Map should look something like the drawing in Figure 2.4.</p>
+<blockquote>
+<div><img alt="image7" src="_images/image8.png" /></div></blockquote>
+<p><strong>Figure 2.4</strong> Network Map after Adding Nodes</p>
+<p>Next we will add the pipes. Let’s begin with pipe 1 connecting node 2
+to node 3. First click the Pipe button <img alt="image8" src="_images/image9.png" /> on the Toolbar. Then
+click the mouse on node 2 on the map and then on node 3. Note how an
+outline of the pipe is drawn as you move the mouse from node 2 to 3.
+Repeat this procedure for pipes 2 through 7.</p>
+<p>Pipe 8 is curved. To draw it, click the mouse first on Node 5. Then
+as you move the mouse towards Node 6, click at those points where a
+change of direction is needed to maintain the desired shape. Complete
+the process by clicking on Node 6.</p>
+<p>Finally we will add the pump. Click the Pump button <img alt="image9" src="_images/image10.png" />, click
+on node 1 and then on node 2.</p>
+<p>Next we will label the reservoir, pump and tank. Select the Text
+button <img alt="image10" src="_images/image11.png" /> on the Map Toolbar and click somewhere close to the
+reservoir (Node 1). An edit box will appear. Type in the word SOURCE
+and then hit the <strong>Enter</strong> key. Click next to the pump and enter its
+label, then do the same for the tank. Then click the Selection button
+<img alt="image11" src="_images/image12.png" /> on the Toolbar to put the map into Object Selection mode
+rather than Text Insertion mode.</p>
+<p>At this point we have completed drawing the example network. Your
+Network Map should look like the map in Figure 2.1. If the nodes are
+out of position you can move them around by clicking the node to
+select it, and then dragging it with the left mouse button held down
+to its new position. Note how pipes connected to the node are moved
+along with the node. The labels can be repositioned in similar
+fashion. To re    - shape the curved Pipe 8:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>First click on Pipe 8 to select it and then click the <img alt="image12" src="_images/image13.png" />
+button on the Map Toolbar to put the map into Vertex Selection mode.</li>
+<li>Select a vertex point on the pipe by clicking on it and then drag it
+to a new position with the left mouse button held down.</li>
+<li>If required, vertices can be added or deleted from the pipe by right-
+clicking the mouse and selecting the appropriate option from the
+popup menu that appears.</li>
+<li>When finished, click <img alt="image13" src="_images/image12.png" /> to return to Object Selection mode.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="setting-object-properties">
+<h2>Setting Object Properties<a class="headerlink" href="#setting-object-properties" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>As objects are added to a project they are assigned a default set of
+properties. To change the value of a specific property for an object
+one must select the object into the Property Editor (Figure 2.5).
+There are several different ways to do this. If the Editor is already
+visible then you can simply click on the object or select it from the
+Data page of the Browser. If the Editor is not visible then you can
+make it appear by one of the following actions:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Double-click the object on the map.</li>
+<li>Right-click on the object and select <strong>Properties</strong> from the pop-up
+menu that appears.</li>
+<li>Select the object from the Data page of the Browser window and then
+click the Browser’s Edit button <img alt="image14" src="_images/image14.jpeg" />.</li>
+</ul>
+</div></blockquote>
+<p>Whenever the Property Editor has the focus you can press the F1 key
+to obtain fuller descriptions of the properties listed</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image15" src="_images/image15.png" /></div></blockquote>
+<p><strong>Figure 2.5</strong> Property Editor</p>
+</div></blockquote>
+<p>Let us begin editing by selecting Node 2 into the Property Editor as
+shown above. We would now enter the elevation and demand for this
+node in the appropriate fields. You can use the <strong>Up</strong> and <strong>Down</strong>
+arrows on the keyboard or the mouse to move between fields. We need
+only click on another object (node or link) to have its properties
+appear next in the Property Editor. (We could also press the <strong>Page
+Down</strong> or <strong>Page Up</strong> key to move to the next or previous object of
+the same type in the database.) Thus we can simply move from object
+to object and fill in elevation and demand for nodes, and length,
+diameter, and roughness (C-factor) for links.</p>
+<p>For the reservoir you would enter its elevation (700) in the Total
+Head field. For the tank, enter 830 for its elevation, 4 for its
+initial level, 20 for its maximum level, and 60 for its diameter. For
+the pump, we need to assign it a pump curve (head versus flow
+relationship). Enter the ID label 1 in the Pump Curve field.</p>
+<p>Next we will create Pump Curve 1. From the Data page of the Browser
+window, select Curves from the dropdown list box and then click the
+Add button <img alt="image16" src="_images/image16.jpeg" />. A new Curve 1 will be added to the database and
+the Curve Editor dialog form will appear (see Figure 2.6). Enter the
+pump’s design flow (600) and head (150) into this form. EPANET
+automatically creates a complete pump curve from this single point.
+The curve’s equation is shown along with its shape. Click <strong>OK</strong> to
+close the Editor.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image17" src="_images/image17.png" /></div></blockquote>
+<p><strong>Figure 2.6</strong> Curve Editor</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="saving-and-opening-projects">
+<h2>Saving and Opening Projects<a class="headerlink" href="#saving-and-opening-projects" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Having completed the initial design of our network it is a good idea
+to save our work to a file at this point.</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>From the <strong>File</strong> menu select the <strong>Save As</strong> option.</li>
+<li>In the Save As dialog that appears, select a folder and file name
+under which to save this project. We suggest naming the file
+<strong>tutorial.net</strong>. (An extension of <strong>.net</strong> will be added to the
+file name if one is not supplied.)</li>
+<li>Click <strong>OK</strong> to save the project to file.</li>
+</ol>
+</div></blockquote>
+<p>The project data is saved to the file in a special binary format. If
+you wanted to save the network data to file as readable text, use the
+<strong>File &gt;&gt; Export &gt;&gt; Network</strong> command instead.</p>
+<p>To open our project at some later time, we would select the <strong>Open</strong>
+command from the <strong>File</strong> menu.</p>
+</div></blockquote>
+</div>
+<div class="section" id="running-a-single-period-analysis">
+<h2>Running a Single Period Analysis<a class="headerlink" href="#running-a-single-period-analysis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>We now have enough information to run a single period (or snapshot)
+hydraulic analysis on our example network. To run the analysis select
+<strong>Project &gt;&gt; Run Analysis</strong> or click the Run button <img alt="image18" src="_images/image18.png" /> on the
+Standard Toolbar. (If the toolbar is not visible select <strong>View &gt;&gt;
+Toolbars &gt;&gt; Standard</strong> from the menu bar).</p>
+<p>If the run was unsuccessful then a Status Report window will appear
+indicating what the problem was. If it ran successfully you can view
+the computed results in a variety of ways. Try some of the following:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Select Node Pressure from the Browser’s Map page and observe how
+pressure values at the nodes become color-coded. To view the legend
+for the color-coding, select <strong>View &gt;&gt; Legends &gt;&gt; Node</strong> (or right-
+click on an empty portion of the map and select Node Legend from the
+popup menu). To change the legend intervals and colors, right-click
+on the legend to make the Legend Editor appear.</li>
+<li>Bring up the Property Editor (double-click on any node or link) and
+note how the computed results are displayed at the end of the
+property list.</li>
+<li>Create a tabular listing of results by selecting <strong>Report &gt;&gt; Table</strong>
+(or by clicking the Table button <img alt="image19" src="_images/image19.png" /> on the Standard Toolbar).
+Figure</li>
+</ul>
+</div></blockquote>
+<p>2.7 displays such a table for the link results of this run. Note that
+flows with negative signs means that the flow is in the opposite
+direction to the direction in which the pipe was drawn initially.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image20" src="_images/image20.png" /></div></blockquote>
+<p><strong>Figure 2.7</strong> Example Table of Link Results</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="running-an-extended-period-analysis">
+<h2>Running an Extended Period Analysis<a class="headerlink" href="#running-an-extended-period-analysis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To make our network more realistic for analyzing an extended period
+of operation we will create a Time Pattern that makes demands at the
+nodes vary in a periodic way over the course of a day. For this
+simple example we will use a pattern time step of 6 hours thus making
+demands change at four different times of the day. (A 1-hour pattern
+time step is a more typical number and is the default assigned to new
+projects.) We set the pattern time step by selecting Options-Times
+from the Data Browser, clicking the Browser’s Edit button to make the
+Property Editor appear (if its not already visible), and entering 6
+for the value of the Pattern Time Step (as shown in Figure 2.8
+below). While we have the Time Options available we can also set the
+duration for which we want the extended period to run. Let’s use a
+3-day period of time (enter 72 hours for the Duration property).</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image21" src="_images/image21.png" /></div></blockquote>
+<p><strong>Figure 2.8</strong> Times Options</p>
+</div></blockquote>
+<p>To create the pattern, select the Patterns category in the Browser
+and then click the Add button <img alt="image22" src="_images/image16.jpeg" />. A new Pattern 1 will be
+created and the Pattern Editor dialog should appear (see Figure 2.9).
+Enter the multiplier values 0.5, 1.3, 1.0, 1.2 for the time periods 1
+to 4 that will give our pattern a duration of 24 hours. The
+multipliers are used to modify the demand from its base level in each
+time period. Since we are making a run of 72 hours, the pattern will
+wrap around to the start after each 24-hour interval of time.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image23" src="_images/image22.png" /></div></blockquote>
+<p><strong>Figure 2.9</strong> Pattern Editor</p>
+</div></blockquote>
+<p>We now need to assign Pattern 1 to the Demand Pattern property of all
+of the junctions in our network. We can utilize one of EPANET’s
+Hydraulic Options to avoid having to edit each junction individually.
+If you bring up the Hydraulic Options in the Property Editor you will
+see that there is an item called Default Pattern. Setting its value
+equal to 1 will make the Demand Pattern at each junction equal
+Pattern 1, as long as no other pattern is assigned to the junction.</p>
+<p>Next run the analysis (select <strong>Project &gt;&gt; Run Analysis</strong> or click
+the <img alt="image24" src="_images/image18.png" /> button on the Standard Toolbar). For extended period
+analysis you have several more ways in which to view results:</p>
+<blockquote>
+<div><ul class="simple">
+<li>The scrollbar in the Browser’s Time controls is used to display the
+network map at different points in time. Try doing this with Pressure
+selected as the node parameter and Flow as the link parameter.</li>
+<li>The VCR-style buttons in the Browser can
+animate the map through time. Click the Forward button <img alt="image25" src="_images/image23.png" />  to start the
+animation and the Stop button <img alt="image26" src="_images/image24.png" />  to stop it.</li>
+<li>Add flow direction arrows to the map (select <strong>View &gt;&gt; Options</strong>,
+select the Flow Arrows page from the Map Options dialog, and check a
+style of arrow that you wish to use). Then begin the animation again
+and note the change in flow direction through the pipe connected to
+the tank as the tank fills and empties over time.</li>
+<li>Create a time series plot for any node or link. For example, to see
+how the water elevation in the tank changes with time:<ol class="arabic">
+<li>Click on the tank.</li>
+<li>Select <strong>Report &gt;&gt; Graph</strong> (or click the Graph button <img alt="image27" src="_images/image25.png" />
+on the Standard Toolbar) which will display a Graph Selection
+dialog box.</li>
+<li>Select the Time Series button on the dialog.</li>
+<li>Select Head as the parameter to plot.</li>
+<li>Click <strong>OK</strong> to accept your choice of graph.</li>
+</ol>
+</li>
+</ul>
+</div></blockquote>
+<p>Note the periodic behavior of the water elevation in the tank over
+time (Figure 2.10).</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image28" src="_images/image26.png" /></div></blockquote>
+<p><strong>Figure 2.10</strong> Example Time Series Plot</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="running-a-water-quality-analysis">
+<h2>Running a Water Quality Analysis<a class="headerlink" href="#running-a-water-quality-analysis" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>Next we show how to extend the analysis of our example network to
+include water quality. The simplest case would be tracking the growth
+in water age throughout the network over time. To make this analysis
+we only have to select Age for the Parameter property in the Quality
+Options (select Options-Quality from the Data page of the Browser,
+then click the Browser’s Edit button to make the Property Editor
+appear). Run the analysis and select Age as the parameter to view on
+the map. Create a time series plot for Age in the tank. Note that
+unlike water level, 72 hours is not enough time for the tank to reach
+periodic behavior for water age. (The default initial condition is to
+start all nodes with an age of 0.) Try repeating the simulation using
+a 240-hour duration or assigning an initial age of 60 hours to the
+tank (enter 60 as the value of Initial Quality in the Property Editor
+for the tank).</p>
+<p>Finally we show how to simulate the transport and decay of chlorine
+through the network. Make the following changes to the database:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select Options-Quality to edit from the Data Browser. In the
+Property Editor’s Parameter field type in the word Chlorine.</li>
+<li>Switch to Options-Reactions in the Browser. For Global Bulk
+Coefficient enter a value of -1.0. This reflects the rate at which
+chlorine will decay due to reactions in the bulk flow over time.
+This rate will apply to all pipes in the network. You could edit
+this value for individual pipes if you needed to.</li>
+<li>Click on the reservoir node and set its Initial Quality to 1.0. This
+will be the concentration of chlorine that continuously enters the
+network. (Reset the initial quality in the Tank to 0 if you had
+changed it.)</li>
+</ol>
+</div></blockquote>
+<p>Now run the example. Use the Time controls on the Map Browser to see
+how chlorine levels change by location and time throughout the
+simulation. Note how for this simple network, only junctions 5, 6,
+and 7 see depressed chlorine levels because of being fed by low
+chlorine water from the tank. Create a reaction report for this run
+by selecting <strong>Report &gt;&gt; Reaction</strong> from the main menu. The report
+should look like Figure 2.11. It shows on average how much chlorine
+loss occurs in the pipes as opposed to the tank. The term “bulk”
+refers to reactions occurring in the bulk fluid while “wall” refers
+to reactions with material on the pipe wall. The latter reaction is
+zero because we did not specify any wall reaction coefficient in this
+example.</p>
+<blockquote>
+<div><blockquote>
+<div><img alt="image29" src="_images/image27.png" /></div></blockquote>
+<p><strong>Figure 2.11</strong> Example Reaction Report</p>
+</div></blockquote>
+<p>We have only touched the surface of the various capabilities offered
+by EPANET. Some additional features of the program that you should
+experiment with are:</p>
+<ul class="simple">
+<li>Editing a property for a group of objects that lie within a user-
+defined area.</li>
+<li>Using Control statements to base pump operation on time of day or
+tank water levels.</li>
+<li>Exploring different Map Options, such as making node size be related
+to value.</li>
+<li>Attaching a backdrop map (such as a street map) to the network map.</li>
+<li>Creating different types of graphs, such as profile plots and contour
+plots.</li>
+<li>Adding calibration data to a project and viewing a calibration
+report.</li>
+<li>Copying the map, a graph, or a report to the clipboard or to a file.</li>
+<li>Saving and retrieving a design scenario (i.e., current nodal demands,
+pipe roughness values, etc.).</li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="3_network_model.html" class="btn btn-neutral float-right" title="3. THE NETWORK MODEL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="1_introduction.html" class="btn btn-neutral" title="1. INTRODUCTION" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

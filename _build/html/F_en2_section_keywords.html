@@ -1,0 +1,1897 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>F. INPUT SECTION KEYWORDS &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="E. REFERENCES" href="E_references.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="7_map.html">7. WORKING WITH THE MAP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">F. INPUT SECTION KEYWORDS</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#general-descriptions">General Descriptions</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#backdrop">[BACKDROP]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controls">[CONTROLS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#coordinates">[COORDINATES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#curves">[CURVES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#demands">[DEMANDS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#emitters">[EMITTERS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#energy">[ENERGY]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#junctions">[JUNCTIONS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#labels">[LABELS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mixing">[MIXING]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#options">[OPTIONS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#patterns">[PATTERNS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pipes">[PIPES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pumps">[PUMPS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#quality">[QUALITY]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reactions">[REACTIONS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#report">[REPORT]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#reservoirs">[RESERVOIRS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#rules">[RULES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sources">[SOURCES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#status">[STATUS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tags">[TAGS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#tanks">[TANKS]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#times">[TIMES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#title">[TITLE]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#valves">[VALVES]</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#vertices">[VERTICES]</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>F. INPUT SECTION KEYWORDS</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/F_en2_section_keywords.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="f-input-section-keywords">
+<h1>F. INPUT SECTION KEYWORDS<a class="headerlink" href="#f-input-section-keywords" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="general-descriptions">
+<h2>General Descriptions<a class="headerlink" href="#general-descriptions" title="Permalink to this headline">¶</a></h2>
+<hr class="docutils" />
+<div class="section" id="backdrop">
+<h3>[BACKDROP]<a class="headerlink" href="#backdrop" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Identifies a backdrop image and dimensions for the network map.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>DIMENSIONS</strong> <em>LLx LLy URx URy</em></p>
+<p><strong>UNITS FEET/METERS/DEGREES/NONE</strong></p>
+<p><strong>FILE</strong> <em>filename</em></p>
+<p><strong>OFFSET</strong> <em>X Y</em></p>
+<p><strong>Definitions:</strong></p>
+<dl class="docutils">
+<dt><strong>DIMENSIONS</strong> provides the X and Y coordinates of the lower-left and</dt>
+<dd>upper-right corners of the map’s bounding rectangle. Defaults are the
+extents of the nodal coordinates supplied in the [COORDINATES]
+section.</dd>
+<dt><strong>UNITS</strong> specifies the units that the map’s dimensions are given in.</dt>
+<dd>Default is NONE.</dd>
+</dl>
+<p><strong>FILE</strong> is the name of the file that contains the backdrop image.</p>
+<dl class="docutils">
+<dt><strong>OFFSET</strong> lists the X and Y distance that the upper-left corner of</dt>
+<dd>the backdrop image is offset from the upper-left corner of the map’s
+bounding rectangle. Default is zero offset.</dd>
+</dl>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>The [BACKDROP] section is optional and is not used at all when EPANET
+is run as a console application.</li>
+<li>Only Windows Enhanced Metafiles and bitmap files can be used as
+backdrops.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="controls">
+<h3>[CONTROLS]<a class="headerlink" href="#controls" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines simple controls that modify links based on a single
+condition.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div>One line for each control which can be of the form:</div></blockquote>
+<p><strong>LINK</strong> linkID status <strong>IF NODE</strong> nodeID <strong>ABOVE/BELOW</strong> value</p>
+<p><strong>LINK</strong> linkID status <strong>AT TIME</strong> time</p>
+<p><strong>LINK</strong> linkID status <strong>AT CLOCKTIME</strong> clocktime <strong>AM/PM</strong></p>
+<blockquote>
+<div><p>where:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>    <span class="n">linkID</span>             <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">a</span> <span class="n">link</span> <span class="n">ID</span> <span class="n">label</span>    <span class="o">|</span>
+<span class="o">+=======================+=======================+=======================+</span>
+<span class="o">|</span>    <span class="n">status</span>             <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">OPEN</span> <span class="ow">or</span> <span class="n">CLOSED</span><span class="p">,</span> <span class="n">a</span>  <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">pump</span> <span class="n">speed</span>         <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">setting</span><span class="p">,</span> <span class="ow">or</span> <span class="n">a</span>      <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">control</span>            <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">valve</span> <span class="n">setting</span>      <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>    <span class="n">nodeID</span>             <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">a</span> <span class="n">node</span> <span class="n">ID</span> <span class="n">label</span>    <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>    <span class="n">value</span>              <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">a</span> <span class="n">pressure</span> <span class="k">for</span> <span class="n">a</span>   <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">junction</span> <span class="ow">or</span> <span class="n">a</span>      <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">water</span> <span class="n">level</span> <span class="k">for</span> <span class="n">a</span>  <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">tank</span>               <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>    <span class="n">time</span>               <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">a</span> <span class="n">time</span> <span class="n">since</span> <span class="n">the</span>   <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">start</span> <span class="n">of</span> <span class="n">the</span>       <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">simulation</span> <span class="ow">in</span>      <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">decimal</span> <span class="n">hours</span> <span class="ow">or</span>   <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="ow">in</span> <span class="n">hours</span><span class="p">:</span><span class="n">minutes</span>   <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="nb">format</span>             <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+<span class="o">|</span>    <span class="n">clocktime</span>          <span class="o">|</span>    <span class="o">=</span>                  <span class="o">|</span>    <span class="n">a</span> <span class="mi">24</span><span class="o">-</span><span class="n">hour</span> <span class="n">clock</span>    <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="n">time</span>               <span class="o">|</span>
+<span class="o">|</span>                       <span class="o">|</span>                       <span class="o">|</span>    <span class="p">(</span><span class="n">hours</span><span class="p">:</span><span class="n">minutes</span><span class="p">)</span>    <span class="o">|</span>
+<span class="o">+-----------------------+-----------------------+-----------------------+</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Simple controls are used to change link status or settings based on
+tank water level, junction pressure, time into the simulation or time
+of day.</li>
+<li>See the notes for the [STATUS] section for conventions used in
+specifying link status and setting, particularly for control valves.</li>
+</ol>
+</div></blockquote>
+<p><strong>Examples:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CONTROLS</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">Close</span> <span class="n">Link</span> <span class="mi">12</span> <span class="k">if</span> <span class="n">the</span> <span class="n">level</span> <span class="ow">in</span> <span class="n">Tank</span> <span class="mi">23</span> <span class="n">exceeds</span> <span class="mi">20</span> <span class="n">ft</span><span class="o">.</span> <span class="n">LINK</span> <span class="mi">12</span> <span class="n">CLOSED</span>
+<span class="n">IF</span> <span class="n">NODE</span> <span class="mi">23</span> <span class="n">ABOVE</span> <span class="mi">20</span>
+
+<span class="p">;</span><span class="n">Open</span> <span class="n">Link</span> <span class="mi">12</span> <span class="k">if</span> <span class="n">pressure</span> <span class="n">at</span> <span class="n">Node</span> <span class="mi">130</span> <span class="ow">is</span> <span class="n">under</span> <span class="mi">30</span> <span class="n">psi</span> <span class="n">LINK</span> <span class="mi">12</span> <span class="n">OPEN</span> <span class="n">IF</span>
+<span class="n">NODE</span> <span class="mi">130</span> <span class="n">BELOW</span> <span class="mi">30</span>
+
+<span class="p">;</span><span class="n">Pump</span> <span class="n">PUMP02</span><span class="s1">&#39;s speed is set to 1.5 at 16 hours into</span>
+
+<span class="p">;</span><span class="n">the</span> <span class="n">simulation</span>
+
+<span class="n">LINK</span> <span class="n">PUMP02</span> <span class="mf">1.5</span> <span class="n">AT</span> <span class="n">TIME</span> <span class="mi">16</span>
+
+<span class="p">;</span><span class="n">Link</span> <span class="mi">12</span> <span class="ow">is</span> <span class="n">closed</span> <span class="n">at</span> <span class="mi">10</span> <span class="n">am</span> <span class="ow">and</span> <span class="n">opened</span> <span class="n">at</span> <span class="mi">8</span> <span class="n">pm</span>
+
+<span class="p">;</span><span class="n">throughout</span> <span class="n">the</span> <span class="n">simulation</span>
+
+<span class="n">LINK</span> <span class="mi">12</span> <span class="n">CLOSED</span> <span class="n">AT</span> <span class="n">CLOCKTIME</span> <span class="mi">10</span> <span class="n">AM</span> <span class="n">LINK</span> <span class="mi">12</span> <span class="n">OPEN</span> <span class="n">AT</span> <span class="n">CLOCKTIME</span> <span class="mi">8</span> <span class="n">PM</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="coordinates">
+<h3>[COORDINATES]<a class="headerlink" href="#coordinates" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Assigns map coordinates to network nodes.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each node containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Node ID label</li>
+<li>X-coordinate</li>
+<li>Y-coordinate</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Include one line for each node displayed on the map.</li>
+<li>The coordinates represent the distance from the node to an arbitrary
+origin at the lower left of the map. Any convenient units of measure
+for this distance can be used.</li>
+<li>There is no requirement that all nodes be included in the map, and
+their locations need not be to actual scale.</li>
+<li>A [COORDINATES] section is optional and is not used at all when
+EPANET is run as a console application.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COORDINATES</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">Node</span> <span class="n">X</span><span class="o">-</span><span class="n">Coord</span><span class="o">.</span> <span class="n">Y</span><span class="o">-</span><span class="n">Coord</span>
+
+<span class="p">;</span><span class="o">-------------------------------</span>
+
+ <span class="mi">1</span> <span class="mi">10023</span> <span class="mi">128</span>
+ <span class="mi">2</span> <span class="mi">10056</span> <span class="mi">95</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="curves">
+<h3>[CURVES]<a class="headerlink" href="#curves" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines data curves and their X,Y points.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each X,Y point on each curve containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Curve ID label</li>
+<li>X value</li>
+<li>Y value</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+</div></blockquote>
+<ol class="loweralpha simple">
+<li>Curves can be used to represent the following relations:<ul>
+<li>Head v. Flow for pumps</li>
+<li>Efficiency v. Flow for pumps</li>
+<li>Volume v. Depth for tanks</li>
+<li>Headloss v. Flow for General Purpose Valves</li>
+</ul>
+</li>
+<li>The points of a curve must be entered in order of increasing X-values
+(lower to higher).</li>
+<li>If the input file will be used with the Windows version of EPANET,
+then adding a comment which contains the curve type and description,
+separated by a colon, directly above the first entry for a curve will
+ensure that these items appear correctly in EPANET’s Curve Editor.
+Curve types include PUMP, EFFICIENCY, VOLUME, and HEADLOSS. See the
+examples below.</li>
+</ol>
+<blockquote>
+<div><p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">CURVES</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">ID</span> <span class="n">Flow</span> <span class="n">Head</span>
+
+<span class="p">;</span><span class="n">PUMP</span><span class="p">:</span> <span class="n">Curve</span> <span class="k">for</span> <span class="n">Pump</span> <span class="mi">1</span> <span class="n">C1</span> <span class="mi">0</span> <span class="mi">200</span>
+
+<span class="n">C1</span> <span class="mi">1000</span> <span class="mi">100</span>
+
+<span class="n">C1</span> <span class="mi">3000</span> <span class="mi">0</span>
+
+<span class="p">;</span><span class="n">ID</span> <span class="n">Flow</span> <span class="n">Effic</span><span class="o">.</span>
+
+<span class="p">;</span><span class="n">EFFICIENCY</span><span class="p">:</span>
+
+<span class="n">E1</span> <span class="mi">200</span> <span class="mi">50</span>
+
+<span class="n">E1</span> <span class="mi">1000</span> <span class="mi">85</span>
+
+<span class="n">E1</span> <span class="mi">2000</span> <span class="mi">75</span>
+
+<span class="n">E1</span> <span class="mi">3000</span> <span class="mi">65</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="demands">
+<h3>[DEMANDS]<a class="headerlink" href="#demands" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Supplement to [JUNCTIONS] section for defining multiple water demands
+at junction nodes.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each category of demand at a junction containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Junction ID label</li>
+<li>Base demand (flow units)</li>
+<li>Demand pattern ID (optional)</li>
+<li>Name of demand category preceded by a semicolon (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Only use for junctions whose demands need to be changed or
+supplemented from entries in [JUNCTIONS] section.</li>
+<li>Data in this section replaces any demand entered in [JUNCTIONS]
+section for the same junction.</li>
+<li>Unlimited number of demand categories can be entered per junction.</li>
+</ol>
+<ol class="loweralpha simple">
+<li>If no demand pattern is supplied then the junction demand follows the
+Default Demand Pattern specified in the [OPTIONS] section or Pattern
+1 if no default pattern is specified. If the default pattern (or
+Pattern 1) does not exist, then the demand remains constant.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">DEMANDS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Demand</span> <span class="n">Pattern</span> <span class="n">Category</span>
+<span class="p">;</span><span class="o">---------------------------------</span>
+<span class="n">J1</span> <span class="mi">100</span> <span class="mi">101</span> <span class="p">;</span><span class="n">Domestic</span>
+<span class="n">J1</span> <span class="mi">25</span> <span class="mi">102</span> <span class="p">;</span><span class="n">School</span>
+<span class="n">J256</span> <span class="mi">50</span> <span class="mi">101</span> <span class="p">;</span><span class="n">Domestic</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="emitters">
+<h3>[EMITTERS]<a class="headerlink" href="#emitters" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines junctions modeled as emitters (sprinklers or orifices).</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each emitter containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Junction ID label</li>
+<li>Flow coefficient, flow units at 1 psi (1 meter) pressure drop</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Emitters are used to model flow through sprinkler heads or pipe
+leaks.</li>
+<li>Flow out of the emitter equals the product of the flow coefficient
+and the junction pressure raised to a power.</li>
+<li>The power can be specified using the EMITTER EXPONENT option in the
+[OPTIONS] section. The default power is 0.5, which normally applies
+to sprinklers and nozzles.</li>
+<li>Actual demand reported in the program’s results includes both the
+normal demand at the junction plus flow through the emitter.</li>
+<li>An [EMITTERS] section is optional.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="energy">
+<h3>[ENERGY]<a class="headerlink" href="#energy" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines parameters used to compute pumping energy and cost.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>GLOBAL PRICE/PATTERN/EFFIC</strong> <em>value</em> <strong>PUMP</strong> <em>PumpID</em>
+<strong>PRICE/PATTERN/EFFIC</strong> <em>value</em> <strong>DEMAND CHARGE</strong> <em>value</em></p>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Lines beginning with the keyword <strong>GLOBAL</strong> are used to set global
+default values of energy price, price pattern, and pumping efficiency
+for all pumps.</li>
+<li>Lines beginning with the keyword <strong>PUMP</strong> are used to override global
+defaults for specific pumps.</li>
+<li>Parameters are defined as follows:<ul>
+<li><strong>PRICE</strong> = average cost per kW-hour,</li>
+<li><strong>PATTERN</strong> = ID label of time pattern describing how energy price
+varies with time,</li>
+<li><strong>EFFIC</strong> = either a single percent efficiency for global setting
+or the ID label of an efficiency curve for a specific pump,</li>
+<li><strong>DEMAND CHARGE</strong> = added cost per maximum kW usage during the
+simulation period.</li>
+</ul>
+</li>
+<li>The default global pump efficiency is 75% and the default global
+energy price is 0.</li>
+<li>All entries in this section are optional. Items offset by slashes (/)
+indicate allowable choices.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">ENERGY</span><span class="p">]</span>
+
+ <span class="n">GLOBAL</span> <span class="n">PRICE</span> <span class="mf">0.05</span> <span class="p">;</span><span class="n">Sets</span> <span class="k">global</span> <span class="n">energy</span> <span class="n">price</span> <span class="n">GLOBAL</span> <span class="n">PATTERN</span> <span class="n">PAT1</span> <span class="p">;</span><span class="ow">and</span>
+ <span class="n">time</span><span class="o">-</span><span class="n">of</span><span class="o">-</span><span class="n">day</span> <span class="n">pattern</span> <span class="n">PUMP</span> <span class="mi">23</span> <span class="n">PRICE</span> <span class="mf">0.10</span> <span class="p">;</span><span class="n">Overrides</span> <span class="n">price</span> <span class="k">for</span> <span class="n">Pump</span> <span class="mi">23</span>
+
+ <span class="n">PUMP</span> <span class="mi">23</span> <span class="n">EFFIC</span> <span class="n">E23</span> <span class="p">;</span><span class="n">Assigns</span> <span class="n">effic</span><span class="o">.</span> <span class="n">curve</span> <span class="n">to</span> <span class="n">Pump</span> <span class="mi">23</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="junctions">
+<h3>[JUNCTIONS]<a class="headerlink" href="#junctions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines junction nodes contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each junction containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label</li>
+<li>Elevation, ft (m)</li>
+<li>Base demand flow (flow units) (optional)</li>
+<li>Demand pattern ID (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>A [JUNCTIONS] section with at least one junction is required.</li>
+<li>If no demand pattern is supplied then the junction demand follows the
+Default Demand Pattern specified in the [OPTIONS] section or Pattern
+1 if no default pattern is specified. If the default pattern (or
+Pattern 1) does not exist, then the demand remains constant.</li>
+<li>Demands can also be entered in the [DEMANDS] section and include
+multiple demand categories per junction.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">JUNCTIONS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Elev</span><span class="o">.</span> <span class="n">Demand</span> <span class="n">Pattern</span>
+<span class="p">;</span><span class="o">------------------------------</span>
+<span class="n">J1</span> <span class="mi">100</span> <span class="mi">50</span> <span class="n">Pat1</span>
+<span class="n">J2</span> <span class="mi">120</span> <span class="mi">10</span> <span class="p">;</span><span class="n">Uses</span> <span class="n">default</span> <span class="n">demand</span> <span class="n">pattern</span>
+<span class="n">J3</span> <span class="mi">115</span> <span class="p">;</span><span class="n">No</span> <span class="n">demand</span> <span class="n">at</span> <span class="n">this</span> <span class="n">junction</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="labels">
+<h3>[LABELS]<a class="headerlink" href="#labels" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Assigns coordinates to map labels.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each label containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>X-coordinate</li>
+<li>Y-coordinate</li>
+<li>Text of label in double quotes</li>
+<li>ID label of an anchor node (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Include one line for each label on the map.</li>
+<li>The coordinates refer to the upper left corner of the label and are
+with respect to an arbitrary origin at the lower left of the map.</li>
+<li>The optional anchor node anchors the label to the node when the map
+is re-scaled during zoom-in operations.</li>
+<li>The [LABELS] section is optional and is not used at all when EPANET
+is run as a console application.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span>[LABELS]
+;X-Coord. Y-Coord. Label Anchor
+;-----------------------------------------------
+1230 3459 “Pump 1”
+34.57 12.75 “North Tank” T22
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="mixing">
+<h3>[MIXING]<a class="headerlink" href="#mixing" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Identifies the model that governs mixing within storage tanks.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line per tank containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Tank ID label</li>
+<li>Mixing model (MIXED, 2COMP, FIFO, or LIFO)</li>
+<li>Compartment volume (fraction)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Mixing models include:<ul>
+<li>Completely Mixed (MIXED)</li>
+<li>Two-Compartment Mixing (2COMP)</li>
+<li>Plug Flow (FIFO)</li>
+<li>Stacked Plug Flow (LIFO)</li>
+</ul>
+</li>
+<li>The compartment volume parameter only applies to the two-compartment
+model and represents the fraction of the total tank volume devoted to
+the inlet/outlet compartment.</li>
+<li>The [MIXING] section is optional. Tanks not described in this section
+are assumed to be completely mixed.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">MIXING</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">Tank</span> <span class="n">Model</span>
+
+<span class="p">;</span><span class="o">-----------------------</span> <span class="n">T12</span> <span class="n">LIFO</span>
+
+<span class="n">T23</span> <span class="mi">2</span><span class="n">COMP</span> <span class="mf">0.2</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="options">
+<h3>[OPTIONS]<a class="headerlink" href="#options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines various simulation options.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>UNITS CFS/GPM/MGD/IMGD/AFD/ LPS/LPM/MLD/CMH/CMD</strong></p>
+<p><strong>HEADLOSS H-W/D-W/C-M</strong></p>
+<p><strong>HYDRAULICS USE/SAVE</strong> filename</p>
+<p><strong>QUALITY NONE/CHEMICAL/AGE/TRACE id</strong></p>
+<p><strong>VISCOSITY</strong> value</p>
+<p><strong>DIFFUSIVITY</strong> value</p>
+<p><strong>SPECIFIC GRAVITY</strong> value</p>
+<p><strong>TRIALS</strong> value</p>
+<p><strong>ACCURACY</strong> value</p>
+<p><strong>UNBALANCED STOP/CONTINUE/CONTINUE n</strong></p>
+<p><strong>PATTERN</strong> id</p>
+<p><strong>DEMAND MULTIPLIER</strong> value</p>
+<p><strong>EMITTER EXPONENT</strong> value</p>
+<p><strong>TOLERANCE</strong> value</p>
+<p><strong>MAP</strong> filename</p>
+<p><strong>Definitions:</strong></p>
+<p><strong>UNITS</strong> sets the units in which flow rates are expressed where:</p>
+<dl class="docutils">
+<dt><strong>CFS</strong> = cubic feet per second <strong>GPM</strong> = gallons per minute <strong>MGD</strong></dt>
+<dd>= million gallons per day <strong>IMGD</strong> = Imperial MGD</dd>
+</dl>
+<p><strong>AFD</strong> = acre-feet per day</p>
+<p><strong>LPS</strong> = liters per second</p>
+<p><strong>LPM</strong> = liters per minute</p>
+<p><strong>MLD</strong> = million liters per day <strong>CMH</strong> = cubic meters per hour
+<strong>CMD</strong> = cubic meters per day</p>
+<blockquote>
+<div><p>For <strong>CFS, GPM, MGD, IMGD</strong>, and <strong>AFD</strong> other input quantities are
+expressed in US Customary Units. If flow units are in liters or cubic
+meters then Metric Units must be used for all other input quantities
+as</p>
+<p>well. (See Appendix A. Units of Measurement). The default flow units
+are <strong>GPM</strong>.</p>
+</div></blockquote>
+<dl class="docutils">
+<dt><strong>HEADLOSS</strong> selects a formula to use for computing head loss for</dt>
+<dd><p class="first">flow through a pipe. The choices are the Hazen-Williams (<strong>H-W</strong>),
+Darcy-Weisbach (<strong>D-W</strong>), or Chezy-Manning (<strong>C-M</strong>) formulas. The
+default is <strong>H-W</strong>.</p>
+<p class="last">The <strong>HYDRAULICS</strong> option allows you to either <strong>SAVE</strong> the current
+hydraulics solution to a file or <strong>USE</strong> a previously saved
+hydraulics solution. This is useful when studying factors that only
+affect water quality behavior.</p>
+</dd>
+<dt><strong>QUALITY</strong> selects the type of water quality analysis to perform.</dt>
+<dd>The choices are <strong>NONE, CHEMICAL, AGE</strong>, and <strong>TRACE</strong>. In place of</dd>
+<dt><strong>CHEMICAL</strong> the actual name of the chemical can be used followed by</dt>
+<dd>its concentration units (e.g., <strong>CHLORINE mg/L</strong>). If <strong>TRACE</strong> is
+selected it must be followed by the ID label of the node being
+traced. The default selection is <strong>NONE</strong> (no water quality
+analysis).</dd>
+<dt><strong>VISCOSITY</strong> is the kinematic viscosity of the fluid being modeled</dt>
+<dd>relative to that of water at 20 deg. C (1.0 centistoke). The default
+value is 1.0.</dd>
+<dt><strong>DIFFUSIVITY</strong> is the molecular diffusivity of the chemical being</dt>
+<dd>analyzed relative to that of chlorine in water. The default value is
+1.0. Diffusivity is only used when mass transfer limitations are
+considered in pipe wall reactions. A value of 0 will cause EPANET to
+ignore mass transfer limitations.</dd>
+<dt><strong>SPECIFIC GRAVITY</strong> is the ratio of the density of the fluid being</dt>
+<dd>modeled to that of water at 4 deg. C (unitless).</dd>
+<dt><strong>TRIALS</strong> are the maximum number of trials used to solve network</dt>
+<dd>hydraulics at each hydraulic time step of a simulation. The default
+is 40.</dd>
+<dt><strong>ACCURACY</strong> prescribes the convergence criterion that determines</dt>
+<dd>when a hydraulic solution has been reached. The trials end when the
+sum of all flow changes from the previous solution divided by the
+total flow in all links is less than this number. The default is
+0.001.</dd>
+<dt><strong>UNBALANCED</strong> determines what happens if a hydraulic solution cannot</dt>
+<dd>be reached within the prescribed number of <strong>TRIALS</strong> at some
+hydraulic time step into the simulation. <strong>“STOP”</strong> will halt the
+entire analysis at that point. <strong>“CONTINUE”</strong> will continue the
+analysis with a warning message issued. <strong>“CONTINUE n”</strong> will
+continue the search for a solution for another “n” trials with the
+status of all links held fixed at their current settings. The
+simulation will be continued at this point with a message issued
+about whether convergence was achieved or not. The default choice is <strong>“STOP”</strong>.</dd>
+<dt><strong>PATTERN</strong> provides the ID label of a default demand pattern to be</dt>
+<dd><p class="first">applied to all junctions where no demand pattern was specified. If no
+such pattern exists in the [PATTERNS] section then by default the
+pattern consists of a single multiplier equal to 1.0. If this option
+is not used, then the global default demand pattern has a label of
+“1”.</p>
+<p class="last">The <strong>DEMAND MULTIPLIER</strong> is used to adjust the values of baseline
+demands for all junctions and all demand categories. For example, a
+value of 2 doubles all baseline demands, while a value of 0.5 would
+halve them. The default value is 1.0.</p>
+</dd>
+<dt><strong>EMITTER EXPONENT</strong> specifies the power to which the pressure at a</dt>
+<dd>junction is raised when computing the flow issuing from an emitter.
+The default is 0.5.</dd>
+<dt><strong>MAP</strong> is used to supply the name of a file containing coordinates</dt>
+<dd>of the network’s nodes so that a map of the network can be drawn. It
+is not used for any hydraulic or water quality computations.</dd>
+<dt><strong>TOLERANCE</strong> is the difference in water quality level below which</dt>
+<dd>one can say that one parcel of water is essentially the same as
+another. The default is 0.01 for all types of quality analyses
+(chemical, age (measured in hours), or source tracing (measured in
+percent)).</dd>
+</dl>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>All options assume their default values if not explicitly specified
+in this section.</li>
+<li>Items offset by slashes (/) indicate allowable choices.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">OPTIONS</span><span class="p">]</span>
+<span class="n">UNITS</span> <span class="n">CFS</span>
+<span class="n">HEADLOSS</span> <span class="n">D</span><span class="o">-</span><span class="n">W</span>
+<span class="n">QUALITY</span> <span class="n">TRACE</span> <span class="n">Tank23</span>
+<span class="n">UNBALANCED</span> <span class="n">CONTINUE</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="patterns">
+<h3>[PATTERNS]<a class="headerlink" href="#patterns" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines time patterns.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One or more lines for each pattern containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Pattern ID label</li>
+<li>One or more multipliers</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><p>Multipliers define how some base quantity (e.g., demand) is
+adjusted for each time period.</p>
+<ol class="loweralpha simple">
+<li>All patterns share the same time period interval as defined in the
+[TIMES] section.</li>
+<li>Each pattern can have a different number of time periods.</li>
+<li>When the simulation time exceeds the pattern length the pattern wraps
+around to its first period.</li>
+<li>Use as many lines as it takes to include all multipliers for each
+pattern.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">PATTERNS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">Pattern</span> <span class="n">P1</span>
+<span class="n">P1</span> <span class="mf">1.1</span> <span class="mf">1.4</span> <span class="mf">0.9</span> <span class="mf">0.7</span>
+<span class="n">P1</span> <span class="mf">0.6</span> <span class="mf">0.5</span> <span class="mf">0.8</span> <span class="mf">1.0</span>
+<span class="p">;</span><span class="n">Pattern</span> <span class="n">P2</span>
+<span class="n">P2</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span> <span class="mi">1</span>
+<span class="n">P2</span> <span class="mi">0</span> <span class="mi">0</span> <span class="mi">1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pipes">
+<h3>[PIPES]<a class="headerlink" href="#pipes" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines all pipe links contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each pipe containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label of pipe</li>
+<li>ID of start node</li>
+<li>ID of end node</li>
+<li>Length, ft (m)</li>
+<li>Diameter, inches (mm)</li>
+<li>Roughness coefficient</li>
+<li>Minor loss coefficient</li>
+<li>Status (OPEN, CLOSED, or CV)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Roughness coefficient is unitless for the Hazen-Williams and
+Chezy-Manning head loss formulas and has units of millifeet (mm) for
+the Darcy-Weisbach formula. Choice of head loss formula is supplied
+in the [OPTIONS] section.</li>
+<li>Setting status to CV means that the pipe contains a check valve
+restricting flow to one direction.</li>
+<li>If minor loss coefficient is 0 and pipe is OPEN then these two items
+can be dropped form the input line.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">PIPES</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Node1</span> <span class="n">Node2</span> <span class="n">Length</span> <span class="n">Diam</span><span class="o">.</span> <span class="n">Roughness</span> <span class="n">Mloss</span> <span class="n">Status</span>
+<span class="p">;</span><span class="o">-------------------------------------------------------------</span>
+<span class="n">P1</span> <span class="n">J1</span> <span class="n">J2</span> <span class="mi">1200</span> <span class="mi">12</span> <span class="mi">120</span> <span class="mf">0.2</span> <span class="n">OPEN</span>
+<span class="n">P2</span> <span class="n">J3</span> <span class="n">J2</span> <span class="mi">600</span> <span class="mi">6</span> <span class="mi">110</span> <span class="mi">0</span> <span class="n">CV</span>
+<span class="n">P3</span> <span class="n">J1</span> <span class="n">J10</span> <span class="mi">1000</span> <span class="mi">12</span> <span class="mi">120</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="pumps">
+<h3>[PUMPS]<a class="headerlink" href="#pumps" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines all pump links contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each pump containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label of pump</li>
+<li>ID of start node</li>
+<li>ID of end node</li>
+<li>Keyword and Value (can be repeated)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Keywords consists of:<ul>
+<li><strong>POWER</strong> – power value for constant energy pump, hp (kW)</li>
+<li><strong>HEAD</strong> - ID of curve that describes head versus flow for the
+pump</li>
+<li><strong>SPEED</strong> - relative speed setting (normal speed is 1.0, 0 means
+pump is off)</li>
+<li><strong>PATTERN</strong> - ID of time pattern that describes how speed setting
+varies with time</li>
+</ul>
+</li>
+<li>Either <strong>POWER</strong> or <strong>HEAD</strong> must be supplied for each pump. The
+other keywords are optional.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">PUMPS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">ID</span> <span class="n">Node1</span> <span class="n">Node2</span> <span class="n">Properties</span>
+<span class="p">;</span><span class="o">---------------------------------------------</span>
+<span class="n">Pump1</span> <span class="n">N12</span> <span class="n">N32</span> <span class="n">HEAD</span> <span class="n">Curve1</span>
+<span class="n">Pump2</span> <span class="n">N121</span> <span class="n">N55</span> <span class="n">HEAD</span> <span class="n">Curve1</span> <span class="n">SPEED</span> <span class="mf">1.2</span>
+<span class="n">Pump3</span> <span class="n">N22</span> <span class="n">N23</span> <span class="n">POWER</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="quality">
+<h3>[QUALITY]<a class="headerlink" href="#quality" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines initial water quality at nodes.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line per node containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Node ID label</li>
+<li>Initial quality</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Quality is assumed to be zero for nodes not listed.</li>
+<li>Quality represents concentration for chemicals, hours for water age,
+or percent for source tracing.</li>
+<li>The [QUALITY] section is optional.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="reactions">
+<h3>[REACTIONS]<a class="headerlink" href="#reactions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines parameters related to chemical reactions occurring in the
+network.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>ORDER BULK/WALL/TANK</strong> value</p>
+<p><strong>GLOBAL BULK/WALL</strong> value</p>
+<p><strong>BULK/WALL/TANK</strong> pipeID value <strong>LIMITING POTENTIAL</strong> value
+<strong>ROUGHNESS CORRELATION</strong> value</p>
+<p><strong>Definitions:</strong></p>
+<dl class="docutils">
+<dt><strong>ORDER</strong> is used to set the order of reactions occurring in the bulk</dt>
+<dd>fluid, at the pipe wall, or in tanks, respectively. Values for wall
+reactions must be either 0 or 1. If not supplied the default reaction
+order is 1.0.</dd>
+<dt><strong>GLOBAL</strong> is used to set a global value for all bulk reaction</dt>
+<dd>coefficients (pipes and tanks) or for all pipe wall coefficients. The
+default value is zero.</dd>
+<dt><strong>BULK, WALL</strong>, and <strong>TANK</strong> are used to override the global reaction</dt>
+<dd>coefficients for specific pipes and tanks.</dd>
+<dt><strong>LIMITING POTENTIAL</strong> specifies that reaction rates are proportional</dt>
+<dd>to the difference between the current concentration and some limiting
+potential value.</dd>
+<dt><strong>ROUGHNESS CORRELATION</strong> will make all default pipe wall reaction</dt>
+<dd><p class="first">coefficients be related to pipe roughness in the following manner:</p>
+<p>Head Loss Equation Roughness Correlation Hazen-Williams F / C</p>
+<p>Darcy-Weisbach F / log(e/D)</p>
+<p>Chezy-Manning F*n</p>
+<p class="last">where F = roughness correlation, C = Hazen-Williams C-factor, e =
+Darcy-Weisbach roughness, D = pipe diameter, and n = Chezy-Manning
+roughness coefficient. The default value computed this way can be
+overridden for any pipe by using the <strong>WALL</strong> format to supply a
+specific value for the pipe.</p>
+</dd>
+</dl>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Remember to use positive numbers for growth reaction coefficients and
+negative numbers for decay coefficients.</li>
+<li>The time units for all reaction coefficients are 1/days.</li>
+<li>All entries in this section are optional. Items offset by slashes (/)
+indicate allowable choices.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">REACTIONS</span><span class="p">]</span>
+<span class="n">ORDER</span> <span class="n">WALL</span> <span class="mi">0</span> <span class="p">;</span><span class="n">Wall</span> <span class="n">reactions</span> <span class="n">are</span> <span class="n">zero</span><span class="o">-</span><span class="n">order</span>
+<span class="n">GLOBAL</span> <span class="n">BULK</span> <span class="o">-</span><span class="mf">0.5</span> <span class="p">;</span><span class="n">Global</span> <span class="n">bulk</span> <span class="n">decay</span> <span class="n">coeff</span><span class="o">.</span>
+<span class="n">GLOBAL</span> <span class="n">WALL</span> <span class="o">-</span><span class="mf">1.0</span> <span class="p">;</span><span class="n">Global</span> <span class="n">wall</span> <span class="n">decay</span> <span class="n">coeff</span><span class="o">.</span>
+<span class="n">WALL</span> <span class="n">P220</span> <span class="o">-</span><span class="mf">0.5</span> <span class="p">;</span><span class="n">Pipe</span><span class="o">-</span><span class="n">specific</span> <span class="n">wall</span> <span class="n">coeffs</span><span class="o">.</span>
+<span class="n">WALL</span> <span class="n">P244</span> <span class="o">-</span><span class="mf">0.7</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="report">
+<h3>[REPORT]<a class="headerlink" href="#report" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Describes the contents of the output report produced from a
+simulation.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>PAGESIZE</strong> value</p>
+<p><strong>FILE</strong> filename</p>
+<p><strong>STATUS YES/NO/FULL</strong></p>
+<p><strong>SUMMARY YES/NO</strong></p>
+<p><strong>ENERGY YES/NO</strong></p>
+<p><strong>NODES NONE/ALL/</strong>node1 node2 …</p>
+<p><strong>LINKS NONE/ALL/</strong>link1 link2 …</p>
+<blockquote>
+<div><p>parameter <strong>YES/NO</strong></p>
+<p>parameter <strong>BELOW/ABOVE/PRECISION</strong> value</p>
+</div></blockquote>
+<p><strong>Definitions:</strong></p>
+<dl class="docutils">
+<dt><strong>PAGESIZE</strong> sets the number of lines written per page of the output</dt>
+<dd>report. The default is 0, meaning that no line limit per page is in
+effect.</dd>
+<dt><strong>FILE</strong> supplies the name of a file to which the output report will</dt>
+<dd>be written (ignored by the Windows version of EPANET).</dd>
+<dt><strong>STATUS</strong> determines whether a hydraulic status report should be</dt>
+<dd>generated. If <strong>YES</strong> is selected the report will identify all
+network components that change status during each time step of the
+simulation. If <strong>FULL</strong> is selected, then the status report will also
+include information from each trial of each hydraulic analysis. This
+level of detail is only useful for de-bugging networks that become
+hydraulically unbalanced. The default is <strong>NO</strong>.</dd>
+<dt><strong>SUMMARY</strong> determines whether a summary table of number of network</dt>
+<dd>components and key analysis options is generated. The default is</dd>
+</dl>
+<p><strong>YES</strong>.</p>
+<dl class="docutils">
+<dt><strong>ENERGY</strong> determines if a table reporting average energy usage and</dt>
+<dd>cost for each pump is provided. The default is NO.</dd>
+<dt><strong>NODES</strong> identifies which nodes will be reported on. You can either</dt>
+<dd>list individual node ID labels or use the keywords <strong>NONE</strong> or</dd>
+<dt><strong>ALL</strong>. Additional <strong>NODES</strong> lines can be used to continue the list.</dt>
+<dd>The default is <strong>NONE</strong>.</dd>
+<dt><strong>LINKS</strong> identifies which links will be reported on. You can either</dt>
+<dd>list individual link ID labels or use the keywords <strong>NONE</strong> or</dd>
+<dt><strong>ALL</strong>. Additional <strong>LINKS</strong> lines can be used to continue the list.</dt>
+<dd><p class="first">The default is <strong>NONE</strong>.</p>
+<p>The “parameter” reporting option is used to identify which quantities
+are reported on, how many decimal places are displayed, and what kind
+of filtering should be used to limit output reporting. Node
+parameters that can be reported on include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Elevation</strong></li>
+<li><strong>Demand</strong></li>
+<li><strong>Head</strong></li>
+<li><strong>Pressure</strong></li>
+<li><strong>Quality.</strong></li>
+</ul>
+</div></blockquote>
+<p>Link parameters include:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Length</strong></li>
+<li><strong>Diameter</strong></li>
+<li><strong>Flow</strong></li>
+<li><strong>Velocity</strong></li>
+<li><strong>Headloss</strong></li>
+<li><strong>Position</strong> (same as status – open, active, closed)</li>
+<li><strong>Setting</strong> (Roughness for pipes, speed for pumps, pressure/flow
+setting for valves)</li>
+<li><strong>Reaction</strong> (reaction rate)</li>
+<li><strong>F-Factor</strong> (friction factor).</li>
+</ul>
+</div></blockquote>
+<p class="last">The default quantities reported are <strong>Demand, Head, Pressure</strong>, and</p>
+</dd>
+</dl>
+<p><strong>Quality</strong> for nodes and</p>
+<dl class="docutils">
+<dt><strong>Flow, Velocity</strong>, and <strong>Headloss</strong> for links. The default precision</dt>
+<dd>is two decimal places.</dd>
+</dl>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>All options assume their default values if not explicitly specified
+in this section.</li>
+<li>Items offset by slashes (/) indicate allowable choices.</li>
+<li>The default is to not report on any nodes or links, so a <strong>NODES</strong> or</li>
+</ol>
+<blockquote>
+<div><dl class="docutils">
+<dt><strong>LINKS</strong> option must be supplied if you wish to report results for</dt>
+<dd>these items.</dd>
+</dl>
+</div></blockquote>
+<ol class="loweralpha simple" start="4">
+<li>For the Windows version of EPANET, the only [REPORT] option
+recognized is <strong>STATUS</strong>. All others are ignored.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><p>The following example reports on nodes N1, N2, N3, and N17 and all
+links with velocity above 3.0. The standard node parameters (Demand,
+Head, Pressure, and Quality) are reported on while only Flow,
+Velocity, and F-Factor (friction factor) are displayed for links.</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">REPORT</span><span class="p">]</span>
+<span class="n">NODES</span> <span class="n">N1</span> <span class="n">N2</span> <span class="n">N3</span> <span class="n">N17</span>
+<span class="n">LINKS</span> <span class="n">ALL</span>
+<span class="n">FLOW</span> <span class="n">YES</span>
+<span class="n">VELOCITY</span> <span class="n">PRECISION</span> <span class="mi">4</span>
+<span class="n">F</span><span class="o">-</span><span class="n">FACTOR</span> <span class="n">PRECISION</span> <span class="mi">4</span>
+<span class="n">VELOCITY</span> <span class="n">ABOVE</span> <span class="mf">3.0</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="reservoirs">
+<h3>[RESERVOIRS]<a class="headerlink" href="#reservoirs" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines all reservoir nodes contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each reservoir containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label</li>
+<li>Head, ft (m)</li>
+<li>Head pattern ID (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Head is the hydraulic head (elevation + pressure head) of water in
+the reservoir.</li>
+<li>A head pattern can be used to make the reservoir head vary with time.</li>
+<li>At least one reservoir or tank must be contained in the network.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">RESERVOIRS</span><span class="p">]</span>
+
+ <span class="p">;</span><span class="n">ID</span> <span class="n">Head</span> <span class="n">Pattern</span>
+
+ <span class="p">;</span><span class="o">---------------------</span>
+
+ <span class="n">R1</span> <span class="mi">512</span> <span class="p">;</span><span class="n">Head</span> <span class="n">stays</span> <span class="n">constant</span>
+ <span class="n">R2</span> <span class="mi">120</span> <span class="n">Pat1</span> <span class="p">;</span><span class="n">Head</span> <span class="n">varies</span> <span class="k">with</span> <span class="n">time</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="rules">
+<h3>[RULES]<a class="headerlink" href="#rules" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines rule-based controls that modify links based on a combination
+of conditions.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div>Each rule is a series of statements of the form:</div></blockquote>
+<p><strong>RULE</strong> ruleID</p>
+<dl class="docutils">
+<dt><strong>IF</strong> condition_1 <strong>AND</strong> condition_2 <strong>OR</strong> condition_3 <strong>AND</strong></dt>
+<dd>condition_4 etc.</dd>
+</dl>
+<p><strong>THEN</strong> action_1 <strong>AND</strong> action_2 etc.</p>
+<p><strong>ELSE</strong> action_3 <strong>AND</strong> action_4 etc.</p>
+<p><strong>PRIORITY</strong> value</p>
+<blockquote>
+<div>where:</div></blockquote>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="22%" />
+<col width="4%" />
+<col width="74%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">ruleID</th>
+<th class="head">=</th>
+<th class="head">an ID label assigned to the rule</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>conditon_n</td>
+<td>=</td>
+<td>a condition clause</td>
+</tr>
+<tr class="row-odd"><td>action_n</td>
+<td>=</td>
+<td>an action clause</td>
+</tr>
+<tr class="row-even"><td>Priority</td>
+<td>=</td>
+<td>a priority value (e.g., a number from 1 to 5)</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Condition Clause Format:</strong></p>
+<blockquote>
+<div><p>A condition clause in a Rule-Based Control takes the form of:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span> <span class="nb">id</span> <span class="n">attribute</span> <span class="n">relation</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>where</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span> <span class="o">=</span> <span class="n">a</span> <span class="n">category</span> <span class="n">of</span> <span class="n">network</span> <span class="nb">object</span>
+
+<span class="nb">id</span> <span class="o">=</span> <span class="n">the</span> <span class="nb">object</span><span class="s1">&#39;s ID label</span>
+
+<span class="n">attribute</span> <span class="o">=</span> <span class="n">an</span> <span class="n">attribute</span> <span class="ow">or</span> <span class="nb">property</span> <span class="n">of</span> <span class="n">the</span> <span class="nb">object</span>
+
+<span class="n">relation</span> <span class="o">=</span> <span class="n">a</span> <span class="n">relational</span> <span class="n">operator</span>
+
+<span class="n">value</span> <span class="o">=</span> <span class="n">an</span> <span class="n">attribute</span> <span class="n">value</span>
+</pre></div>
+</div>
+<p>Some example conditional clauses are:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">JUNCTION</span> <span class="mi">23</span> <span class="n">PRESSURE</span> <span class="o">&gt;</span> <span class="mi">20</span> <span class="n">TANK</span> <span class="n">T200</span> <span class="n">FILLTIME</span> <span class="n">BELOW</span> <span class="mf">3.5</span> <span class="n">LINK</span> <span class="mi">44</span> <span class="n">STATUS</span>
+
+<span class="n">IS</span> <span class="n">OPEN</span> <span class="n">SYSTEM</span> <span class="n">DEMAND</span> <span class="o">&gt;=</span> <span class="mi">1500</span>
+
+<span class="n">SYSTEM</span> <span class="n">CLOCKTIME</span> <span class="o">=</span> <span class="mi">7</span><span class="p">:</span><span class="mi">30</span> <span class="n">AM</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+<p>The Object keyword can be any of the following:</p>
+<blockquote>
+<div><p><strong>NODE LINK SYSTEM</strong></p>
+<p><strong>JUNCTION PIPE RESERVOIR PUMP TANK VALVE</strong></p>
+</div></blockquote>
+<p>When <strong>SYSTEM</strong> is used in a condition no ID is supplied.</p>
+<p>The following attributes can be used with Node-type objects:</p>
+<blockquote>
+<div><strong>DEMAND HEAD PRESSURE</strong></div></blockquote>
+<p>The following attributes can be used with Tanks:</p>
+<blockquote>
+<div><p><strong>LEVEL</strong></p>
+<p><strong>FILLTIME</strong> (hours needed to fill a tank)</p>
+<p><strong>DRAINTIME</strong> (hours needed to empty a tank)</p>
+</div></blockquote>
+<p>These attributes can be used with Link-Type objects:</p>
+<blockquote>
+<div><p><strong>FLOW</strong></p>
+<p><strong>STATUS</strong> (<strong>OPEN</strong>, <strong>CLOSED</strong>, or <strong>ACTIVE</strong>)</p>
+<p><strong>SETTING</strong> (pump speed or valve setting)</p>
+</div></blockquote>
+<p>The <strong>SYSTEM</strong> object can use the following attributes:</p>
+<blockquote>
+<div><p><strong>DEMAND</strong> (total system demand)</p>
+<dl class="docutils">
+<dt><strong>TIME</strong> (hours from the start of the simulation expressed either as</dt>
+<dd>a decimal number or in hours:minutes format)</dd>
+</dl>
+<p><strong>CLOCKTIME</strong> (24-hour clock time with <strong>AM</strong> or <strong>PM</strong> appended)</p>
+</div></blockquote>
+<p>Relation operators consist of the following:</p>
+<blockquote>
+<div><p><strong>= IS</strong></p>
+<p><strong>&lt;&gt; NOT</strong></p>
+<p><strong>&lt; BELOW</strong></p>
+<p><strong>&gt; ABOVE</strong></p>
+<p><strong>&lt;= &gt;=</strong></p>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Action Clause Format:</strong></p>
+<blockquote>
+<div><blockquote>
+<div><p>An action clause in a Rule-Based Control takes the form of:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span> <span class="nb">id</span> <span class="n">STATUS</span><span class="o">/</span><span class="n">SETTING</span> <span class="n">IS</span> <span class="n">value</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>where</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nb">object</span> <span class="o">=</span> <span class="n">LINK</span><span class="p">,</span> <span class="n">PIPE</span><span class="p">,</span> <span class="n">PUMP</span><span class="p">,</span> <span class="ow">or</span> <span class="n">VALVE</span> <span class="n">keyword</span>
+<span class="nb">id</span> <span class="o">=</span> <span class="n">the</span> <span class="nb">object</span><span class="s1">&#39;s ID label</span>
+<span class="n">value</span> <span class="o">=</span> <span class="n">a</span> <span class="n">status</span> <span class="n">condition</span> <span class="p">(</span><span class="n">OPEN</span> <span class="ow">or</span> <span class="n">CLOSED</span><span class="p">),</span> <span class="n">pump</span> <span class="n">speed</span> <span class="n">setting</span><span class="p">,</span> <span class="ow">or</span> <span class="n">valve</span>
+<span class="n">setting</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>Some example action clauses are:</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">LINK</span> <span class="mi">23</span> <span class="n">STATUS</span> <span class="n">IS</span> <span class="n">CLOSED</span> <span class="n">PUMP</span> <span class="n">P100</span> <span class="n">SETTING</span> <span class="n">IS</span> <span class="mf">1.5</span> <span class="n">VALVE</span> <span class="mi">123</span> <span class="n">SETTING</span>
+
+<span class="n">IS</span> <span class="mi">90</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">Only the <strong>RULE</strong>, <strong>IF</strong> and <strong>THEN</strong> portions of a rule are
+required; the other portions are optional.</p>
+</li>
+<li><p class="first">When mixing <strong>AND</strong> and <strong>OR</strong> clauses, the <strong>OR</strong> operator has
+higher precedence than <strong>AND</strong>, i.e.,</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IF</span> <span class="n">A</span> <span class="ow">or</span> <span class="n">B</span> <span class="ow">and</span> <span class="n">C</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>is equivalent to</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IF</span> <span class="p">(</span><span class="n">A</span> <span class="ow">or</span> <span class="n">B</span><span class="p">)</span> <span class="ow">and</span> <span class="n">C</span><span class="o">.</span>
+</pre></div>
+</div>
+</div></blockquote>
+<p>If the interpretation was meant to be</p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IF</span> <span class="n">A</span> <span class="ow">or</span> <span class="p">(</span><span class="n">B</span> <span class="ow">and</span> <span class="n">C</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+<dl class="docutils">
+<dt>then this can be expressed using two rules as in</dt>
+<dd><div class="first last highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">IF</span> <span class="n">A</span> <span class="n">THEN</span> <span class="o">...</span>
+
+<span class="n">IF</span> <span class="n">B</span> <span class="ow">and</span> <span class="n">C</span> <span class="n">THEN</span> <span class="o">...</span>
+</pre></div>
+</div>
+</dd>
+</dl>
+</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+<ol class="loweralpha simple" start="3">
+<li>The <strong>PRIORITY</strong> value is used to determine which rule applies when
+two or more rules require that conflicting actions be taken on a
+link. A rule without a priority value always has a lower priority
+than one with a value. For two rules with the same priority value,
+the rule that appears first is given the higher priority.</li>
+</ol>
+<blockquote>
+<div><p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">RULES</span><span class="p">]</span>
+
+<span class="n">RULE</span> <span class="mi">1</span>
+
+<span class="n">IF</span> <span class="n">TANK</span> <span class="mi">1</span> <span class="n">LEVEL</span> <span class="n">ABOVE</span> <span class="mf">19.1</span> <span class="n">THEN</span> <span class="n">PUMP</span> <span class="mi">335</span> <span class="n">STATUS</span> <span class="n">IS</span> <span class="n">CLOSED</span> <span class="n">AND</span> <span class="n">PIPE</span>
+<span class="mi">330</span> <span class="n">STATUS</span> <span class="n">IS</span> <span class="n">OPEN</span>
+
+<span class="n">RULE</span> <span class="mi">2</span>
+
+<span class="n">IF</span> <span class="n">SYSTEM</span> <span class="n">CLOCKTIME</span> <span class="o">&gt;=</span> <span class="mi">8</span> <span class="n">AM</span> <span class="n">AND</span> <span class="n">SYSTEM</span> <span class="n">CLOCKTIME</span> <span class="o">&lt;</span> <span class="mi">6</span> <span class="n">PM</span> <span class="n">AND</span> <span class="n">TANK</span> <span class="mi">1</span>
+<span class="n">LEVEL</span> <span class="n">BELOW</span> <span class="mi">12</span> <span class="n">THEN</span> <span class="n">PUMP</span> <span class="mi">335</span> <span class="n">STATUS</span> <span class="n">IS</span> <span class="n">OPEN</span>
+
+<span class="n">RULE</span> <span class="mi">3</span>
+
+<span class="n">IF</span> <span class="n">SYSTEM</span> <span class="n">CLOCKTIME</span> <span class="o">&gt;=</span> <span class="mi">6</span> <span class="n">PM</span> <span class="n">OR</span> <span class="n">SYSTEM</span> <span class="n">CLOCKTIME</span> <span class="o">&lt;</span> <span class="mi">8</span> <span class="n">AM</span> <span class="n">AND</span> <span class="n">TANK</span> <span class="mi">1</span>
+<span class="n">LEVEL</span> <span class="n">BELOW</span> <span class="mi">14</span> <span class="n">THEN</span> <span class="n">PUMP</span> <span class="mi">335</span> <span class="n">STATUS</span> <span class="n">IS</span> <span class="n">OPEN</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="sources">
+<h3>[SOURCES]<a class="headerlink" href="#sources" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines locations of water quality sources.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each water quality source containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Node ID label</li>
+<li>Source type (<strong>CONCEN, MASS, FLOWPACED</strong>, or <strong>SETPOINT</strong>)</li>
+<li>Baseline source strength</li>
+<li>Time pattern ID (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>For <strong>MASS</strong> type sources, strength is measured in mass flow per
+minute. All other types measure source strength in concentration
+units.</li>
+<li>Source strength can be made to vary over time by specifying a time
+pattern.</li>
+<li>A <strong>CONCEN</strong> source:<ul>
+<li>represents the concentration of any external source inflow to the
+node</li>
+<li>applies only when the node has a net negative demand (water enters
+the network at the node)</li>
+<li>if the node is a junction, reported concentration is the result of
+mixing the source flow and inflow from the rest of the network</li>
+<li>if the node is a reservoir, the reported concentration is the
+source concentration</li>
+<li>if the node is a tank, the reported concentration is the internal
+concentration of the tank</li>
+<li>is best used for nodes that represent source water supplies or
+treatment works (e.g., reservoirs or nodes assigned a negative
+demand)</li>
+<li>should not be used at storage tanks with simultaneous
+inflow/outflow.</li>
+</ul>
+</li>
+<li>A <strong>MASS, FLOWPACED</strong>, or <strong>SETPOINT</strong> source:<ul>
+<li>represents a booster source, where the substance is injected
+directly into the network irregardless of what the demand at the
+node is</li>
+<li>affects water leaving the node to the rest of the network in the
+following way:<ul>
+<li>a <strong>MASS</strong> booster adds a fixed mass flow to that resulting
+from inflow to the node</li>
+<li>a <strong>FLOWPACED</strong> booster adds a fixed concentration to the
+resultant inflow concentration at the node</li>
+<li>a <strong>SETPOINT</strong> booster fixes the concentration of any flow
+leaving the node (as long as the concentration resulting from
+the inflows is below the setpoint)</li>
+</ul>
+</li>
+<li>the reported concentration at a junction or reservoir booster
+source is the concentration that results after the boosting is
+applied; the reported concentration for a tank with a booster
+source is the internal concentration of the tank</li>
+<li>is best used to model direct injection of a tracer or disinfectant
+into the network or to model a contaminant intrusion.</li>
+</ul>
+</li>
+<li>A [SOURCES] section is not needed for simulating water age or source
+tracing.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">SOURCES</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">Node</span> <span class="n">Type</span> <span class="n">Strength</span> <span class="n">Pattern</span>
+
+<span class="p">;</span><span class="o">--------------------------------</span>
+
+<span class="n">N1</span> <span class="n">CONCEN</span> <span class="mf">1.2</span> <span class="n">Pat1</span> <span class="p">;</span><span class="n">Concentration</span> <span class="n">varies</span> <span class="k">with</span> <span class="n">time</span> <span class="n">N44</span> <span class="n">MASS</span> <span class="mi">12</span>
+<span class="p">;</span><span class="n">Constant</span> <span class="n">mass</span> <span class="n">injection</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="status">
+<h3>[STATUS]<a class="headerlink" href="#status" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines initial status of selected links at the start of a
+simulation.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line per link being controlled containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Link ID label</li>
+<li>Status or setting</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Links not listed in this section have a default status of <strong>OPEN</strong>
+(for pipes and pumps) or <strong>ACTIVE</strong> (for valves).</li>
+<li>The status value can be <strong>OPEN</strong> or <strong>CLOSED</strong>. For control valves
+(e.g., PRVs, FCVs, etc.) this means that the valve is either fully
+opened or closed, not active at its control setting.</li>
+<li>The setting value can be a speed setting for pumps or valve setting
+for valves.</li>
+<li>The initial status of pipes can also be set in the [PIPES] section.</li>
+<li>Check valves cannot have their status be preset.</li>
+<li>Use [CONTROLS] or [RULES] to change status or setting at some future
+point in the simulation.</li>
+<li>If a <strong>CLOSED</strong> or <strong>OPEN</strong> control valve is to become <strong>ACTIVE</strong>
+again, then its pressure or flow setting must be specified in the
+control or rule that re-activates it.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">STATUS</span><span class="p">]</span>
+
+<span class="p">;</span> <span class="n">Link</span> <span class="n">Status</span><span class="o">/</span><span class="n">Setting</span>
+
+<span class="p">;</span><span class="o">----------------------</span>
+
+<span class="n">L22</span> <span class="n">CLOSED</span> <span class="p">;</span><span class="n">Link</span> <span class="n">L22</span> <span class="ow">is</span> <span class="n">closed</span> <span class="n">P14</span> <span class="mf">1.5</span> <span class="p">;</span><span class="n">Speed</span> <span class="k">for</span> <span class="n">pump</span> <span class="n">P14</span>
+
+<span class="n">PRV1</span> <span class="n">OPEN</span> <span class="p">;</span><span class="n">PRV1</span> <span class="n">forced</span> <span class="nb">open</span>
+
+<span class="p">;(</span><span class="n">overrides</span> <span class="n">normal</span> <span class="n">operation</span><span class="p">)</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="tags">
+<h3>[TAGS]<a class="headerlink" href="#tags" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Associates category labels (tags) with specific nodes and links.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each node and link with a tag containing</p>
+<blockquote>
+<div><ul class="simple">
+<li>the keyword NODE or LINK</li>
+<li>the node or link ID label</li>
+<li>the text of the tag label (with no spaces)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Tags can be useful for assigning nodes to different pressure zones or
+for classifying pipes by material or age.</li>
+<li>If a node or link’s tag is not identified in this section then it is
+assumed to be blank.</li>
+<li>The [TAGS] section is optional and has no effect on the hydraulic or
+water quality calculations.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">TAGS</span><span class="p">]</span>
+<span class="p">;</span><span class="n">Object</span> <span class="n">ID</span> <span class="n">Tag</span>
+<span class="p">;</span><span class="o">------------------------------</span>
+<span class="n">NODE</span> <span class="mi">1001</span> <span class="n">Zone_A</span>
+<span class="n">NODE</span> <span class="mi">1002</span> <span class="n">Zone_A</span>
+<span class="n">NODE</span> <span class="mi">45</span> <span class="n">Zone_B</span>
+<span class="n">LINK</span> <span class="mi">201</span> <span class="n">UNCI</span><span class="o">-</span><span class="mi">1960</span>
+<span class="n">LINK</span> <span class="mi">202</span> <span class="n">PVC</span><span class="o">-</span><span class="mi">1985</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="tanks">
+<h3>[TANKS]<a class="headerlink" href="#tanks" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines all tank nodes contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each tank containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label</li>
+<li>Bottom elevation, ft (m)</li>
+<li>Initial water level, ft (m)</li>
+<li>Minimum water level, ft (m)</li>
+<li>Maximum water level, ft (m)</li>
+<li>Nominal diameter, ft (m)</li>
+<li>Minimum volume, cubic ft (cubic meters)</li>
+<li>Volume curve ID (optional)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Water surface elevation equals bottom elevation plus water level.</li>
+<li>Non-cylindrical tanks can be modeled by specifying a curve of volume
+versus water depth in the [CURVES] section.</li>
+<li>If a volume curve is supplied the diameter value can be any non-zero
+number</li>
+<li>Minimum volume (tank volume at minimum water level) can be zero for a
+cylindrical tank or if a volume curve is supplied.</li>
+<li>A network must contain at least one tank or reservoir.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">TANKS</span><span class="p">]</span>
+
+<span class="p">;</span><span class="n">ID</span> <span class="n">Elev</span><span class="o">.</span> <span class="n">InitLvl</span> <span class="n">MinLvl</span> <span class="n">MaxLvl</span> <span class="n">Diam</span> <span class="n">MinVol</span> <span class="n">VolCurve</span>
+
+<span class="p">;</span><span class="o">-----------------------------------------------------------</span>
+
+<span class="p">;</span><span class="n">Cylindrical</span> <span class="n">tank</span>
+
+<span class="n">T1</span> <span class="mi">100</span> <span class="mi">15</span> <span class="mi">5</span> <span class="mi">25</span> <span class="mi">120</span> <span class="mi">0</span>
+
+<span class="p">;</span><span class="n">Non</span><span class="o">-</span><span class="n">cylindrical</span> <span class="n">tank</span> <span class="k">with</span> <span class="n">arbitrary</span> <span class="n">diameter</span>
+
+<span class="n">T2</span> <span class="mi">100</span> <span class="mi">15</span> <span class="mi">5</span> <span class="mi">25</span> <span class="mi">1</span> <span class="mi">0</span> <span class="n">VC1</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="times">
+<h3>[TIMES]<a class="headerlink" href="#times" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines various time step parameters used in the simulation.</div></blockquote>
+<p><strong>Formats:</strong></p>
+<p><strong>DURATION</strong></p>
+<dl class="docutils">
+<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>HYDRAULIC TIMESTEP QUALITY TIMESTEP RULE TIMESTEP PATTERN TIMESTEP</dt>
+<dd>PATTERN START REPORT TIMESTEP REPORT START**</dd>
+</dl>
+<p><strong>START CLOCKTIME STATISTIC</strong></p>
+<p><strong>Definitions:</strong></p>
+<blockquote>
+<div>Value (units) Value (units) Value (units) Value (units) Value (units)
+Value (units) Value (units) Value (units) Value (<strong>AM/PM</strong>)</div></blockquote>
+<p><strong>NONE/AVERAGED/ MINIMUM/MAXIMUM RANGE</strong></p>
+<dl class="docutils">
+<dt><strong>DURATION</strong> is the duration of the simulation. Use 0 to run a single</dt>
+<dd>period snapshot analysis. The default is 0.</dd>
+<dt><strong>HYDRAULIC TIMESTEP</strong> determines how often a new hydraulic state of</dt>
+<dd>the network is computed. If greater than either the <strong>PATTERN</strong> or</dd>
+<dt><strong>REPORT</strong> time step it will be automatically reduced. The default is</dt>
+<dd>1 hour.</dd>
+<dt><strong>QUALITY TIMESTEP</strong> is the time step used to track changes in water</dt>
+<dd>quality throughout the network. The default is 1/10 of the hydraulic
+time step.</dd>
+<dt><strong>RULE TIMESTEP</strong> is the time step used to check for changes in</dt>
+<dd>system status due to activation of rule-based controls between
+hydraulic time steps. The default is 1/10 of the hydraulic time step.</dd>
+<dt><strong>PATTERN TIMESTEP</strong> is the interval between time periods in all time</dt>
+<dd>patterns. The default is 1 hour.</dd>
+<dt><strong>PATTERN START</strong> is the time offset at which all patterns will</dt>
+<dd>start. For example, a value of 6 hours would start the simulation
+with each pattern in the time period that corresponds to hour 6. The
+default is 0.</dd>
+<dt><strong>REPORT TIMESTEP</strong> sets the time interval between which output</dt>
+<dd>results are reported. The default is 1 hour.</dd>
+<dt><strong>REPORT START</strong> is the length of time into the simulation at which</dt>
+<dd>output results begin to be reported. The default is 0.</dd>
+<dt><strong>START CLOCKTIME</strong> is the time of day (e.g., 3:00 PM) at which the</dt>
+<dd>simulation begins. The default is 12:00 AM midnight.</dd>
+<dt><strong>STATISTIC</strong> determines what kind of statistical post-processing</dt>
+<dd>should be done on the time series of simulation results generated.</dd>
+<dt><strong>AVERAGED</strong> reports a set of time-averaged results, <strong>MINIMUM</strong></dt>
+<dd>reports only the minimum values, <strong>MAXIMUM</strong> the maximum values, and</dd>
+<dt><strong>RANGE</strong> reports the difference between the minimum and maximum</dt>
+<dd>values. <strong>NONE</strong> reports the full time series for all quantities for
+all nodes and links and is the default.</dd>
+</dl>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Units can be <strong>SECONDS (SEC), MINUTES (MIN), HOURS</strong>, or <strong>DAYS</strong>.
+The default is hours.</li>
+<li>If units are not supplied, then time values can be entered as decimal
+hours or in hours:minutes notation.</li>
+<li>All entries in the [TIMES] section are optional. Items offset by
+slashes (/) indicate allowable choices.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">TIMES</span><span class="p">]</span>
+ <span class="n">DURATION</span> <span class="mi">240</span> <span class="n">HOURS</span>
+ <span class="n">QUALITY</span> <span class="n">TIMESTEP</span> <span class="mi">3</span> <span class="n">MIN</span>
+ <span class="n">REPORT</span> <span class="n">START</span> <span class="mi">120</span>
+ <span class="n">STATISTIC</span> <span class="n">AVERAGED</span>
+ <span class="n">START</span> <span class="n">CLOCKTIME</span> <span class="mi">6</span><span class="p">:</span><span class="mi">00</span> <span class="n">AM</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="title">
+<h3>[TITLE]<a class="headerlink" href="#title" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Attaches a descriptive title to the network being analyzed.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div>Any number of lines of text.</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div>The [TITLE] section is optional.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="valves">
+<h3>[VALVES]<a class="headerlink" href="#valves" title="Permalink to this headline">¶</a></h3>
+<p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Defines all control valve links contained in the network.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each valve containing:</p>
+<blockquote>
+<div><ul class="simple">
+<li>ID label of valve</li>
+<li>ID of start node</li>
+<li>ID of end node</li>
+<li>Diameter, inches (mm)</li>
+<li>Valve type</li>
+<li>Valve setting</li>
+<li>Minor loss coefficient</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha">
+<li><p class="first">Valve types and settings include:</p>
+<p>Valve Type Setting PRV (pressure reducing valve) Pressure, psi (m)</p>
+<p>PSV (pressure sustaining valve) Pressure, psi (m)</p>
+<p>PBV (pressure breaker valve) Pressure, psi (m)</p>
+<p>FCV (flow control valve) Flow (flow units)</p>
+<p>TCV (throttle control valve) Loss Coefficient</p>
+<p>GPV (general purpose valve) ID of head loss curve</p>
+</li>
+<li><p class="first">Shutoff valves and check valves are considered to be part of a pipe,
+not a separate control valve component (see [PIPES])</p>
+</li>
+</ol>
+</div></blockquote>
+</div>
+<div class="section" id="vertices">
+<h3>[VERTICES]<a class="headerlink" href="#vertices" title="Permalink to this headline">¶</a></h3>
+<p><strong>Purpose:</strong></p>
+<blockquote>
+<div>Assigns interior vertex points to network links.</div></blockquote>
+<p><strong>Format:</strong></p>
+<blockquote>
+<div><p>One line for each point in each link containing such points that
+includes:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Link ID label</li>
+<li>X-coordinate</li>
+<li>Y-coordinate</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<p><strong>Remarks:</strong></p>
+<blockquote>
+<div><ol class="loweralpha simple">
+<li>Vertex points allow links to be drawn as polylines instead of simple
+straight-lines between their end nodes.</li>
+<li>The coordinates refer to the same coordinate system used for node and
+label coordinates.</li>
+<li>A [VERTICES] section is optional and is not used at all when EPANET
+is run as a console application.</li>
+</ol>
+</div></blockquote>
+<p><strong>Example:</strong></p>
+<blockquote>
+<div><div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">[</span><span class="n">COORDINATES</span><span class="p">]</span>
+<span class="p">;</span><span class="n">Node</span> <span class="n">X</span><span class="o">-</span><span class="n">Coord</span><span class="o">.</span> <span class="n">Y</span><span class="o">-</span><span class="n">Coord</span>
+<span class="p">;</span><span class="o">-------------------------------</span>
+<span class="mi">1</span> <span class="mi">10023</span> <span class="mi">128</span>
+<span class="mi">2</span> <span class="mi">10056</span> <span class="mi">95</span>
+</pre></div>
+</div>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="E_references.html" class="btn btn-neutral" title="E. REFERENCES" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

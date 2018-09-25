@@ -1,0 +1,840 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>7. WORKING WITH THE MAP &mdash; EPANET 2.00.12 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="8. ANALYZING A NETWORK" href="8_analyzing_network.html" />
+    <link rel="prev" title="6. WORKING WITH OBJECTS" href="6_objects.html" /> 
+
+  
+  <script src="_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="index.html" class="icon icon-home"> EPANET
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
+<li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
+<li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="3_network_model.html">3. THE NETWORK MODEL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="4_EPANET_workspace.html">4. EPANET’S WORKSPACE</a></li>
+<li class="toctree-l1"><a class="reference internal" href="5_projects.html">5. WORKING WITH PROJECTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="6_objects.html">6. WORKING WITH OBJECTS</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">7. WORKING WITH THE MAP</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-a-map-view">Selecting a Map View</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#setting-the-maps-dimensions">Setting the Map’s Dimensions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#utilizing-a-backdrop-map">Utilizing a Backdrop Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#zooming-the-map">Zooming the Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#panning-the-map">Panning the Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#finding-an-object">Finding an Object</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-legends">Map Legends</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#overview-map">Overview Map</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#map-display-options">Map Display Options</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#node-options">Node Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#link-options">Link Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#label-options">Label Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#notation-options">Notation Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#symbol-options">Symbol Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#flow-arrow-options">Flow Arrow Options</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="8_analyzing_network.html">8. ANALYZING A NETWORK</a></li>
+<li class="toctree-l1"><a class="reference internal" href="9_viewing_results.html">9. VIEWING RESULTS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="10_printing_copying.html">10. PRINTING AND COPYING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="11_importing_exporting.html">11. IMPORTING AND EXPORTING</a></li>
+<li class="toctree-l1"><a class="reference internal" href="12_questions.html">12. FREQUENTLY ASKED QUESTIONS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="A_units.html">A. UNITS OF MEASUREMENT</a></li>
+<li class="toctree-l1"><a class="reference internal" href="B_error_messages.html">B. ERROR MESSAGES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="C_command_line_EPANET.html">C. COMMAND LINE EPANET</a></li>
+<li class="toctree-l1"><a class="reference internal" href="D_analysis_algorithms.html">D. ANALYSIS ALGORITHMS</a></li>
+<li class="toctree-l1"><a class="reference internal" href="E_references.html">E. REFERENCES</a></li>
+<li class="toctree-l1"><a class="reference internal" href="F_en2_section_keywords.html">F. INPUT SECTION KEYWORDS</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">EPANET</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html">Docs</a> &raquo;</li>
+        
+      <li>7. WORKING WITH THE MAP</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/7_map.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="working-with-the-map">
+<h1>7. WORKING WITH THE MAP<a class="headerlink" href="#working-with-the-map" title="Permalink to this headline">¶</a></h1>
+<p><em>EPANET displays a map of the pipe network being modeled. This
+chapter describes how you can manipulate this map to enhance your
+visualization of the system being modeled.</em></p>
+<hr class="docutils" />
+<div class="section" id="selecting-a-map-view">
+<h2>Selecting a Map View<a class="headerlink" href="#selecting-a-map-view" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>One uses the Map Page of the Browser (Section 4.7) to select a node
+and link parameter to view on the map. Parameters are viewed on the
+map by using colors, as specified in the Map Legends (see below), to
+display different ranges of values.</p>
+<p>Node parameters available for viewing include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Elevation</li>
+<li>Base Demand (nominal or average demand)</li>
+<li>Initial Quality (water quality at time zero)</li>
+<li>*Actual Demand (total demand at current time)</li>
+<li>*Hydraulic Head (elevation plus pressure head)</li>
+<li>*Pressure</li>
+<li>*Water Quality</li>
+</ul>
+</div></blockquote>
+<p>Link parameters available for viewing include:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Length</li>
+<li>Diameter</li>
+<li>Roughness Coefficient</li>
+<li>Bulk Reaction Coefficient</li>
+<li>Wall Reaction Coefficient</li>
+<li>*Flow Rate</li>
+<li>*Velocity</li>
+<li>*Headloss (per 1000 feet (or meters) of pipe)</li>
+<li>*Friction Factor (as used in the Darcy-Weisbach headloss formula)</li>
+<li>*Reaction Rate (average over length of pipe)</li>
+<li>*Water Quality (average over length of pipe)</li>
+</ul>
+</div></blockquote>
+<p>The items marked with asterisks are computed quantities whose values
+will only be available if a successful analysis has been run on the
+network (see Chapter 8 – Analyzing a Network).</p>
+</div></blockquote>
+</div>
+<div class="section" id="setting-the-maps-dimensions">
+<h2>Setting the Map’s Dimensions<a class="headerlink" href="#setting-the-maps-dimensions" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><blockquote>
+<div><p>The physical dimensions of the map must be defined so that map
+coordinates can be properly scaled to the computer’s video display.
+To set the map’s dimensions:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Dimensions</strong>.</li>
+<li>Enter new dimension information into the Map Dimensions dialog that
+appears (see Figure 7.1) or click the <strong>Auto-Size</strong> button to have
+EPANET compute dimensions based on the coordinates of objects
+currently included in the network.</li>
+<li>Click the <strong>OK</strong> button to re-size the map.</li>
+</ol>
+<p><img alt="image100" src="_images/image67.png" /></p>
+</div></blockquote>
+<p><strong>Figure 7.1</strong> Map Dimensions Dialog</p>
+<p>The information provided in the Map Dimensions dialog consists of the
+following:</p>
+</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Item</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Lower Left Coordinates</td>
+<td>The X and Y coordinates of the
+lower left point on the map.</td>
+</tr>
+<tr class="row-odd"><td>Upper Right Coordinates</td>
+<td>The X and Y coordinates of the
+upper right point on the map.</td>
+</tr>
+<tr class="row-even"><td>Map Units</td>
+<td>Units used to measure distances
+on the map. Choices are Feet,
+Meters, Degrees, and None (i.e.,
+arbitrary units).</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note:</strong> If you are going to use a backdrop map with automatic pipe
+length calculation, then it is recommended that you set the map
+dimensions immediately after creating a new project. Map distance
+units can be different from pipe length units. The latter (feet or
+meters) depend on whether flow rates are expressed in US or metric
+units. EPANET will automatically convert units if necessary.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="utilizing-a-backdrop-map">
+<h2>Utilizing a Backdrop Map<a class="headerlink" href="#utilizing-a-backdrop-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>EPANET can display a backdrop map behind the pipe network map. The
+backdrop map might be a street map, utility map, topographic map,
+site development plan, or any other picture or drawing that might be
+useful. For example, using a street map would simplify the process of
+adding pipes to the network since one could essentially digitize the
+network’s nodes and links directly on top of it.</p>
+<blockquote>
+<div><img alt="image101" src="_images/image68.png" /></div></blockquote>
+<p>The backdrop map must be a Windows enhanced metafile or bitmap
+created outside of EPANET. Once imported, its features cannot be
+edited, although its scale and extent will change as the map window
+is zoomed and panned. For this reason metafiles work better than
+bitmaps since they will not loose resolution when re- scaled. Most
+CAD and GIS programs have the ability to save their drawings and maps
+as metafiles.</p>
+<p>Selecting <strong>View &gt;&gt; Backdrop</strong> from the Menu Bar will display a
+sub-menu with the following commands:</p>
+<blockquote>
+<div><ul class="simple">
+<li><strong>Load</strong> (loads a backdrop map file into the project)</li>
+<li><strong>Unload</strong> (unloads the backdrop map from the project)</li>
+<li><strong>Align</strong> (aligns the pipe network with the backdrop)</li>
+<li><strong>Show/Hide</strong> (toggles the display of the backdrop on and off)</li>
+</ul>
+</div></blockquote>
+<p>When first loaded, the backdrop image is placed with its upper left
+corner coinciding with that of the network’s bounding rectangle. The
+backdrop can be re-positioned relative to the network map by
+selecting <strong>View &gt;&gt; Backdrop &gt;&gt; Align</strong>. This allows an outline of
+the pipe network to be moved across the backdrop (by moving the mouse
+with the left button held down) until one decides that it lines up
+properly with the backdrop. The name of the backdrop file and its
+current alignment are saved along with the rest of a project’s data
+whenever the project is saved to file.</p>
+<p>For best results in using a backdrop map:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Use a metafile, not a bitmap.</li>
+<li>Dimension the network map so that its bounding rectangle has the same</li>
+</ul>
+</div></blockquote>
+<p>aspect ratio (width-to-height ratio) as the backdrop.</p>
+</div></blockquote>
+</div>
+<div class="section" id="zooming-the-map">
+<h2>Zooming the Map<a class="headerlink" href="#zooming-the-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To Zoom In on the map:</p>
+<blockquote>
+<div><blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Zoom In</strong> or click <img alt="image102" src="_images/image49.png" /> on the Map Toolbar.</li>
+<li>To zoom in 100%, move the mouse to the center of the zoom area and
+click the left button.</li>
+<li>To perform a custom zoom, move the mouse to the upper left corner of
+the zoom area and with the left button pressed down, draw a
+rectangular outline around the zoom area. Then release the left
+button.</li>
+</ol>
+</div></blockquote>
+<p>To Zoom Out on the map:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Zoom Out</strong> or click <img alt="image103" src="_images/image50.png" /> on the Map Toolbar.</li>
+<li>Move the mouse to the center of the new zoom area and click the left
+button.</li>
+<li>The map will be returned to its previous zoom level.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="panning-the-map">
+<h2>Panning the Map<a class="headerlink" href="#panning-the-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To pan the map across the Map window:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Pan</strong> or click <img alt="image104" src="_images/image48.png" /> on the Map Toolbar.</li>
+<li>With the left button held down over any point on the map, drag the
+mouse in the direction you wish to pan in.</li>
+<li>Release the mouse button to complete the pan.</li>
+</ol>
+</div></blockquote>
+<p>To pan using the Overview Map (which is described in Section 7.7
+below):</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>If not already visible, bring up the Overview Map by selecting
+<strong>View&gt;&gt; Overview Map</strong>.</li>
+<li>Position the mouse within the zoom window displayed on the Overview
+Map.</li>
+<li>With the left button held down, drag the zoom window to a new
+position.</li>
+<li>Release the mouse button and the main map will be panned to an area
+corresponding to that of the Overview Map’s zoom window.</li>
+</ol>
+</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="finding-an-object">
+<h2>Finding an Object<a class="headerlink" href="#finding-an-object" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>To find a node or link on the map whose ID label is known:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Find</strong> or click <img alt="image105" src="_images/image42.png" /> on the Standard
+Toolbar<strong>.</strong></li>
+<li>In the Map Finder dialog box that appears, select <strong>Node</strong> or
+<strong>Link</strong> and enter an ID label.</li>
+<li>Click <strong>Find</strong>.</li>
+</ol>
+</div></blockquote>
+<p>If the node/link exists it will be highlighted on the map and in the
+Browser. If the map is currently zoomed in and the node/link falls
+outside the current map boundaries, the map will be panned so that
+the node/link comes into view. The Map Finder dialog will also list
+the ID labels of the links that connect to a found node or the nodes
+attached to a found link.</p>
+<p>To find a listing of all nodes that serve as water quality sources:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Select <strong>View &gt;&gt; Find</strong> or click <img alt="image106" src="_images/image42.png" /> on the Standard
+Toolbar<strong>.</strong></li>
+<li>In the Map Finder dialog box that appears, select <strong>Sources</strong>.</li>
+<li>Click <strong>Find</strong>.</li>
+</ol>
+</div></blockquote>
+<p>The ID labels of all water quality source nodes will be listed in the
+Map Finder. Clicking on any ID label will highlight that node on the
+map.</p>
+</div></blockquote>
+</div>
+<div class="section" id="map-legends">
+<h2>Map Legends<a class="headerlink" href="#map-legends" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p><img alt="image107" src="_images/image69.jpeg" />There are three types of map legends that can be
+displayed. The Node and Link Legends associate a color with a range
+of values for the current parameter being viewed on the map. The Time
+Legend displays the clock time of the simulation time period being
+viewed. To display or hide any of these legends check or uncheck the
+legend from the <strong>View &gt;&gt; Legends</strong> menu or right- click over the map
+and do the same from the popup menu that appears. Double-clicking the
+mouse over it can also hide a visible legend.</p>
+<p>To move a legend to another location:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Press the left mouse button over the legend.</li>
+<li>With the button held down, drag the legend to its new location and
+release the button.</li>
+</ol>
+</div></blockquote>
+<p>To edit the Node Legend:</p>
+<blockquote>
+<div><ol class="arabic simple">
+<li>Either select <strong>View &gt;&gt; Legends &gt;&gt; Modify &gt;&gt; Node</strong> or right-click on
+the legend if it is visible.</li>
+<li>Use the Legend Editor dialog form that appears (see Figure 7.2) to
+modify the legend’s colors and intervals.</li>
+</ol>
+</div></blockquote>
+<p>A similar method is used to edit the Link Legend.</p>
+<p>The Legend Editor (Figure 7.2) is used to set numerical ranges to
+which different colors are assigned for viewing a particular
+parameter on the network map. It works as follows:</p>
+<blockquote>
+<div><ul class="simple">
+<li>Numerical values, in increasing order, are entered in the edit boxes
+to define the ranges. Not all four boxes need to have values.</li>
+<li>To change a color, click on its color band in the Editor and then
+select a new color from the Color Dialog box that will appear.</li>
+<li>Click the <strong>Equal Intervals</strong> button to assign ranges based on
+dividing the range of the parameter at the current time period into
+equal intervals.</li>
+<li>Click the <strong>Equal Quantiles</strong> button to assign ranges so that there
+are equal numbers of objects within each range, based on values that
+exist at the current time period.</li>
+<li>The <strong>Color Ramp</strong> button is used to select from a list of built-in
+color schemes.</li>
+<li>The <strong>Reverse Colors</strong> button reverses the ordering of the current
+set of colors (the color in the lowest range becomes that of the
+highest range and so on).</li>
+<li>Check <strong>Framed</strong> if you want a frame drawn around the legend.</li>
+</ul>
+<blockquote>
+<div><img alt="image108" src="_images/image70.png" /></div></blockquote>
+</div></blockquote>
+<p><strong>Figure 7.2</strong> Legend Editor Dialog</p>
+</div></blockquote>
+</div>
+<div class="section" id="overview-map">
+<h2>Overview Map<a class="headerlink" href="#overview-map" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><img alt="image109" src="_images/image71.png" /></div></blockquote>
+</div>
+<div class="section" id="map-display-options">
+<h2>Map Display Options<a class="headerlink" href="#map-display-options" title="Permalink to this headline">¶</a></h2>
+<blockquote>
+<div><p>The Overview Map allows you to see where in terms of the overall
+system the main network map is currently focused. This zoom area is
+depicted by the rectangular boundary displayed on the Overview Map.
+As you drag this rectangle to another position the view within the
+main map will follow suit. The Overview Map can be toggled on and off
+by selecting <strong>View &gt;&gt; Overview Map</strong>. Clicking the mouse on its
+title bar will update its map image to match that of the main network
+map.</p>
+<p>There are several ways to bring up the Map Options dialog form
+(Figure 7.3) used to change the appearance of the Network Map:</p>
+<blockquote>
+<div><ul class="simple">
+<li>select <strong>View &gt;&gt; Options</strong>,</li>
+<li>click the Options button <img alt="image110" src="_images/image46.png" /> on the Standard Toolbar when the
+Map window has the focus,</li>
+<li>right-click on any empty portion of the map and select <strong>Options</strong>
+from the popup menu that appears.</li>
+</ul>
+<blockquote>
+<div><img alt="image111" src="_images/image72.png" /></div></blockquote>
+</div></blockquote>
+<p><strong>Figure 7.3</strong> Map Options Dialog</p>
+<p>The dialog contains a separate page, selected from the panel on the
+left side of the form, for each of the following display option
+categories:</p>
+<blockquote>
+<div><ul class="simple">
+<li><em>Nodes</em> (controls size of nodes and making size be proportional to
+value)</li>
+<li><em>Links</em> (controls thickness of links and making thickness be
+proportional to value)</li>
+<li>Labels (turns display of map labels on/off)</li>
+<li><em>Notation</em> (displays or hides node/link ID labels and parameter
+values)</li>
+<li><em>Symbols</em> (turns display of tank, pump, valve symbols on/off)</li>
+<li><em>Flow Arrows</em> (selects visibility and style of flow direction arrows)</li>
+<li><em>Background</em> (changes color of map’s background)</li>
+</ul>
+</div></blockquote>
+</div></blockquote>
+<div class="section" id="node-options">
+<h3>Node Options<a class="headerlink" href="#node-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Nodes page of the Map Options dialog controls how nodes are
+displayed on the Network Map.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Node Size</td>
+<td>Selects node diameter</td>
+</tr>
+<tr class="row-odd"><td>Proportional to Value</td>
+<td>Select if node size should
+increase as the viewed parameter
+increases in value</td>
+</tr>
+<tr class="row-even"><td>Display Border</td>
+<td>Select if a border should be
+drawn around each node
+(recommended for light-colored
+backgrounds)</td>
+</tr>
+<tr class="row-odd"><td>Display Junctions</td>
+<td>Displays junction nodes (all
+junctions will be hidden unless
+this option is checked).</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="link-options">
+<h3>Link Options<a class="headerlink" href="#link-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Links page of the Map Options dialog controls how links are
+displayed on the map.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Link Size</td>
+<td>Sets thickness of links displayed
+on map</td>
+</tr>
+<tr class="row-odd"><td>Proportional to Value</td>
+<td>Select if link thickness should
+increase as the viewed parameter
+increases in value</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="label-options">
+<h3>Label Options<a class="headerlink" href="#label-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display Labels</td>
+<td>Displays map labels (labels will
+be hidden unless this option is
+checked)</td>
+</tr>
+<tr class="row-odd"><td>Use Transparent Text</td>
+<td>Displays label with a transparent
+background (otherwise an opaque
+background is used)</td>
+</tr>
+<tr class="row-even"><td>At Zoom Of</td>
+<td>Selects minimum zoom at which
+labels should be displayed;
+labels will be hidden at zooms
+smaller than this unless they are
+meter labels</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="notation-options">
+<h3>Notation Options<a class="headerlink" href="#notation-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Notation page of the Map Options dialog form determines what kind
+of annotation is provided alongside of the nodes and links of the
+map.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display Node IDs</td>
+<td>Displays node ID labels</td>
+</tr>
+<tr class="row-odd"><td>Display Node Values</td>
+<td>Displays value of current node
+parameter being viewed</td>
+</tr>
+<tr class="row-even"><td>Display Link IDs</td>
+<td>Displays link ID labels</td>
+</tr>
+<tr class="row-odd"><td>Display Link Values</td>
+<td>Displays values of current link
+parameter being viewed</td>
+</tr>
+<tr class="row-even"><td>Use Transparent Text</td>
+<td>Displays text with a transparent
+background (otherwise an opaque
+background is used)</td>
+</tr>
+<tr class="row-odd"><td>At Zoom Of</td>
+<td>Selects minimum zoom at which
+notation should be displayed; all
+notation will be hidden at zooms
+smaller than this</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><strong>Note</strong>: Values of the current viewing parameter at only specific
+nodes and links can be displayed by creating Map Labels with meters
+for those objects. See Sections 6.2 and 6.4 as well as Table 6.7.</div></blockquote>
+</div></blockquote>
+</div>
+<div class="section" id="symbol-options">
+<h3>Symbol Options<a class="headerlink" href="#symbol-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Symbols page of the Map Options dialog determines which types of
+objects are represented with special symbols on the map.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Display Tanks</td>
+<td>Displays tank symbols</td>
+</tr>
+<tr class="row-odd"><td>Display Pumps</td>
+<td>Displays pump symbols</td>
+</tr>
+<tr class="row-even"><td>Display Valves</td>
+<td>Displays valve symbols</td>
+</tr>
+<tr class="row-odd"><td>Display Emitters</td>
+<td>Displays emitter symbols</td>
+</tr>
+<tr class="row-even"><td>Display Sources</td>
+<td>Displays <strong>+</strong> symbol for water
+quality sources</td>
+</tr>
+<tr class="row-odd"><td>At Zoom Of</td>
+<td>Selects minimum zoom at which
+symbols should be displayed;
+symbols will be hidden at zooms
+smaller than this</td>
+</tr>
+</tbody>
+</table>
+</div></blockquote>
+</div>
+<div class="section" id="flow-arrow-options">
+<h3>Flow Arrow Options<a class="headerlink" href="#flow-arrow-options" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><blockquote>
+<div>The Flow Arrows page of the Map Options dialog controls how
+flow-direction arrows are displayed on the network map.</div></blockquote>
+<table border="1" class="docutils">
+<colgroup>
+<col width="50%" />
+<col width="50%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head"><em>Option</em></th>
+<th class="head"><em>Description</em></th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>Arrow Style</td>
+<td>Selects style (shape) of arrow to
+display (select None to hide
+arrows)</td>
+</tr>
+<tr class="row-odd"><td>Arrow Size</td>
+<td>Sets arrow size</td>
+</tr>
+<tr class="row-even"><td>At Zoom Of</td>
+<td>Selects minimum zoom at which
+arrows should be displayed;
+arrows will be hidden at zooms
+smaller than this</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<div><p><strong>Note</strong>: Flow direction arrows will only be displayed after a
+network has been successfully analyzed (see Section 8.2 Running an
+Analysis).</p>
+<p>Background Options</p>
+<p>The Background page of the Map Options dialog offers a selection of
+colors used to paint the map’s background with.</p>
+</div></blockquote>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="8_analyzing_network.html" class="btn btn-neutral float-right" title="8. ANALYZING A NETWORK" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="6_objects.html" class="btn btn-neutral" title="6. WORKING WITH OBJECTS" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'./',
+            VERSION:'2.00.12',
+            LANGUAGE:'None',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true,
+            SOURCELINK_SUFFIX: '.txt'
+        };
+    </script>
+      <script type="text/javascript" src="_static/jquery.js"></script>
+      <script type="text/javascript" src="_static/underscore.js"></script>
+      <script type="text/javascript" src="_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  <script type="text/javascript" src="_static/js/theme.js"></script>
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
