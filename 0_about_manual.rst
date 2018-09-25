@@ -1,11 +1,10 @@
 About This Manual
 ==================================
 
-.. automodule:: about_manual
-  :members:
-  :undoc-members:
-  :show-inheritance:
-
+.. raw:: 
+    
+    \clearpage
+    
 This on-line manual is based on the **EPANET 2 USERS MANUAL** 
 by Lewis A. Rossman. 
 The original report number is EPA/600/R-00/057 (September 2000). 
