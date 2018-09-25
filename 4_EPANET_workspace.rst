@@ -1,9 +1,12 @@
-4. EPANET’S WORKSPACE
-=====================
-
 .. raw:: latex
 
     \clearpage
+    
+
+4. EPANET’S WORKSPACE
+=====================
+
+
     
 *This chapter discusses the essential features of EPANET’s workspace.
 It describes the main menu bar, the tool and status bars, and the

@@ -1,9 +1,11 @@
-2. QUICK START TUTORIAL
-=======================
-
 .. raw:: latex
 
     \clearpage
+
+    
+2. QUICK START TUTORIAL
+=======================
+
     
 *This chapter provides a tutorial on how to use EPANET. If you are
 not familiar with the components that comprise a water distribution

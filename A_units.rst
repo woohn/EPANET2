@@ -1,12 +1,12 @@
+.. raw:: latex
+
+    \clearpage
+
+    
 A. UNITS OF MEASUREMENT
 =======================
 
-.. raw:: latex
-
-
-    \clearpage
-    
-------
+   
   
 UNITS
 ~~~~~

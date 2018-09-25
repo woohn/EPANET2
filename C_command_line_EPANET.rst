@@ -1,14 +1,10 @@
-C. COMMAND LINE EPANET
-======================
-
 .. raw:: latex
-
 
     \clearpage
   
--------
 
-..
+C. COMMAND LINE EPANET
+======================
 
   
 General Instructions

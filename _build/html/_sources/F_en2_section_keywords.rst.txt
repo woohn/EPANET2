@@ -1,17 +1,14 @@
-F. INPUT SECTION KEYWORDS
-=========================
-
-
 .. raw:: latex
 
     \clearpage
 
+    
+F. INPUT SECTION KEYWORDS
+=========================
+
   
 General Descriptions
 ~~~~~~~~~~~~~~~~~~~~  
-
-----------
-
 
 
 [BACKDROP]

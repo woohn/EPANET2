@@ -1,9 +1,10 @@
-9. VIEWING RESULTS
-==================
-
 .. raw:: latex
 
     \clearpage
+
+
+9. VIEWING RESULTS
+==================
     
 *This chapter describes the different ways in which the results of an
 analysis as well as the basic network input data can be viewed. These
@@ -224,10 +225,8 @@ Viewing Results with a Graph
   | Move Up                           | Moves selected item on list up    |
   |                                   | one position                      |
   +-----------------------------------+-----------------------------------+
-  | Move Down                         | +------------------------------+  |
-  |                                   | | Moves selected item on list  |  |
-  |                                   | | down one position            |  |
-  |                                   | +------------------------------+  |
+  | Move Down                         | Moves selected item on list       |
+  |                                   | down one position                 |
   +-----------------------------------+-----------------------------------+
 
 
@@ -301,10 +300,9 @@ General Page
   +-----------------------------------+-----------------------------------+
   | Main Title                        | Text of graph's main title        |
   +-----------------------------------+-----------------------------------+
-  | Font                              | +------------------------------+  |
-  |                                   | | Changes the font used for    |  |
-  |                                   | | the main title               |  |
-  |                                   | +------------------------------+  |
+  | Font                              |                                   |
+  |                                   | Changes the font used for         |
+  |                                   | the main title                    |
   +-----------------------------------+-----------------------------------+
 
 
@@ -337,10 +335,8 @@ General Page
   +-----------------------------------+-----------------------------------+
   | Axis Title                        | Text of axis title                |
   +-----------------------------------+-----------------------------------+
-  | Font                              | +------------------------------+  |
-  |                                   | | Click to select a font for   |  |
-  |                                   | | the axis title.              |  |
-  |                                   | +------------------------------+  |
+  | Font                              | Click to select a font for        |
+  |                                   | the axis title.                   |
   +-----------------------------------+-----------------------------------+
 
 
@@ -364,9 +360,7 @@ General Page
   +-----------------------------------+-----------------------------------+
   | Framed                            | Places a frame around the legend. |
   +-----------------------------------+-----------------------------------+
-  | Visible                           | +---------------------------+     |
-  |                                   | | Makes the legend visible. |     |
-  |                                   | +---------------------------+     |
+  | Visible                           | Makes the legend visible.         |
   +-----------------------------------+-----------------------------------+
 
 

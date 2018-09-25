@@ -1,9 +1,10 @@
-10. PRINTING AND COPYING
-========================
-
 .. raw:: latex
 
     \clearpage
+
+
+10. PRINTING AND COPYING
+========================
 
     
 *This chapter describes how to print, copy to the Windows clipboard,

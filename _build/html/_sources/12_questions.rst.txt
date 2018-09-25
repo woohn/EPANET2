@@ -1,12 +1,11 @@
-12. FREQUENTLY ASKED QUESTIONS
-==============================
-
 .. raw:: latex
 
     \clearpage
     
--------
 
+    
+12. FREQUENTLY ASKED QUESTIONS
+==============================
 
 FAQs
 ~~~~

@@ -1,9 +1,11 @@
-7. WORKING WITH THE MAP
-=======================
-
 .. raw:: latex
 
     \clearpage
+
+
+
+7. WORKING WITH THE MAP
+=======================
 
 
 *EPANET displays a map of the pipe network being modeled. This

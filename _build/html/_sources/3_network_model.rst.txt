@@ -1,10 +1,13 @@
-3. THE NETWORK MODEL
-====================
-
 .. raw:: latex
 
     \clearpage
     
+
+
+3. THE NETWORK MODEL
+====================
+
+
 *This chapter discusses how EPANET models the physical objects that
 constitute a distribution system as well as its operational
 parameters. Details about how this information is entered into the

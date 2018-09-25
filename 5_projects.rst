@@ -1,9 +1,11 @@
-5. WORKING WITH PROJECTS
-========================
-
 .. raw:: latex
 
     \clearpage
+
+    
+5. WORKING WITH PROJECTS
+========================
+
     
 *This chapter discusses how EPANET uses project files to store a
 piping network’s data. It explains how to set certain default options

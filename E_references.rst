@@ -1,12 +1,12 @@
-E. REFERENCES
-==============
-
 .. raw:: latex
 
     \clearpage
 
     
-..
+
+E. REFERENCES
+==============
+
 
 Bhave, P.R. 1991. *Analysis of Flow in Water Distribution Networks*.
 Technomic Publishing. Lancaster, PA.

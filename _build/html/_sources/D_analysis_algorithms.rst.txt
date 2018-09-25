@@ -1,13 +1,10 @@
-D. ANALYSIS ALGORITHMS
-======================
-
 .. raw:: latex
-
 
     \clearpage
     
-..
 
+D. ANALYSIS ALGORITHMS
+======================
 
 Hydraulics
 ~~~~~~~~~~

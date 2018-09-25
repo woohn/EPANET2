@@ -1,10 +1,12 @@
-6. WORKING WITH OBJECTS
-=======================
-
 .. raw:: latex
 
     \clearpage
     
+
+
+6. WORKING WITH OBJECTS
+=======================
+
 *EPANET uses various types of objects to model a distribution system.
 These objects can be accessed either directly on the network map or
 from the Data page of the Browser window. This chapter describes what
