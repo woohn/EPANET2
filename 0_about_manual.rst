@@ -1,8 +1,9 @@
 About This Manual
 ==================================
 
-.. raw:: 
-    
+.. raw:: latex
+
+
     \clearpage
     
 This on-line manual is based on the **EPANET 2 USERS MANUAL** 

@@ -1,10 +1,10 @@
 7. WORKING WITH THE MAP
 =======================
 
-.. automodule:: ch7_map
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
+
+    \clearpage
+
 
 *EPANET displays a map of the pipe network being modeled. This
 chapter describes how you can manipulate this map to enhance your
@@ -13,8 +13,6 @@ visualization of the system being modeled.*
 -------
 
 
-
-   
 
 Selecting a Map View
 ~~~~~~~~~~~~~~~~~~~~
@@ -164,7 +162,7 @@ Utilizing a Backdrop Map
     -  Use a metafile, not a bitmap.
 
     -  Dimension the network map so that its bounding rectangle has the same
-   aspect ratio (width-to-height ratio) as the backdrop.
+       aspect ratio (width-to-height ratio) as the backdrop.
 
 
 Zooming the Map

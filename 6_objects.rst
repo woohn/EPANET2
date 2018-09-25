@@ -1,11 +1,10 @@
 6. WORKING WITH OBJECTS
 =======================
 
-.. automodule:: ch6_Objects
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *EPANET uses various types of objects to model a distribution system.
 These objects can be accessed either directly on the network map or
 from the Data page of the Browser window. This chapter describes what
@@ -817,8 +816,8 @@ Editing Visual Objects
   +-----------------------------------+-----------------------------------+
 
 
-    Notes:
-    ~~~~~~
+  Notes: 
+     
 
     1. A label's anchor node property is used to anchor the label relative
        to a given location on the map. When the map is zoomed in, the label

@@ -1,11 +1,10 @@
 4. EPANET’S WORKSPACE
 =====================
 
-.. automodule:: ch4_Epanet_workspace
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *This chapter discusses the essential features of EPANET’s workspace.
 It describes the main menu bar, the tool and status bars, and the
 three windows used most often – the Network Map, the Browser, and the
@@ -334,7 +333,7 @@ Status Bar
    divided into four sections which display the following information:
 
     -  **Auto-Length** – indicates whether automatic computation of pipe
-   lengths is turned on or off
+       lengths is turned on or off
 
     -  **Flow Units** - displays the current flow units that are in effect
 
@@ -409,10 +408,11 @@ Map Browser
 
    Animate forward in time
 
+   
 Property Editor
 ~~~~~~~~~~~~~~~
 
-    The Property Editor (shown at the left) is used to edit
+   The Property Editor (shown at the left) is used to edit
    the properties of network nodes, links, labels, and analysis options.
    It is invoked when one of these objects is selected (either on the
    Network Map or in the Data Browser) and double-clicked or the

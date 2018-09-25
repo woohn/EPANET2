@@ -1,12 +1,10 @@
 B. ERROR MESSAGES
 =================
 
-.. automodule:: B_error_messages
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
 
+    \clearpage
 
 
 ..

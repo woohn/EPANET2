@@ -1,11 +1,11 @@
 D. ANALYSIS ALGORITHMS
 ======================
 
-.. automodule:: D_analysis_algorithms
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+
+    \clearpage
+    
 ..
 
 

@@ -1,13 +1,10 @@
 1. INTRODUCTION
 ===============
 
-.. automodule:: ch1_Introduction
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
-
-
+    \clearpage
+    
 -------
 
 What is EPANET

@@ -1,11 +1,10 @@
 2. QUICK START TUTORIAL
 =======================
 
-.. automodule:: ch2_quickstart
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *This chapter provides a tutorial on how to use EPANET. If you are
 not familiar with the components that comprise a water distribution
 system and how these are represented in pipe network models you might
@@ -14,9 +13,6 @@ want to review the first two sections of Chapter 3 first.*
 
 -------
 
-.. automodule:: ch2_quickstart.my_module
-  :members:
-  
   
  
 Installing EPANET

@@ -1,11 +1,11 @@
 A. UNITS OF MEASUREMENT
 =======================
 
-.. automodule:: A_units
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+
+    \clearpage
+    
 ------
   
 UNITS

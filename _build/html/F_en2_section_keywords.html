@@ -77,7 +77,8 @@
               
             
             
-              <ul class="current">
+              <p class="caption"><span class="caption-text">Table of Contents</span></p>
+<ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="0_about_manual.html">About This Manual</a></li>
 <li class="toctree-l1"><a class="reference internal" href="1_introduction.html">1. INTRODUCTION</a></li>
 <li class="toctree-l1"><a class="reference internal" href="2_quickstart.html">2. QUICK START TUTORIAL</a></li>
@@ -1079,20 +1080,18 @@ include information from each trial of each hydraulic analysis. This
 level of detail is only useful for de-bugging networks that become
 hydraulically unbalanced. The default is <strong>NO</strong>.</dd>
 <dt><strong>SUMMARY</strong> determines whether a summary table of number of network</dt>
-<dd>components and key analysis options is generated. The default is</dd>
-</dl>
-<p><strong>YES</strong>.</p>
-<dl class="docutils">
+<dd>components and key analysis options is generated. The default is
+<strong>YES</strong>.</dd>
 <dt><strong>ENERGY</strong> determines if a table reporting average energy usage and</dt>
 <dd>cost for each pump is provided. The default is NO.</dd>
 <dt><strong>NODES</strong> identifies which nodes will be reported on. You can either</dt>
-<dd>list individual node ID labels or use the keywords <strong>NONE</strong> or</dd>
-<dt><strong>ALL</strong>. Additional <strong>NODES</strong> lines can be used to continue the list.</dt>
-<dd>The default is <strong>NONE</strong>.</dd>
+<dd>list individual node ID labels or use the keywords <strong>NONE</strong> or
+<strong>ALL</strong>. Additional <strong>NODES</strong> lines can be used to continue the list.
+The default is <strong>NONE</strong>.</dd>
 <dt><strong>LINKS</strong> identifies which links will be reported on. You can either</dt>
-<dd>list individual link ID labels or use the keywords <strong>NONE</strong> or</dd>
-<dt><strong>ALL</strong>. Additional <strong>LINKS</strong> lines can be used to continue the list.</dt>
-<dd><p class="first">The default is <strong>NONE</strong>.</p>
+<dd><p class="first">list individual link ID labels or use the keywords <strong>NONE</strong> or
+<strong>ALL</strong>. Additional <strong>LINKS</strong> lines can be used to continue the list.
+The default is <strong>NONE</strong>.</p>
 <p>The “parameter” reporting option is used to identify which quantities
 are reported on, how many decimal places are displayed, and what kind
 of filtering should be used to limit output reporting. Node
@@ -1121,13 +1120,10 @@ setting for valves)</li>
 <li><strong>F-Factor</strong> (friction factor).</li>
 </ul>
 </div></blockquote>
-<p class="last">The default quantities reported are <strong>Demand, Head, Pressure</strong>, and</p>
+<p class="last">The default quantities reported are <strong>Demand, Head, Pressure</strong>, and
+<strong>Quality</strong> for nodes and <strong>Flow, Velocity</strong>, and <strong>Headloss</strong> for links. The default precision
+is two decimal places.</p>
 </dd>
-</dl>
-<p><strong>Quality</strong> for nodes and</p>
-<dl class="docutils">
-<dt><strong>Flow, Velocity</strong>, and <strong>Headloss</strong> for links. The default precision</dt>
-<dd>is two decimal places.</dd>
 </dl>
 <p><strong>Remarks:</strong></p>
 <blockquote>
@@ -1135,15 +1131,9 @@ setting for valves)</li>
 <li>All options assume their default values if not explicitly specified
 in this section.</li>
 <li>Items offset by slashes (/) indicate allowable choices.</li>
-<li>The default is to not report on any nodes or links, so a <strong>NODES</strong> or</li>
-</ol>
-<blockquote>
-<div><dl class="docutils">
-<dt><strong>LINKS</strong> option must be supplied if you wish to report results for</dt>
-<dd>these items.</dd>
-</dl>
-</div></blockquote>
-<ol class="loweralpha simple" start="4">
+<li>The default is to not report on any nodes or links, so a <strong>NODES</strong> or
+<strong>LINKS</strong> option must be supplied if you wish to report results for
+these items.</li>
 <li>For the Windows version of EPANET, the only [REPORT] option
 recognized is <strong>STATUS</strong>. All others are ignored.</li>
 </ol>
@@ -1669,50 +1659,54 @@ cylindrical tank or if a volume curve is supplied.</li>
 <blockquote>
 <div>Defines various time step parameters used in the simulation.</div></blockquote>
 <p><strong>Formats:</strong></p>
-<p><strong>DURATION</strong></p>
-<dl class="docutils">
-<dt><a href="#id1"><span class="problematic" id="id2">**</span></a>HYDRAULIC TIMESTEP QUALITY TIMESTEP RULE TIMESTEP PATTERN TIMESTEP</dt>
-<dd>PATTERN START REPORT TIMESTEP REPORT START**</dd>
-</dl>
-<p><strong>START CLOCKTIME STATISTIC</strong></p>
+<blockquote>
+<div><p><strong>DURATION</strong>           Value (units)</p>
+<p><strong>HYDRAULIC TIMESTEP</strong> Value (units)</p>
+<p><strong>QUALITY TIMESTEP</strong>   Value (units)</p>
+<p><strong>RULE TIMESTEP</strong>      Value (units)</p>
+<p><strong>PATTERN TIMESTEP</strong>   Value (units)</p>
+<p><strong>PATTERN START</strong>      Value (units)</p>
+<p><strong>REPORT TIMESTEP</strong>    Value (units)</p>
+<p><strong>REPORT START</strong>       Value (units)</p>
+<p><strong>START CLOCKTIME</strong>    Value (AM/PM)</p>
+<p><strong>STATISTIC</strong>           <strong>NONE/AVERAGED/ MINIMUM/MAXIMUM RANGE</strong></p>
+</div></blockquote>
 <p><strong>Definitions:</strong></p>
 <blockquote>
-<div>Value (units) Value (units) Value (units) Value (units) Value (units)
-Value (units) Value (units) Value (units) Value (<strong>AM/PM</strong>)</div></blockquote>
-<p><strong>NONE/AVERAGED/ MINIMUM/MAXIMUM RANGE</strong></p>
-<dl class="docutils">
-<dt><strong>DURATION</strong> is the duration of the simulation. Use 0 to run a single</dt>
-<dd>period snapshot analysis. The default is 0.</dd>
-<dt><strong>HYDRAULIC TIMESTEP</strong> determines how often a new hydraulic state of</dt>
-<dd>the network is computed. If greater than either the <strong>PATTERN</strong> or</dd>
-<dt><strong>REPORT</strong> time step it will be automatically reduced. The default is</dt>
-<dd>1 hour.</dd>
-<dt><strong>QUALITY TIMESTEP</strong> is the time step used to track changes in water</dt>
-<dd>quality throughout the network. The default is 1/10 of the hydraulic
-time step.</dd>
-<dt><strong>RULE TIMESTEP</strong> is the time step used to check for changes in</dt>
-<dd>system status due to activation of rule-based controls between
-hydraulic time steps. The default is 1/10 of the hydraulic time step.</dd>
-<dt><strong>PATTERN TIMESTEP</strong> is the interval between time periods in all time</dt>
-<dd>patterns. The default is 1 hour.</dd>
-<dt><strong>PATTERN START</strong> is the time offset at which all patterns will</dt>
-<dd>start. For example, a value of 6 hours would start the simulation
+<div><p><strong>DURATION</strong> is the duration of the simulation. Use 0 to run a single
+period snapshot analysis. The default is 0.</p>
+<p><strong>HYDRAULIC TIMESTEP</strong> determines how often a new hydraulic state of
+the network is computed. If greater than either the <strong>PATTERN</strong> or
+<strong>REPORT</strong> time step it will be automatically reduced. The default is
+1 hour.</p>
+<p><strong>QUALITY TIMESTEP</strong> is the time step used to track changes in water
+quality throughout the network. The default is 1/10 of the hydraulic
+time step.</p>
+<p><strong>RULE TIMESTEP</strong> is the time step used to check for changes in
+system status due to activation of rule-based controls between
+hydraulic time steps. The default is 1/10 of the hydraulic time step.</p>
+<p><strong>PATTERN TIMESTEP</strong> is the interval between time periods in all time
+patterns. The default is 1 hour.</p>
+<p><strong>PATTERN START</strong> is the time offset at which all patterns will
+start. For example, a value of 6 hours would start the simulation
 with each pattern in the time period that corresponds to hour 6. The
-default is 0.</dd>
-<dt><strong>REPORT TIMESTEP</strong> sets the time interval between which output</dt>
-<dd>results are reported. The default is 1 hour.</dd>
-<dt><strong>REPORT START</strong> is the length of time into the simulation at which</dt>
-<dd>output results begin to be reported. The default is 0.</dd>
-<dt><strong>START CLOCKTIME</strong> is the time of day (e.g., 3:00 PM) at which the</dt>
-<dd>simulation begins. The default is 12:00 AM midnight.</dd>
-<dt><strong>STATISTIC</strong> determines what kind of statistical post-processing</dt>
-<dd>should be done on the time series of simulation results generated.</dd>
-<dt><strong>AVERAGED</strong> reports a set of time-averaged results, <strong>MINIMUM</strong></dt>
-<dd>reports only the minimum values, <strong>MAXIMUM</strong> the maximum values, and</dd>
-<dt><strong>RANGE</strong> reports the difference between the minimum and maximum</dt>
-<dd>values. <strong>NONE</strong> reports the full time series for all quantities for
-all nodes and links and is the default.</dd>
-</dl>
+default is 0.</p>
+<p><strong>REPORT TIMESTEP</strong> sets the time interval between which output
+results are reported. The default is 1 hour.</p>
+<p><strong>REPORT START</strong> is the length of time into the simulation at which
+output results begin to be reported. The default is 0.</p>
+<p><strong>START CLOCKTIME</strong> is the time of day (e.g., 3:00 PM) at which the
+simulation begins. The default is 12:00 AM midnight.</p>
+<p><strong>STATISTIC</strong> determines what kind of statistical post-processing
+should be done on the time series of simulation results generated.
+<strong>AVERAGED</strong> reports a set of time-averaged results,
+<strong>MINIMUM</strong>  reports only the minimum values,
+<strong>MAXIMUM</strong> the maximum values, and
+<strong>RANGE</strong> reports the difference between the minimum and maximum
+values.
+<strong>NONE</strong> reports the full time series for all quantities for
+all nodes and links and is the default.</p>
+</div></blockquote>
 <p><strong>Remarks:</strong></p>
 <blockquote>
 <div><ol class="loweralpha simple">

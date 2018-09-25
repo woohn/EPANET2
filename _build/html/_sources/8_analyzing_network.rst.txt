@@ -1,11 +1,10 @@
 8. ANALYZING A NETWORK
 ======================
 
-.. automodule:: ch8_analyzing_network
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *After a network has been suitably described, its hydraulic and water
 quality behavior can be analyzed. This chapter describes how to
 specify options to use in the analysis, how to run the analysis and

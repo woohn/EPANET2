@@ -1,10 +1,7 @@
 10. PRINTING AND COPYING
 ========================
 
-.. automodule:: ch10_printing_copying
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
 *This chapter describes how to print, copy to the Windows clipboard,
 or copy to file the contents of the currently active window in the

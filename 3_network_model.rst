@@ -1,11 +1,10 @@
 3. THE NETWORK MODEL
 ====================
 
-.. automodule:: ch3_network_model
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *This chapter discusses how EPANET models the physical objects that
 constitute a distribution system as well as its operational
 parameters. Details about how this information is entered into the
@@ -241,11 +240,11 @@ Pipes
     |    *Formula*      |    *Resistance  Coefficient*               |    *Flow Exponent*    |
     |                   |    *(A)*                                   |    *(B)*              |
     +===================+============================================+=======================+
-    | Hazen-Williams    |  4.727 C\ :sup:`-1.852` d\ :sup:`-4.871` L   |    1.852              |
+    | Hazen-Williams    |  4.727 C\ :sup:`-1.852` d\ :sup:`-4.871` L |    1.852              |
     +-------------------+--------------------------------------------+-----------------------+
-    | Darcy-Weisbach    |  0.0252 f(ε,d,q)d\ :sup:`-5` L              |    2                  |
+    | Darcy-Weisbach    |  0.0252 f(ε,d,q)d\ :sup:`-5` L             |    2                  |
     +-------------------+--------------------------------------------+-----------------------+
-    | Chezy-Manning     |  4.66 n\ :sup:`2` d\ :sup:`-5.33` L          |    2                  |
+    | Chezy-Manning     |  4.66 n\ :sup:`2` d\ :sup:`-5.33` L        |    2                  |
     +-------------------+--------------------------------------------+-----------------------+
 
     
@@ -529,16 +528,16 @@ Pump Curve
    EPANET will use a different shape of pump curve depending on the
    number of points supplied (see Figure 3.2):
 
-    Single-Point Pump Curve:     
+      Single-Point Pump Curve:     
       |image31| 
-    |
-    Three-Point Pump Curve:      
+      | 
+      Three-Point Pump Curve:      
       |image32|
-    |
-    Multi-Point Pump Curve: 
+      | 
+      Multi-Point Pump Curve: 
       |image31-2|
-    |
-    Variable-Speed Pump Curve:
+      | 
+      Variable-Speed Pump Curve:
       |image32-2|    
 
     **Figure 3.2** Example Pump Curves
@@ -694,7 +693,7 @@ Simple Controls
    They are statements expressed in one of the following three formats:
     
      
-    .. 
+     
     
       LINK *x status* IF NODE *y* ABOVE/BELOW *z*
 
@@ -702,7 +701,7 @@ Simple Controls
 
       LINK *x status* AT CLOCKTIME *c* AM/PM
       
-    ..  
+    
     where:
       | ``x`` = a link ID label,
       | ``status`` = OPEN or CLOSED, a pump speed setting, or a control valve
@@ -970,8 +969,10 @@ Water Quality Reactions
    treat these two reaction zones separately.
 
    
-      |image36-2|
+      |image36-2| 
+      
     **Figure 3.6** Reaction Zones Within a Pipe
+    
 
    
 Bulk Reactions

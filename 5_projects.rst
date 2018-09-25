@@ -1,11 +1,10 @@
 5. WORKING WITH PROJECTS
 ========================
 
-.. automodule:: ch5_projects
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *This chapter discusses how EPANET uses project files to store a
 piping network’s data. It explains how to set certain default options
 for the project and how to register calibration data (observed

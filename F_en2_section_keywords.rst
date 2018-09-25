@@ -2,12 +2,9 @@ F. INPUT SECTION KEYWORDS
 =========================
 
 
-.. automodule:: F_en2_section_keywords
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
-..
+    \clearpage
 
   
 General Descriptions
@@ -1008,19 +1005,19 @@ c. If the input file will be used with the Windows version of EPANET,
 
  **SUMMARY** determines whether a summary table of number of network
    components and key analysis options is generated. The default is
- **YES**.
+   **YES**.
 
  **ENERGY** determines if a table reporting average energy usage and
    cost for each pump is provided. The default is NO.
 
  **NODES** identifies which nodes will be reported on. You can either
    list individual node ID labels or use the keywords **NONE** or
- **ALL**. Additional **NODES** lines can be used to continue the list.
+   **ALL**. Additional **NODES** lines can be used to continue the list.
    The default is **NONE**.
 
  **LINKS** identifies which links will be reported on. You can either
    list individual link ID labels or use the keywords **NONE** or
- **ALL**. Additional **LINKS** lines can be used to continue the list.
+   **ALL**. Additional **LINKS** lines can be used to continue the list.
    The default is **NONE**.
 
    The “parameter” reporting option is used to identify which quantities
@@ -1064,9 +1061,7 @@ c. If the input file will be used with the Windows version of EPANET,
 
 
    The default quantities reported are **Demand, Head, Pressure**, and
- **Quality** for nodes and
-
- **Flow, Velocity**, and **Headloss** for links. The default precision
+   **Quality** for nodes and **Flow, Velocity**, and **Headloss** for links. The default precision
    is two decimal places.
 
  **Remarks:**
@@ -1077,7 +1072,7 @@ c. If the input file will be used with the Windows version of EPANET,
   b. Items offset by slashes (/) indicate allowable choices.
 
   c. The default is to not report on any nodes or links, so a **NODES** or
-   **LINKS** option must be supplied if you wish to report results for
+     **LINKS** option must be supplied if you wish to report results for
      these items.
 
   d. For the Windows version of EPANET, the only [REPORT] option
@@ -1626,61 +1621,72 @@ c. The **PRIORITY** value is used to determine which rule applies when
 
    Defines various time step parameters used in the simulation.
 
- **Formats:**
+ **Formats:**           
 
- **DURATION**
+   **DURATION**           Value (units)
 
- **HYDRAULIC TIMESTEP QUALITY TIMESTEP RULE TIMESTEP PATTERN TIMESTEP
-   PATTERN START REPORT TIMESTEP REPORT START**
+   **HYDRAULIC TIMESTEP** Value (units)
+   
+   **QUALITY TIMESTEP**   Value (units)
+   
+   **RULE TIMESTEP**      Value (units)
+   
+   **PATTERN TIMESTEP**   Value (units)
+   
+   **PATTERN START**      Value (units)
+   
+   **REPORT TIMESTEP**    Value (units)
+   
+   **REPORT START**       Value (units)
 
- **START CLOCKTIME STATISTIC**
+   **START CLOCKTIME**    Value (AM/PM)
+   
+   **STATISTIC**           **NONE/AVERAGED/ MINIMUM/MAXIMUM RANGE**
 
+ 
  **Definitions:**
 
-   Value (units) Value (units) Value (units) Value (units) Value (units)
-   Value (units) Value (units) Value (units) Value (**AM/PM**)
-
- **NONE/AVERAGED/ MINIMUM/MAXIMUM RANGE**
-
- **DURATION** is the duration of the simulation. Use 0 to run a single
+   **DURATION** is the duration of the simulation. Use 0 to run a single
    period snapshot analysis. The default is 0.
 
- **HYDRAULIC TIMESTEP** determines how often a new hydraulic state of
+   **HYDRAULIC TIMESTEP** determines how often a new hydraulic state of
    the network is computed. If greater than either the **PATTERN** or
- **REPORT** time step it will be automatically reduced. The default is
+   **REPORT** time step it will be automatically reduced. The default is
    1 hour.
 
- **QUALITY TIMESTEP** is the time step used to track changes in water
+   **QUALITY TIMESTEP** is the time step used to track changes in water
    quality throughout the network. The default is 1/10 of the hydraulic
    time step.
 
- **RULE TIMESTEP** is the time step used to check for changes in
+   **RULE TIMESTEP** is the time step used to check for changes in
    system status due to activation of rule-based controls between
    hydraulic time steps. The default is 1/10 of the hydraulic time step.
 
- **PATTERN TIMESTEP** is the interval between time periods in all time
+   **PATTERN TIMESTEP** is the interval between time periods in all time
    patterns. The default is 1 hour.
 
- **PATTERN START** is the time offset at which all patterns will
+   **PATTERN START** is the time offset at which all patterns will
    start. For example, a value of 6 hours would start the simulation
    with each pattern in the time period that corresponds to hour 6. The
    default is 0.
 
- **REPORT TIMESTEP** sets the time interval between which output
+   **REPORT TIMESTEP** sets the time interval between which output
    results are reported. The default is 1 hour.
 
- **REPORT START** is the length of time into the simulation at which
+   **REPORT START** is the length of time into the simulation at which
    output results begin to be reported. The default is 0.
 
- **START CLOCKTIME** is the time of day (e.g., 3:00 PM) at which the
+   **START CLOCKTIME** is the time of day (e.g., 3:00 PM) at which the
    simulation begins. The default is 12:00 AM midnight.
 
- **STATISTIC** determines what kind of statistical post-processing
+   **STATISTIC** determines what kind of statistical post-processing
    should be done on the time series of simulation results generated.
- **AVERAGED** reports a set of time-averaged results, **MINIMUM**
-   reports only the minimum values, **MAXIMUM** the maximum values, and
- **RANGE** reports the difference between the minimum and maximum
-   values. **NONE** reports the full time series for all quantities for
+   **AVERAGED** reports a set of time-averaged results, 
+   **MINIMUM**  reports only the minimum values, 
+   **MAXIMUM** the maximum values, and
+   **RANGE** reports the difference between the minimum and maximum
+   values. 
+   **NONE** reports the full time series for all quantities for
    all nodes and links and is the default.
 
  **Remarks:**

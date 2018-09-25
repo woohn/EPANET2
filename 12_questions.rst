@@ -1,13 +1,10 @@
 12. FREQUENTLY ASKED QUESTIONS
 ==============================
 
-.. automodule:: ch12_questions
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
-
-
+    \clearpage
+    
 -------
 
 

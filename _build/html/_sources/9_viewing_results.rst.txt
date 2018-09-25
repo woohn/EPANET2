@@ -1,11 +1,10 @@
 9. VIEWING RESULTS
 ==================
 
-.. automodule:: ch9_viewing_results
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
+    \clearpage
+    
 *This chapter describes the different ways in which the results of an
 analysis as well as the basic network input data can be viewed. These
 include different map views, graphs, tables, and special reports.*

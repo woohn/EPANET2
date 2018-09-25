@@ -1,12 +1,10 @@
 C. COMMAND LINE EPANET
 ======================
 
-.. automodule:: C_command_line_EPANET
-  :members:
-  :undoc-members:
-  :show-inheritance:
+.. raw:: latex
 
 
+    \clearpage
   
 -------
 
